@@ -115,6 +115,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Tamagotchi %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\Tamagotchi %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\Tamagotchi.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -8,11 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TamaConsole.ServiceReference1 {
+namespace TamaConsole.TamaService {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.ITamaLogic")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="TamaService.ITamaLogic")]
     public interface ITamaLogic {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/GetTamagotchi", ReplyAction="http://tempuri.org/ITamaLogic/GetTamagotchiResponse")]
@@ -29,12 +29,12 @@ namespace TamaConsole.ServiceReference1 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ITamaLogicChannel : TamaConsole.ServiceReference1.ITamaLogic, System.ServiceModel.IClientChannel {
+    public interface ITamaLogicChannel : TamaConsole.TamaService.ITamaLogic, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class TamaLogicClient : System.ServiceModel.ClientBase<TamaConsole.ServiceReference1.ITamaLogic>, TamaConsole.ServiceReference1.ITamaLogic {
+    public partial class TamaLogicClient : System.ServiceModel.ClientBase<TamaConsole.TamaService.ITamaLogic>, TamaConsole.TamaService.ITamaLogic {
         
         public TamaLogicClient() {
         }

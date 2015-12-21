@@ -9,3 +9,14 @@ C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaService\bin\EntityFramewo
 C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaService\bin\Ninject.xml
 C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaService\obj\Debug\TamaService.dll
 C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaService\obj\Debug\TamaService.pdb
+E:\Tamagotchi\Tamagotchi\TamaService\bin\TamaService.dll.config
+E:\Tamagotchi\Tamagotchi\TamaService\bin\TamaService.dll
+E:\Tamagotchi\Tamagotchi\TamaService\bin\TamaService.pdb
+E:\Tamagotchi\Tamagotchi\TamaService\bin\EntityFramework.dll
+E:\Tamagotchi\Tamagotchi\TamaService\bin\EntityFramework.SqlServer.dll
+E:\Tamagotchi\Tamagotchi\TamaService\bin\Ninject.dll
+E:\Tamagotchi\Tamagotchi\TamaService\bin\EntityFramework.xml
+E:\Tamagotchi\Tamagotchi\TamaService\bin\EntityFramework.SqlServer.xml
+E:\Tamagotchi\Tamagotchi\TamaService\bin\Ninject.xml
+E:\Tamagotchi\Tamagotchi\TamaService\obj\Debug\TamaService.dll
+E:\Tamagotchi\Tamagotchi\TamaService\obj\Debug\TamaService.pdb
