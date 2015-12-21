@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="VGlyik/LqDQJSvvpJ/1E1KgWFYA=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="cJU0ExASNQrQc+TpjG2nkYRgp0Q=">
   <bindingConfigurations>
-    <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_ITamaLogic1">
+    <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_ITamaLogic">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_ITamaLogic1</serializedValue>
+          <serializedValue>BasicHttpBinding_ITamaLogic</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -221,10 +221,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_ITamaLogic1" contract="TamaService.ITamaLogic" bindingType="basicHttpBinding" address="http://tamagotchi.azurewebsites.net/TamaService.svc" bindingConfiguration="BasicHttpBinding_ITamaLogic1">
+    <endpoint name="BasicHttpBinding_ITamaLogic" contract="TamaService.ITamaLogic" bindingType="basicHttpBinding" address="http://tamaservice.azurewebsites.net/TamaService.svc" bindingConfiguration="BasicHttpBinding_ITamaLogic">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://tamagotchi.azurewebsites.net/TamaService.svc</serializedValue>
+          <serializedValue>http://tamaservice.azurewebsites.net/TamaService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -233,7 +233,7 @@
           <serializedValue>basicHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_ITamaLogic1</serializedValue>
+          <serializedValue>BasicHttpBinding_ITamaLogic</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>TamaService.ITamaLogic</serializedValue>
@@ -296,7 +296,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_ITamaLogic1</serializedValue>
+          <serializedValue>BasicHttpBinding_ITamaLogic</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -306,10 +306,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="BasicHttpsBinding_ITamaLogic" contract="TamaService.ITamaLogic" bindingType="basicHttpBinding" address="https://tamagotchi.azurewebsites.net/TamaService.svc" bindingConfiguration="BasicHttpsBinding_ITamaLogic">
+    <endpoint name="BasicHttpsBinding_ITamaLogic" contract="TamaService.ITamaLogic" bindingType="basicHttpBinding" address="https://tamaservice.azurewebsites.net/TamaService.svc" bindingConfiguration="BasicHttpsBinding_ITamaLogic">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://tamagotchi.azurewebsites.net/TamaService.svc</serializedValue>
+          <serializedValue>https://tamaservice.azurewebsites.net/TamaService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

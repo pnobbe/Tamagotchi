@@ -25,7 +25,11 @@ namespace TamaWebApp
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/tamagotchi.css",
                       "~/Content/site.css"));
+
+            BundleTable.EnableOptimizations = false;
+
         }
     }
 }

@@ -27,8 +27,8 @@
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="https://tamagotchi.azurewebsites.net/TamaService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="https://tamagotchi.azurewebsites.net/TamaService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://tamaservice.azurewebsites.net/TamaService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://tamaservice.azurewebsites.net/TamaService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ITamaLogic_GetTamagotchi_InputMessage">
@@ -98,10 +98,10 @@
   </wsdl:binding>
   <wsdl:service name="TamaService">
     <wsdl:port name="BasicHttpBinding_ITamaLogic" binding="tns:BasicHttpBinding_ITamaLogic">
-      <soap:address location="http://tamagotchi.azurewebsites.net/TamaService.svc" />
+      <soap:address location="http://tamaservice.azurewebsites.net/TamaService.svc" />
     </wsdl:port>
     <wsdl:port name="BasicHttpsBinding_ITamaLogic" binding="tns:BasicHttpsBinding_ITamaLogic">
-      <soap:address location="https://tamagotchi.azurewebsites.net/TamaService.svc" />
+      <soap:address location="https://tamaservice.azurewebsites.net/TamaService.svc" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

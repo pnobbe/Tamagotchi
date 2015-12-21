@@ -1,31 +1,49 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
+﻿@model TamaWebApp.Models.Tamagotchi;
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<div class="container">
+    <div class="row">
+        <div class="mainBox">
+            <div class="col-lg-12 text-center">
+                <h1 class="brand-name">Welkom bij</h1>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+                <img src="~/Content/img/title.png" height="200px" width="auto" />
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div class="row">
+        <div class="box">
+            <div class="col-lg-12">
+                <hr>
+                <h2 class="intro-text text-center">
+                    Selecteer jouw <strong>Tamagotchi</strong> om te beginnen!
+                </h2>
+                <hr>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="newTama">
+                        <p class="text-center">
+                            Heb je nog geen <strong>Tamagotchi</strong>? Vul een naam in en maak hem aan!
+                        </p>
+                        
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div>
+                            <p class="text-center">
+                                @Html.EditorFor(model => model, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                <button type="button" value="Add">Aanmaken</button>
+                            </p>
+                        </div>
+
+                    </div>
+                }
+                <p class="text-center">
+                    *Insert Tamagotchis!*
+                </p>
+                <hr class="visible-xs">
+
+
+            </div>
+        </div>
     </div>
 </div>
