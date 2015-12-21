@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TamaConsole", "TamaConsole\TamaConsole.csproj", "{CA68C345-9039-497C-81AB-47DFBF4164CA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A8CA41AD-A05C-4ED1-9C6A-F4812D96381F} = {A8CA41AD-A05C-4ED1-9C6A-F4812D96381F}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TamaService", "TamaService\TamaService.csproj", "{A8CA41AD-A05C-4ED1-9C6A-F4812D96381F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TamaWebApp", "TamaWebApp\TamaWebApp.csproj", "{3C538A86-90FD-43CA-9D5B-B250715D4C77}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA68C345-9039-497C-81AB-47DFBF4164CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA68C345-9039-497C-81AB-47DFBF4164CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA68C345-9039-497C-81AB-47DFBF4164CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA68C345-9039-497C-81AB-47DFBF4164CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8CA41AD-A05C-4ED1-9C6A-F4812D96381F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8CA41AD-A05C-4ED1-9C6A-F4812D96381F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8CA41AD-A05C-4ED1-9C6A-F4812D96381F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8CA41AD-A05C-4ED1-9C6A-F4812D96381F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C538A86-90FD-43CA-9D5B-B250715D4C77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C538A86-90FD-43CA-9D5B-B250715D4C77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C538A86-90FD-43CA-9D5B-B250715D4C77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C538A86-90FD-43CA-9D5B-B250715D4C77}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

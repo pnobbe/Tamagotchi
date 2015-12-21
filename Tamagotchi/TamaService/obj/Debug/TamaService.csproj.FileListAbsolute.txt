@@ -1,0 +1,11 @@
+C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaService\bin\TamaService.dll.config
+C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaService\bin\TamaService.dll
+C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaService\bin\TamaService.pdb
+C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaService\bin\EntityFramework.dll
+C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaService\bin\EntityFramework.SqlServer.dll
+C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaService\bin\Ninject.dll
+C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaService\bin\EntityFramework.xml
+C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaService\bin\EntityFramework.SqlServer.xml
+C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaService\bin\Ninject.xml
+C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaService\obj\Debug\TamaService.dll
+C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaService\obj\Debug\TamaService.pdb

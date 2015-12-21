@@ -1,0 +1,5 @@
+C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaConsole\bin\Debug\TamaConsole.exe.config
+C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaConsole\bin\Debug\TamaConsole.exe
+C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaConsole\bin\Debug\TamaConsole.pdb
+C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaConsole\obj\Debug\TamaConsole.exe
+C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaConsole\obj\Debug\TamaConsole.pdb

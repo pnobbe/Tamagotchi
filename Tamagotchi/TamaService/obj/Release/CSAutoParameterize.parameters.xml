@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="TamaString-Web.config Connection String" description="TamaString Connection String used in web.config by the application to access the database." defaultValue="Data Source=tcp:ov4qod7hzn.database.windows.net,1433; Database=TamaData;User ID=aroxis@ov4qod7hzn;Password=42in06SOe;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\patri\\Documents\\GitHub\\Sudoku\\TamaConsole\\TamaService\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='TamaString']/@connectionString" />
+  </parameter>
+</parameters>
