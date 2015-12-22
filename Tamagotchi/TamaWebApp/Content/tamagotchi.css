@@ -31,7 +31,7 @@ hr {
     border-color: #999999;
 }
 
-.button-default {
+.button-default, .button-link {
     position: relative;
     vertical-align: top;
     width: 25%;
@@ -48,6 +48,13 @@ hr {
     cursor: pointer;
     -webkit-box-shadow: inset 0 -2px #28be68;
     box-shadow: inset 0 -2px #28be68;
+}
+
+.button-link {
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 200px;
 }
 
 .brand,

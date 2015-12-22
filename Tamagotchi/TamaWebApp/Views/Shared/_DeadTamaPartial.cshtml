@@ -1,0 +1,37 @@
+﻿@model IEnumerable<TamaWebApp.TamaService.Tamagotchi>
+
+<div class="panel panel-default" id="panel1">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-target="#collapseTwo"
+               href="#collapseTwo">
+                Dood
+            </a>
+        </h4>
+
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse">
+        <div class="panel-body">
+            <div class="text-center">
+                <div class="col-lg-12">
+                    <table class="table">
+                        @foreach (var item in Model)
+                        {
+                            if (item.isDead)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Click", "Tamagotchi", "Home", new { id = item.Id }, new { @class = "button-link" })
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

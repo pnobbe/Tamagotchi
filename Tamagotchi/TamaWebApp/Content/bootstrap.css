@@ -5304,7 +5304,7 @@ a.list-group-item:focus {
 
 .panel {
   margin-bottom: 20px;
-  background-color: #ffffff;
+  background-color: #D9FFAD;
   border: 1px solid transparent;
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -5369,6 +5369,7 @@ a.list-group-item:focus {
   border-bottom: 1px solid transparent;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
+  background-color: #78ffcd;
 }
 
 .panel-title {
@@ -5416,13 +5417,13 @@ a.list-group-item:focus {
 }
 
 .panel-default {
-  border-color: #dddddd;
+  border-color: #9DFC8F;
 }
 
 .panel-default > .panel-heading {
   color: #333333;
-  background-color: #f5f5f5;
-  border-color: #dddddd;
+  background-color: rgb(125, 226, 131);
+  border-color: rgb(125, 226, 131);
 }
 
 .panel-default > .panel-heading + .panel-collapse .panel-body {
