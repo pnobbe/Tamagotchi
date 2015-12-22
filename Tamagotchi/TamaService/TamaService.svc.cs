@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using TamaService.Domain.Interfaces;
 
 namespace TamaService
 {
@@ -15,15 +16,25 @@ namespace TamaService
 
         private Database x = new Database();
 
-        public void AddTamagotchi(string name)
+        public int AddTamagotchi(string name)
         {
             var dQuery = x.Database.SqlQuery<DateTime>("SELECT GETDATE() ");
             DateTime dbDate = dQuery.AsEnumerable().First();
             TamaFlags tf = new TamaFlags();
             x.Tamaflags.Add(tf);
             x.SaveChanges();
-            x.Tamagotchis.Add(new Tamagotchi() { Name = name, CreationData = dbDate, LastUpdate = dbDate, FlagID = tf.ID });
+            Tamagotchi tama = new Tamagotchi();
+            tama.Name = name;
+            tama.CreationData = dbDate;
+            tama.LastUpdate = dbDate;
+            tama.FlagID = tf.ID;
+            tama.ActionDone = dbDate;
+            x.Tamagotchis.Add(tama);
             x.SaveChanges();
+
+            return tama.Id;
+
+
         }
 
 
@@ -33,7 +44,6 @@ namespace TamaService
         }
 
         public Tamagotchi GetTamagotchi(int value)
-
         {
             if (x.Tamagotchis.Where(t => t.Id == value).Count() != 0)
             {
@@ -61,5 +71,142 @@ namespace TamaService
             }
         }
 
+        public bool FlipFlag(string name, int tamaID)
+        {
+
+            Tamagotchi tama = GetTamagotchi(tamaID);
+
+            if (tama == null)
+                return false;
+
+            if (x.Tamaflags.Where(t => t.ID == tama.FlagID).Count() != 0)
+            {
+                TamaFlags flags = x.Tamaflags.First(t => t.ID == tama.FlagID);
+
+                switch(name)
+                {
+                    case "Crazy":
+                        flags.Crazy = !flags.Crazy;
+                        x.SaveChanges();
+                        return true;
+                    case "Honger":
+                        flags.Honger = !flags.Honger;
+                        x.SaveChanges();
+                        return true;
+                    case "Isolatie":
+                        flags.Isolatie = !flags.Isolatie;
+                        x.SaveChanges();
+                        return true;
+                    case "Munchies":
+                        flags.Munchies = !flags.Munchies;
+                        x.SaveChanges();
+                        return true;
+                    case "Slaaptekort":
+                        flags.Slaaptekort = !flags.Slaaptekort;
+                        x.SaveChanges();
+                        return true;
+                    case "Topatleet":
+                        flags.Topatleet = !flags.Topatleet;
+                        x.SaveChanges();
+                        return true;
+                    case "Vermoeidheid":
+                        flags.Vermoeidheid = !flags.Vermoeidheid;
+                        x.SaveChanges();
+                        return true;
+                    case "Verveling":
+                        flags.Verveling = !flags.Verveling;
+                        x.SaveChanges();
+                        return true;
+                    case "Voedseltekort":
+                        flags.Voedseltekort = !flags.Voedseltekort;
+                        x.SaveChanges();
+                        return true;
+                };
+
+                return false;
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateTamagochi(int value)
+        {
+            Tamagotchi tama = GetTamagotchi(value);
+
+            if (tama == null)
+                return false;
+
+            TamaFlags flags = GetFlag(value);
+
+            List<ISpelRegel> x = new List<ISpelRegel>();
+
+            return false;
+        }
+
+        public bool Eat(Tamagotchi tama)
+        {
+            DateTime time;
+            if(canExecute(tama, out time))
+            {
+                tama.Hunger = 0;
+
+            }
+            return false;
+        }
+
+        public bool Sleep(Tamagotchi tama)
+        {
+            DateTime time;
+            if (canExecute(tama, out time))
+            {
+
+            }
+            return false;
+        }
+
+        public bool Play(Tamagotchi tama)
+        {
+            DateTime time;
+            if (canExecute(tama, out time))
+            {
+
+            }
+            return false;
+        }
+
+        public bool Workout(Tamagotchi tama)
+        {
+            DateTime time;
+            if (canExecute(tama, out time))
+            {
+
+            }
+            return false;
+        }
+
+        public bool Hug(Tamagotchi tama)
+        {
+            DateTime time;
+            if (canExecute(tama, out time))
+            {
+
+            }
+            return false;
+        }
+
+        private bool canExecute(Tamagotchi tama, out DateTime time)
+        {
+            time = DateTime.Now;
+            if (tama == null || tama.isDead)
+                return false;
+
+            var dQuery = x.Database.SqlQuery<DateTime>("SELECT GETDATE() ");
+            time = dQuery.AsEnumerable().First();
+
+            return time >= tama.ActionDone;
+        }
     }
 }
