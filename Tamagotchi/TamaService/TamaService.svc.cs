@@ -148,7 +148,7 @@ namespace TamaService
 
         public bool Eat(Tamagotchi tama)
         {
-            // UPDATE
+            // UPDATE UpdateTamagochi
 
             DateTime time;
             if(canExecute(tama, out time))
