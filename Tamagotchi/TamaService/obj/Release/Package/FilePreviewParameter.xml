@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
   <parameter name="IIS Web Application Name" description="" value="Tamagotchi" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\patri\\Documents\\GitHub\\Sudoku\\TamaConsole\\TamaService\\obj\\Release\\Package\\PackageTmp$" />
-    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\patri\\Documents\\GitHub\\Sudoku\\TamaConsole\\TamaService\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^E:\\Tamagotchi\\Tamagotchi\\TamaService\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^E:\\Tamagotchi\\Tamagotchi\\TamaService\\obj\\Release\\Package\\PackageTmp$" />
   </parameter>
-  <parameter name="TamaString-Web.config Connection String" description="" value="Data Source=tcp:ov4qod7hzn.database.windows.net,1433;Initial Catalog=TamaData;User ID=aroxis@ov4qod7hzn;Password=42in06SOe;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False" tags="">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\patri\\Documents\\GitHub\\Sudoku\\TamaConsole\\TamaService\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='TamaString']/@connectionString" />
+  <parameter name="TamaString-Web.config Connection String" description="TamaString Connection String used in web.config by the application to access the database." value="Data Source=tcp:ov4qod7hzn.database.windows.net,1433; Database=TamaData;User ID=aroxis@ov4qod7hzn;Password=42in06SOe;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\Tamagotchi\\Tamagotchi\\TamaService\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='TamaString']/@connectionString" />
   </parameter>
 </parameters>

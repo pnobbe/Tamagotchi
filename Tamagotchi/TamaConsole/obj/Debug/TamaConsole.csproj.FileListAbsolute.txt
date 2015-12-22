@@ -3,3 +3,8 @@ C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaConsole\bin\Debug\TamaCon
 C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaConsole\bin\Debug\TamaConsole.pdb
 C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaConsole\obj\Debug\TamaConsole.exe
 C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaConsole\obj\Debug\TamaConsole.pdb
+E:\Tamagotchi\Tamagotchi\TamaConsole\bin\Debug\TamaConsole.exe.config
+E:\Tamagotchi\Tamagotchi\TamaConsole\bin\Debug\TamaConsole.exe
+E:\Tamagotchi\Tamagotchi\TamaConsole\bin\Debug\TamaConsole.pdb
+E:\Tamagotchi\Tamagotchi\TamaConsole\obj\Debug\TamaConsole.exe
+E:\Tamagotchi\Tamagotchi\TamaConsole\obj\Debug\TamaConsole.pdb
