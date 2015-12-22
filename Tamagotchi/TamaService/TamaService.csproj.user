@@ -8,6 +8,7 @@
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <NameOfLastUsedPublishProfile>TamaService</NameOfLastUsedPublishProfile>
+    <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

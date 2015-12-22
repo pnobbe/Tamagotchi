@@ -43,5 +43,8 @@ namespace TamaService
 
         [DataMember]
         public int FlagID { get; set; }
+
+        [DataMember]
+        public DateTime ActionDone { get; set; }
     }
 }
