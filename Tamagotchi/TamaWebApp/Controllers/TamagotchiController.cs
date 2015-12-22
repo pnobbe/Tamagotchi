@@ -21,12 +21,25 @@ namespace TamaWebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Add([Bind(Include = "Name")] Tamagotchi t)
         {
+            int Tamaid = -1;
+            if (ModelState.IsValid)
+            {
+                Tamaid = service.AddTamagotchi(t.Name);
+            }
+            service.Close();
+            return RedirectToAction("Tamagotchi", "Home", new { id = Tamaid });
+        }
+
+        [HttpPost, ActionName("Eat")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Eat(Tamagotchi t)
+        {
             if (ModelState.IsValid)
             {
                 service.AddTamagotchi(t.Name);
             }
             service.Close();
-            return RedirectToAction("Tamagotchi", "Home");
+            return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
         }
 
     }
