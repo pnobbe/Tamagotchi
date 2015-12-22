@@ -23,6 +23,7 @@
   </MetadataSources>
   <Metadata>
     <MetadataFile FileName="TamaService.xsd" MetadataType="Schema" ID="1dccd2f7-d243-4706-8f5a-9f083d81dfe5" SourceId="1" SourceUrl="http://tamaservice.azurewebsites.net/TamaService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TamaService2.xsd" MetadataType="Schema" ID="f0ed344e-cef7-4f58-9566-3acab0b688d9" SourceId="1" SourceUrl="http://tamaservice.azurewebsites.net/TamaService.svc?xsd=xsd2" />
     <MetadataFile FileName="TamaService.disco" MetadataType="Disco" ID="a462f36b-1a61-4bc9-aa72-10320a050bdf" SourceId="1" SourceUrl="http://tamaservice.azurewebsites.net/TamaService.svc?disco" />
     <MetadataFile FileName="TamaService1.xsd" MetadataType="Schema" ID="1c828e46-711c-423a-8209-ec7a47dd69a3" SourceId="1" SourceUrl="http://tamaservice.azurewebsites.net/TamaService.svc?xsd=xsd0" />
     <MetadataFile FileName="TamaService.wsdl" MetadataType="Wsdl" ID="c83ab8ab-3183-43b7-bb12-4c70a742363f" SourceId="1" SourceUrl="http://tamaservice.azurewebsites.net/TamaService.svc?wsdl" />

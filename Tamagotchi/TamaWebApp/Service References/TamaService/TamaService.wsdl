@@ -29,6 +29,7 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://tamaservice.azurewebsites.net/TamaService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://tamaservice.azurewebsites.net/TamaService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://tamaservice.azurewebsites.net/TamaService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TamaService" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ITamaLogic_GetTamagotchi_InputMessage">
@@ -43,6 +44,12 @@
   <wsdl:message name="ITamaLogic_AddTamagotchi_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddTamagotchiResponse" />
   </wsdl:message>
+  <wsdl:message name="ITamaLogic_GetAllTamagotchi_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTamagotchi" />
+  </wsdl:message>
+  <wsdl:message name="ITamaLogic_GetAllTamagotchi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTamagotchiResponse" />
+  </wsdl:message>
   <wsdl:portType name="ITamaLogic">
     <wsdl:operation name="GetTamagotchi">
       <wsdl:input wsaw:Action="http://tempuri.org/ITamaLogic/GetTamagotchi" message="tns:ITamaLogic_GetTamagotchi_InputMessage" />
@@ -51,6 +58,10 @@
     <wsdl:operation name="AddTamagotchi">
       <wsdl:input wsaw:Action="http://tempuri.org/ITamaLogic/AddTamagotchi" message="tns:ITamaLogic_AddTamagotchi_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITamaLogic/AddTamagotchiResponse" message="tns:ITamaLogic_AddTamagotchi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTamagotchi">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITamaLogic/GetAllTamagotchi" message="tns:ITamaLogic_GetAllTamagotchi_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITamaLogic/GetAllTamagotchiResponse" message="tns:ITamaLogic_GetAllTamagotchi_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ITamaLogic" type="tns:ITamaLogic">
@@ -73,6 +84,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetAllTamagotchi">
+      <soap:operation soapAction="http://tempuri.org/ITamaLogic/GetAllTamagotchi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="BasicHttpsBinding_ITamaLogic" type="tns:ITamaLogic">
     <wsp:PolicyReference URI="#BasicHttpsBinding_ITamaLogic_policy" />
@@ -88,6 +108,15 @@
     </wsdl:operation>
     <wsdl:operation name="AddTamagotchi">
       <soap:operation soapAction="http://tempuri.org/ITamaLogic/AddTamagotchi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTamagotchi">
+      <soap:operation soapAction="http://tempuri.org/ITamaLogic/GetAllTamagotchi" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

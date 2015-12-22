@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.ServiceModel;
 
 namespace TamaService
@@ -13,6 +14,9 @@ namespace TamaService
 
         [OperationContract]
         void AddTamagotchi(string name);
+
+        [OperationContract]
+        List<Tamagotchi> GetAllTamagotchi();
 
     }
 

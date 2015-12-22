@@ -1,0 +1,16 @@
+﻿@model TamaWebApp.Models.Tamagotchi
+
+<div class="container">
+    <div class="row">
+        <div class="mainBox">
+            <div class="col-lg-12 text-center">
+                <img src="~/Content/img/title.png" height="200px" width="auto" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="box">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+    </div>
+</div>

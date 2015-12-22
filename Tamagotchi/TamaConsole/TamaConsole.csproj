@@ -57,11 +57,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Service References\TamaService\TamaConsole.TamaService.Tamagotchi.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\TamaService\TamaService.wsdl" />
     <None Include="Service References\TamaService\TamaService.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\TamaService\TamaService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TamaService\TamaService2.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

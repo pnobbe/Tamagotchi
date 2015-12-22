@@ -23,6 +23,11 @@ namespace TamaService
             x.SaveChanges();
         }
 
+        public List<Tamagotchi> GetAllTamagotchi()
+        {
+           return x.Tamagotchis.ToList();
+        }
+
         public string GetTamagotchi(int value)
         {
             if (x.Tamagotchis.Where(t => t.Id == value).Count() != 0)

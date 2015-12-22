@@ -177,6 +177,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\TamaFlags.cs" />
     <Compile Include="Models\Tamagotchi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\TamaService\Reference.cs">
@@ -241,10 +242,17 @@
     <None Include="Service References\TamaService\TamaService1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\TamaService\TamaService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\TamaService\TamaWebApp.TamaService.Tamagotchi.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Views\Shared\_newTamagotchiPartial.cshtml" />
+    <Content Include="Views\Home\Tamagotchi.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Tamagotchi\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

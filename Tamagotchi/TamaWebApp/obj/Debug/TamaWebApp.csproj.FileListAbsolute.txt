@@ -134,3 +134,4 @@ E:\Tamagotchi\Tamagotchi\TamaWebApp\bin\Microsoft.Owin.Security.Twitter.xml
 E:\Tamagotchi\Tamagotchi\TamaWebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 E:\Tamagotchi\Tamagotchi\TamaWebApp\obj\Debug\TamaWebApp.dll
 E:\Tamagotchi\Tamagotchi\TamaWebApp\obj\Debug\TamaWebApp.pdb
+E:\Tamagotchi\Tamagotchi\TamaWebApp\obj\Debug\TamaWebApp.csprojResolveAssemblyReference.cache

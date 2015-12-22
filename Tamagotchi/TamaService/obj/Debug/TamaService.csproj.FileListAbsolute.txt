@@ -20,3 +20,4 @@ E:\Tamagotchi\Tamagotchi\TamaService\bin\EntityFramework.SqlServer.xml
 E:\Tamagotchi\Tamagotchi\TamaService\bin\Ninject.xml
 E:\Tamagotchi\Tamagotchi\TamaService\obj\Debug\TamaService.dll
 E:\Tamagotchi\Tamagotchi\TamaService\obj\Debug\TamaService.pdb
+E:\Tamagotchi\Tamagotchi\TamaService\obj\Debug\TamaService.csprojResolveAssemblyReference.cache

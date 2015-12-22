@@ -9,7 +9,7 @@ namespace TamaWebApp.Controllers
 {
     public class TamagotchiController : Controller
     {
-        public TamaService.ITamaLogic service = new TamaService.TamaLogicClient();
+        public TamaService.TamaLogicClient service = new TamaService.TamaLogicClient();
 
         // GET: Tamagotchi
         public ActionResult Index()
@@ -25,7 +25,10 @@ namespace TamaWebApp.Controllers
             {
                 service.AddTamagotchi(t.Name);
             }
-            return RedirectToAction("Index");
+            service.Close();
+            return RedirectToAction("Index", "Home");
         }
+
     }
+
 }
