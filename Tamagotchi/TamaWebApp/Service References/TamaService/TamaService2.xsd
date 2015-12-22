@@ -11,7 +11,7 @@
   <xs:element name="GetTamagotchiResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="GetTamagotchiResult" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/TamaService" minOccurs="0" name="GetTamagotchiResult" nillable="true" type="q1:Tamagotchi" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -35,7 +35,21 @@
   <xs:element name="GetAllTamagotchiResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/TamaService" minOccurs="0" name="GetAllTamagotchiResult" nillable="true" type="q1:ArrayOfTamagotchi" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/TamaService" minOccurs="0" name="GetAllTamagotchiResult" nillable="true" type="q2:ArrayOfTamagotchi" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFlag">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFlagResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/TamaService" minOccurs="0" name="GetFlagResult" nillable="true" type="q3:TamaFlags" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

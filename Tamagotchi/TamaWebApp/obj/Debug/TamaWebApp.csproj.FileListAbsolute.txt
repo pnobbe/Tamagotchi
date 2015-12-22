@@ -66,6 +66,8 @@ C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaWebApp\bin\Microsoft.Owin
 C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaWebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaWebApp\obj\Debug\TamaWebApp.dll
 C:\Users\patri\Documents\GitHub\Sudoku\TamaConsole\TamaWebApp\obj\Debug\TamaWebApp.pdb
+E:\Tamagotchi\Tamagotchi\TamaWebApp\bin\System.Web.WebPages.Deployment.dll
+E:\Tamagotchi\Tamagotchi\TamaWebApp\bin\System.Web.WebPages.dll
 E:\Tamagotchi\Tamagotchi\TamaWebApp\bin\roslyn\csc.exe
 E:\Tamagotchi\Tamagotchi\TamaWebApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 E:\Tamagotchi\Tamagotchi\TamaWebApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -104,8 +106,6 @@ E:\Tamagotchi\Tamagotchi\TamaWebApp\bin\System.Web.Helpers.dll
 E:\Tamagotchi\Tamagotchi\TamaWebApp\bin\System.Web.Mvc.dll
 E:\Tamagotchi\Tamagotchi\TamaWebApp\bin\System.Web.Optimization.dll
 E:\Tamagotchi\Tamagotchi\TamaWebApp\bin\System.Web.Razor.dll
-E:\Tamagotchi\Tamagotchi\TamaWebApp\bin\System.Web.WebPages.Deployment.dll
-E:\Tamagotchi\Tamagotchi\TamaWebApp\bin\System.Web.WebPages.dll
 E:\Tamagotchi\Tamagotchi\TamaWebApp\bin\System.Web.WebPages.Razor.dll
 E:\Tamagotchi\Tamagotchi\TamaWebApp\bin\WebGrease.dll
 E:\Tamagotchi\Tamagotchi\TamaWebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
@@ -134,4 +134,3 @@ E:\Tamagotchi\Tamagotchi\TamaWebApp\bin\Microsoft.Owin.Security.Twitter.xml
 E:\Tamagotchi\Tamagotchi\TamaWebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 E:\Tamagotchi\Tamagotchi\TamaWebApp\obj\Debug\TamaWebApp.dll
 E:\Tamagotchi\Tamagotchi\TamaWebApp\obj\Debug\TamaWebApp.pdb
-E:\Tamagotchi\Tamagotchi\TamaWebApp\obj\Debug\TamaWebApp.csprojResolveAssemblyReference.cache

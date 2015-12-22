@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="861f0c68-65fd-40ec-a902-8c2ad9610dda" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8e61f667-f845-43d3-8e4a-10cf9b5ad02f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://tamaservice.azurewebsites.net/TamaService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="TamaService.xsd" MetadataType="Schema" ID="1dccd2f7-d243-4706-8f5a-9f083d81dfe5" SourceId="1" SourceUrl="http://tamaservice.azurewebsites.net/TamaService.svc?xsd=xsd1" />
-    <MetadataFile FileName="TamaService2.xsd" MetadataType="Schema" ID="f0ed344e-cef7-4f58-9566-3acab0b688d9" SourceId="1" SourceUrl="http://tamaservice.azurewebsites.net/TamaService.svc?xsd=xsd2" />
-    <MetadataFile FileName="TamaService.disco" MetadataType="Disco" ID="a462f36b-1a61-4bc9-aa72-10320a050bdf" SourceId="1" SourceUrl="http://tamaservice.azurewebsites.net/TamaService.svc?disco" />
-    <MetadataFile FileName="TamaService1.xsd" MetadataType="Schema" ID="1c828e46-711c-423a-8209-ec7a47dd69a3" SourceId="1" SourceUrl="http://tamaservice.azurewebsites.net/TamaService.svc?xsd=xsd0" />
-    <MetadataFile FileName="TamaService.wsdl" MetadataType="Wsdl" ID="c83ab8ab-3183-43b7-bb12-4c70a742363f" SourceId="1" SourceUrl="http://tamaservice.azurewebsites.net/TamaService.svc?wsdl" />
+    <MetadataFile FileName="TamaService.xsd" MetadataType="Schema" ID="1c351e84-d0bd-494c-9108-773c41def6a4" SourceId="1" SourceUrl="http://tamaservice.azurewebsites.net/TamaService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TamaService1.xsd" MetadataType="Schema" ID="c094b397-116a-462a-aa32-079f38b37a47" SourceId="1" SourceUrl="http://tamaservice.azurewebsites.net/TamaService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TamaService.disco" MetadataType="Disco" ID="e49b171b-bbe6-405c-a914-36435ece14b4" SourceId="1" SourceUrl="http://tamaservice.azurewebsites.net/TamaService.svc?disco" />
+    <MetadataFile FileName="TamaService2.xsd" MetadataType="Schema" ID="805f7077-57ce-41aa-ae57-599eeef4b0c4" SourceId="1" SourceUrl="http://tamaservice.azurewebsites.net/TamaService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TamaService.wsdl" MetadataType="Wsdl" ID="4ef2429f-8c6e-4462-a7e4-cc3d18393d44" SourceId="1" SourceUrl="http://tamaservice.azurewebsites.net/TamaService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

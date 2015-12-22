@@ -50,6 +50,12 @@
   <wsdl:message name="ITamaLogic_GetAllTamagotchi_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllTamagotchiResponse" />
   </wsdl:message>
+  <wsdl:message name="ITamaLogic_GetFlag_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFlag" />
+  </wsdl:message>
+  <wsdl:message name="ITamaLogic_GetFlag_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFlagResponse" />
+  </wsdl:message>
   <wsdl:portType name="ITamaLogic">
     <wsdl:operation name="GetTamagotchi">
       <wsdl:input wsaw:Action="http://tempuri.org/ITamaLogic/GetTamagotchi" message="tns:ITamaLogic_GetTamagotchi_InputMessage" />
@@ -62,6 +68,10 @@
     <wsdl:operation name="GetAllTamagotchi">
       <wsdl:input wsaw:Action="http://tempuri.org/ITamaLogic/GetAllTamagotchi" message="tns:ITamaLogic_GetAllTamagotchi_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITamaLogic/GetAllTamagotchiResponse" message="tns:ITamaLogic_GetAllTamagotchi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlag">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITamaLogic/GetFlag" message="tns:ITamaLogic_GetFlag_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITamaLogic/GetFlagResponse" message="tns:ITamaLogic_GetFlag_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ITamaLogic" type="tns:ITamaLogic">
@@ -93,6 +103,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetFlag">
+      <soap:operation soapAction="http://tempuri.org/ITamaLogic/GetFlag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="BasicHttpsBinding_ITamaLogic" type="tns:ITamaLogic">
     <wsp:PolicyReference URI="#BasicHttpsBinding_ITamaLogic_policy" />
@@ -117,6 +136,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllTamagotchi">
       <soap:operation soapAction="http://tempuri.org/ITamaLogic/GetAllTamagotchi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlag">
+      <soap:operation soapAction="http://tempuri.org/ITamaLogic/GetFlag" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

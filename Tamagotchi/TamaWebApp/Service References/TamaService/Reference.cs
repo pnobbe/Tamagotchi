@@ -29,6 +29,9 @@ namespace TamaWebApp.TamaService {
         private System.DateTime CreationDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int FlagIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private short HealthField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -45,9 +48,6 @@ namespace TamaWebApp.TamaService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private short SleepField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TamaWebApp.TamaService.TamaFlags SpelregelsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool isDeadField;
@@ -84,6 +84,19 @@ namespace TamaWebApp.TamaService {
                 if ((this.CreationDataField.Equals(value) != true)) {
                     this.CreationDataField = value;
                     this.RaisePropertyChanged("CreationData");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int FlagID {
+            get {
+                return this.FlagIDField;
+            }
+            set {
+                if ((this.FlagIDField.Equals(value) != true)) {
+                    this.FlagIDField = value;
+                    this.RaisePropertyChanged("FlagID");
                 }
             }
         }
@@ -167,19 +180,6 @@ namespace TamaWebApp.TamaService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TamaWebApp.TamaService.TamaFlags Spelregels {
-            get {
-                return this.SpelregelsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SpelregelsField, value) != true)) {
-                    this.SpelregelsField = value;
-                    this.RaisePropertyChanged("Spelregels");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public bool isDead {
             get {
                 return this.isDeadField;
@@ -216,6 +216,9 @@ namespace TamaWebApp.TamaService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool HongerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool IsolatieField;
@@ -270,6 +273,19 @@ namespace TamaWebApp.TamaService {
                 if ((this.HongerField.Equals(value) != true)) {
                     this.HongerField = value;
                     this.RaisePropertyChanged("Honger");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
                 }
             }
         }
@@ -380,10 +396,10 @@ namespace TamaWebApp.TamaService {
     public interface ITamaLogic {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/GetTamagotchi", ReplyAction="http://tempuri.org/ITamaLogic/GetTamagotchiResponse")]
-        string GetTamagotchi(int value);
+        TamaWebApp.TamaService.Tamagotchi GetTamagotchi(int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/GetTamagotchi", ReplyAction="http://tempuri.org/ITamaLogic/GetTamagotchiResponse")]
-        System.Threading.Tasks.Task<string> GetTamagotchiAsync(int value);
+        System.Threading.Tasks.Task<TamaWebApp.TamaService.Tamagotchi> GetTamagotchiAsync(int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/AddTamagotchi", ReplyAction="http://tempuri.org/ITamaLogic/AddTamagotchiResponse")]
         void AddTamagotchi(string name);
@@ -396,6 +412,12 @@ namespace TamaWebApp.TamaService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/GetAllTamagotchi", ReplyAction="http://tempuri.org/ITamaLogic/GetAllTamagotchiResponse")]
         System.Threading.Tasks.Task<TamaWebApp.TamaService.Tamagotchi[]> GetAllTamagotchiAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/GetFlag", ReplyAction="http://tempuri.org/ITamaLogic/GetFlagResponse")]
+        TamaWebApp.TamaService.TamaFlags GetFlag(int value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/GetFlag", ReplyAction="http://tempuri.org/ITamaLogic/GetFlagResponse")]
+        System.Threading.Tasks.Task<TamaWebApp.TamaService.TamaFlags> GetFlagAsync(int value);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -425,11 +447,11 @@ namespace TamaWebApp.TamaService {
                 base(binding, remoteAddress) {
         }
         
-        public string GetTamagotchi(int value) {
+        public TamaWebApp.TamaService.Tamagotchi GetTamagotchi(int value) {
             return base.Channel.GetTamagotchi(value);
         }
         
-        public System.Threading.Tasks.Task<string> GetTamagotchiAsync(int value) {
+        public System.Threading.Tasks.Task<TamaWebApp.TamaService.Tamagotchi> GetTamagotchiAsync(int value) {
             return base.Channel.GetTamagotchiAsync(value);
         }
         
@@ -447,6 +469,14 @@ namespace TamaWebApp.TamaService {
         
         public System.Threading.Tasks.Task<TamaWebApp.TamaService.Tamagotchi[]> GetAllTamagotchiAsync() {
             return base.Channel.GetAllTamagotchiAsync();
+        }
+        
+        public TamaWebApp.TamaService.TamaFlags GetFlag(int value) {
+            return base.Channel.GetFlag(value);
+        }
+        
+        public System.Threading.Tasks.Task<TamaWebApp.TamaService.TamaFlags> GetFlagAsync(int value) {
+            return base.Channel.GetFlagAsync(value);
         }
     }
 }

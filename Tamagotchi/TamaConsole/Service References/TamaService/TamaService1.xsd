@@ -1,42 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://tamaservice.azurewebsites.net/TamaService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TamaService" />
-  <xs:element name="GetTamagotchi">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="value" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetTamagotchiResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="GetTamagotchiResult" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AddTamagotchi">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AddTamagotchiResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetAllTamagotchi">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetAllTamagotchiResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/TamaService" minOccurs="0" name="GetAllTamagotchiResult" nillable="true" type="q1:ArrayOfTamagotchi" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TamaService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TamaService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Tamagotchi">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Boredom" type="xs:short" />
+      <xs:element minOccurs="0" name="CreationData" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FlagID" type="xs:int" />
+      <xs:element minOccurs="0" name="Health" type="xs:short" />
+      <xs:element minOccurs="0" name="Hunger" type="xs:short" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LastUpdate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sleep" type="xs:short" />
+      <xs:element minOccurs="0" name="isDead" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Tamagotchi" nillable="true" type="tns:Tamagotchi" />
+  <xs:complexType name="ArrayOfTamagotchi">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tamagotchi" nillable="true" type="tns:Tamagotchi" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTamagotchi" nillable="true" type="tns:ArrayOfTamagotchi" />
+  <xs:complexType name="TamaFlags">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Crazy" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Honger" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Isolatie" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Munchies" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Slaaptekort" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Topatleet" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Vermoeidheid" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Verveling" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Voedseltekort" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TamaFlags" nillable="true" type="tns:TamaFlags" />
 </xs:schema>
