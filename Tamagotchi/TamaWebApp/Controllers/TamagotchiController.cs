@@ -36,7 +36,7 @@ namespace TamaWebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                service.AddTamagotchi(t.Name);
+                service.Eat(t);
             }
             service.Close();
             return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });

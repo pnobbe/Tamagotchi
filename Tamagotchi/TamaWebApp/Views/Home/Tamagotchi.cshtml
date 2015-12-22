@@ -15,7 +15,7 @@
     </div>
     <div class="row">
         <div class="box">
-            @Html.ActionLink()
+            @Ajax.ActionLink("Eat", "Eat", "Tamagotchi", new { tama = Model }, new AjaxOptions { HttpMethod = "GET" })
         </div>
     </div>
 </div>
