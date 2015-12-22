@@ -10,13 +10,16 @@ namespace TamaService
     {
 
         [OperationContract]
-        string GetTamagotchi(int value);
+        Tamagotchi GetTamagotchi(int value);
 
         [OperationContract]
         void AddTamagotchi(string name);
 
         [OperationContract]
         List<Tamagotchi> GetAllTamagotchi();
+
+        [OperationContract]
+        TamaFlags GetFlag(int value);
 
     }
 

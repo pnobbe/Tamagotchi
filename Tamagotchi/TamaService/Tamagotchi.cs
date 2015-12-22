@@ -42,6 +42,6 @@ namespace TamaService
         public DateTime LastUpdate { get; set; }
 
         [DataMember]
-        public TamaFlags Spelregels { get; set; }
+        public int FlagID { get; set; }
     }
 }
