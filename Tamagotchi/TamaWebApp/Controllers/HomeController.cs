@@ -3,31 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using TamaWebApp.Models;
+using TamaWebApp.TamaService;
 
 namespace TamaWebApp.Controllers
 {
     public class HomeController : Controller
     {
-        public TamaService.TamaLogicClient service = new TamaService.TamaLogicClient();
+        public TamaLogicClient service = new TamaLogicClient();
         List<Tamagotchi> list = new List<Tamagotchi>();
 
         public ActionResult Index()
         {
-            list = new List<Tamagotchi>();
-            foreach (var item in service.GetAllTamagotchi())
-            {
-                list.Add(new Tamagotchi() { Id = item.Id, Boredom = item.Boredom, CreationData = item.CreationData, Health = item.Health, Hunger = item.Hunger, isDead = item.isDead, LastUpdate = item.LastUpdate, Name = item.Name, Sleep = item.Sleep/*, Spelregels = new TamaFlags() { Crazy = item.Spelregels.Crazy, Honger = item.Spelregels.Honger, Isolatie = item.Spelregels.Isolatie, Munchies = item.Spelregels.Munchies, Slaaptekort = item.Spelregels.Slaaptekort, TamaId = item.Id, Topatleet = item.Spelregels.Topatleet, Vermoeidheid = item.Spelregels.Vermoeidheid, Verveling = item.Spelregels.Verveling, Voedseltekort = item.Spelregels.Voedseltekort }*/ });
-            }
-            return View(list.AsEnumerable());
+            return View(service.GetAllTamagotchi().OrderByDescending(t => t.Id).AsEnumerable());
         }
 
-        [HttpPost, ActionName("Tamagotchi")]
-        [ValidateAntiForgeryToken]
+        [HttpGet, ActionName("Tamagotchi")]
         public ActionResult Tamagotchi([Bind(Include = "Id")] Tamagotchi t)
         {
-            Console.WriteLine(t.Id + " " + t.Name);
-            return View(list.Find(x => x.Id == t.Id));
+            return View(service.GetTamagotchi(t.Id));
         }
     }
 }

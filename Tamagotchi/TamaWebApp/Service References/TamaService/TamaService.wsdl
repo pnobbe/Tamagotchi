@@ -56,6 +56,48 @@
   <wsdl:message name="ITamaLogic_GetFlag_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetFlagResponse" />
   </wsdl:message>
+  <wsdl:message name="ITamaLogic_UpdateTamagochi_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTamagochi" />
+  </wsdl:message>
+  <wsdl:message name="ITamaLogic_UpdateTamagochi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTamagochiResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITamaLogic_FlipFlag_InputMessage">
+    <wsdl:part name="parameters" element="tns:FlipFlag" />
+  </wsdl:message>
+  <wsdl:message name="ITamaLogic_FlipFlag_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FlipFlagResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITamaLogic_Eat_InputMessage">
+    <wsdl:part name="parameters" element="tns:Eat" />
+  </wsdl:message>
+  <wsdl:message name="ITamaLogic_Eat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EatResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITamaLogic_Sleep_InputMessage">
+    <wsdl:part name="parameters" element="tns:Sleep" />
+  </wsdl:message>
+  <wsdl:message name="ITamaLogic_Sleep_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SleepResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITamaLogic_Play_InputMessage">
+    <wsdl:part name="parameters" element="tns:Play" />
+  </wsdl:message>
+  <wsdl:message name="ITamaLogic_Play_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlayResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITamaLogic_Workout_InputMessage">
+    <wsdl:part name="parameters" element="tns:Workout" />
+  </wsdl:message>
+  <wsdl:message name="ITamaLogic_Workout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WorkoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITamaLogic_Hug_InputMessage">
+    <wsdl:part name="parameters" element="tns:Hug" />
+  </wsdl:message>
+  <wsdl:message name="ITamaLogic_Hug_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HugResponse" />
+  </wsdl:message>
   <wsdl:portType name="ITamaLogic">
     <wsdl:operation name="GetTamagotchi">
       <wsdl:input wsaw:Action="http://tempuri.org/ITamaLogic/GetTamagotchi" message="tns:ITamaLogic_GetTamagotchi_InputMessage" />
@@ -72,6 +114,34 @@
     <wsdl:operation name="GetFlag">
       <wsdl:input wsaw:Action="http://tempuri.org/ITamaLogic/GetFlag" message="tns:ITamaLogic_GetFlag_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITamaLogic/GetFlagResponse" message="tns:ITamaLogic_GetFlag_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTamagochi">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITamaLogic/UpdateTamagochi" message="tns:ITamaLogic_UpdateTamagochi_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITamaLogic/UpdateTamagochiResponse" message="tns:ITamaLogic_UpdateTamagochi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FlipFlag">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITamaLogic/FlipFlag" message="tns:ITamaLogic_FlipFlag_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITamaLogic/FlipFlagResponse" message="tns:ITamaLogic_FlipFlag_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Eat">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITamaLogic/Eat" message="tns:ITamaLogic_Eat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITamaLogic/EatResponse" message="tns:ITamaLogic_Eat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Sleep">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITamaLogic/Sleep" message="tns:ITamaLogic_Sleep_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITamaLogic/SleepResponse" message="tns:ITamaLogic_Sleep_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Play">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITamaLogic/Play" message="tns:ITamaLogic_Play_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITamaLogic/PlayResponse" message="tns:ITamaLogic_Play_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Workout">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITamaLogic/Workout" message="tns:ITamaLogic_Workout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITamaLogic/WorkoutResponse" message="tns:ITamaLogic_Workout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Hug">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITamaLogic/Hug" message="tns:ITamaLogic_Hug_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITamaLogic/HugResponse" message="tns:ITamaLogic_Hug_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ITamaLogic" type="tns:ITamaLogic">
@@ -112,6 +182,69 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="UpdateTamagochi">
+      <soap:operation soapAction="http://tempuri.org/ITamaLogic/UpdateTamagochi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FlipFlag">
+      <soap:operation soapAction="http://tempuri.org/ITamaLogic/FlipFlag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eat">
+      <soap:operation soapAction="http://tempuri.org/ITamaLogic/Eat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sleep">
+      <soap:operation soapAction="http://tempuri.org/ITamaLogic/Sleep" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Play">
+      <soap:operation soapAction="http://tempuri.org/ITamaLogic/Play" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Workout">
+      <soap:operation soapAction="http://tempuri.org/ITamaLogic/Workout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hug">
+      <soap:operation soapAction="http://tempuri.org/ITamaLogic/Hug" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="BasicHttpsBinding_ITamaLogic" type="tns:ITamaLogic">
     <wsp:PolicyReference URI="#BasicHttpsBinding_ITamaLogic_policy" />
@@ -145,6 +278,69 @@
     </wsdl:operation>
     <wsdl:operation name="GetFlag">
       <soap:operation soapAction="http://tempuri.org/ITamaLogic/GetFlag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTamagochi">
+      <soap:operation soapAction="http://tempuri.org/ITamaLogic/UpdateTamagochi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FlipFlag">
+      <soap:operation soapAction="http://tempuri.org/ITamaLogic/FlipFlag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eat">
+      <soap:operation soapAction="http://tempuri.org/ITamaLogic/Eat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sleep">
+      <soap:operation soapAction="http://tempuri.org/ITamaLogic/Sleep" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Play">
+      <soap:operation soapAction="http://tempuri.org/ITamaLogic/Play" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Workout">
+      <soap:operation soapAction="http://tempuri.org/ITamaLogic/Workout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hug">
+      <soap:operation soapAction="http://tempuri.org/ITamaLogic/Hug" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

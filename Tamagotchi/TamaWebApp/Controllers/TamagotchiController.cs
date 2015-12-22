@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using TamaWebApp.Models;
+using TamaWebApp.TamaService;
 
 namespace TamaWebApp.Controllers
 {
@@ -26,7 +26,7 @@ namespace TamaWebApp.Controllers
                 service.AddTamagotchi(t.Name);
             }
             service.Close();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Tamagotchi", "Home");
         }
 
     }

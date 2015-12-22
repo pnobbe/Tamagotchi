@@ -148,11 +148,16 @@ namespace TamaService
 
         public bool Eat(Tamagotchi tama)
         {
+            // UPDATE
+
             DateTime time;
             if(canExecute(tama, out time))
             {
                 tama.Hunger = 0;
-
+                time.AddSeconds(30);
+                tama.ActionDone = time;
+                x.SaveChanges();
+                return true;
             }
             return false;
         }
