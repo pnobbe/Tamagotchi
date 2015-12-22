@@ -12,8 +12,9 @@ namespace TamaService
     [Table("Flags")]
     public class TamaFlags
     {
+        [DataMember]
         [Key]
-        public int TamaId { get; set; }
+        public int ID { get; set; }
 
         [DataMember]
         public bool Crazy { get; set; }

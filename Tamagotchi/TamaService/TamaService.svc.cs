@@ -19,19 +19,37 @@ namespace TamaService
             var dQuery = x.Database.SqlQuery<DateTime>("SELECT GETDATE() ");
             DateTime dbDate = dQuery.AsEnumerable().First();
             TamaFlags tf = new TamaFlags();
-            x.Tamagotchis.Add(new Tamagotchi() { Name = name, CreationData = dbDate, LastUpdate = dbDate, Spelregels = tf });
+            x.Tamaflags.Add(tf);
+            x.SaveChanges();
+            x.Tamagotchis.Add(new Tamagotchi() { Name = name, CreationData = dbDate, LastUpdate = dbDate, FlagID = tf.ID });
             x.SaveChanges();
         }
 
-        public string GetTamagotchi(int value)
+        public Tamagotchi GetTamagotchi(int value)
         {
             if (x.Tamagotchis.Where(t => t.Id == value).Count() != 0)
             {
-                return x.Tamagotchis.First(t => t.Id == value).Id + "";
+                Tamagotchi tama = x.Tamagotchis.First(t => t.Id == value);
+                return tama;
+
             }
             else
             {
-                return "Tamagotchi met Id " + value + " is niet gevonden!";
+                return null;
+            }
+        }
+
+        public TamaFlags GetFlag(int value)
+        {
+            if (x.Tamaflags.Where(t => t.ID == value).Count() != 0)
+            {
+                TamaFlags tama = x.Tamaflags.First(t => t.ID == value);
+                return tama;
+
+            }
+            else
+            {
+                return null;
             }
         }
 
