@@ -9,6 +9,7 @@
       <xs:element minOccurs="0" name="Health" type="xs:short" />
       <xs:element minOccurs="0" name="Hunger" type="xs:short" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="ImgId" type="xs:int" />
       <xs:element minOccurs="0" name="LastUpdate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Sleep" type="xs:short" />

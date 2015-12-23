@@ -1,0 +1,16 @@
+﻿@model TamaWebApp.TamaService.Tamagotchi
+
+<div class="row">
+    <div class="box">
+        <div class="text-center">
+            <div class="intro-text">
+                @Html.DisplayFor(model => model.Name)
+            </div>
+            <img src="~/Content/img/sprites/@Model.ImgId/Happy.PNG" />
+        </div>
+        <br />
+        <div class="text-center">
+            <strong>@Html.DisplayFor(model => model.Name)</strong> is: <strong>Happy</strong>!
+        </div>
+    </div>
+</div>

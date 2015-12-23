@@ -19,6 +19,7 @@ namespace TamaService
         public int AddTamagotchi(string name)
         {
             var dQuery = x.Database.SqlQuery<DateTime>("SELECT GETDATE() ");
+            Random rnd = new Random();
             DateTime dbDate = dQuery.AsEnumerable().First();
             TamaFlags tf = new TamaFlags();
             x.Tamaflags.Add(tf);
@@ -29,12 +30,11 @@ namespace TamaService
             tama.LastUpdate = dbDate;
             tama.FlagID = tf.ID;
             tama.ActionDone = dbDate;
+            tama.ImgId = rnd.Next(1, 13);
             x.Tamagotchis.Add(tama);
             x.SaveChanges();
 
             return tama.Id;
-
-
         }
 
 
@@ -146,9 +146,14 @@ namespace TamaService
             return false;
         }
 
-        public bool Eat(Tamagotchi tama)
+        public bool Eat(int value)
         {
             // UPDATE UpdateTamagochi
+
+            Tamagotchi tama = GetTamagotchi(value);
+
+            if (tama == null)
+                return false;
 
             DateTime time;
             if(canExecute(tama, out time))
@@ -162,8 +167,13 @@ namespace TamaService
             return false;
         }
 
-        public bool Sleep(Tamagotchi tama)
+        public bool Sleep(int value)
         {
+            Tamagotchi tama = GetTamagotchi(value);
+
+            if (tama == null)
+                return false;
+
             DateTime time;
             if (canExecute(tama, out time))
             {
@@ -172,8 +182,13 @@ namespace TamaService
             return false;
         }
 
-        public bool Play(Tamagotchi tama)
+        public bool Play(int value)
         {
+            Tamagotchi tama = GetTamagotchi(value);
+
+            if (tama == null)
+                return false;
+
             DateTime time;
             if (canExecute(tama, out time))
             {
@@ -182,8 +197,13 @@ namespace TamaService
             return false;
         }
 
-        public bool Workout(Tamagotchi tama)
+        public bool Workout(int value)
         {
+            Tamagotchi tama = GetTamagotchi(value);
+
+            if (tama == null)
+                return false;
+
             DateTime time;
             if (canExecute(tama, out time))
             {
@@ -192,8 +212,13 @@ namespace TamaService
             return false;
         }
 
-        public bool Hug(Tamagotchi tama)
+        public bool Hug(int value)
         {
+            Tamagotchi tama = GetTamagotchi(value);
+
+            if (tama == null)
+                return false;
+
             DateTime time;
             if (canExecute(tama, out time))
             {

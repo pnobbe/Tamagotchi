@@ -87,7 +87,7 @@
   <xs:element name="Eat">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/TamaService" minOccurs="0" name="tama" nillable="true" type="q4:Tamagotchi" />
+        <xs:element minOccurs="0" name="value" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -101,7 +101,7 @@
   <xs:element name="Sleep">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/TamaService" minOccurs="0" name="tama" nillable="true" type="q5:Tamagotchi" />
+        <xs:element minOccurs="0" name="value" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -115,7 +115,7 @@
   <xs:element name="Play">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/TamaService" minOccurs="0" name="tama" nillable="true" type="q6:Tamagotchi" />
+        <xs:element minOccurs="0" name="value" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -129,7 +129,7 @@
   <xs:element name="Workout">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/TamaService" minOccurs="0" name="tama" nillable="true" type="q7:Tamagotchi" />
+        <xs:element minOccurs="0" name="value" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -143,7 +143,7 @@
   <xs:element name="Hug">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/TamaService" minOccurs="0" name="tama" nillable="true" type="q8:Tamagotchi" />
+        <xs:element minOccurs="0" name="value" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

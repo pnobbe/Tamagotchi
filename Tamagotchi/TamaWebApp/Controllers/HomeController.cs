@@ -22,5 +22,17 @@ namespace TamaWebApp.Controllers
         {
             return View(service.GetTamagotchi(t.Id));
         }
+
+        [HttpGet, ActionName("Eat")]
+        public ActionResult Eat([Bind(Include = "Id")] Tamagotchi t)
+        {
+            if (ModelState.IsValid)
+            {
+                service.Eat(t.Id);
+            }
+            service.Close();
+            return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
+        }
+
     }
 }

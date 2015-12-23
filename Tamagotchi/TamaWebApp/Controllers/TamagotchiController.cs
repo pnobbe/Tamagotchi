@@ -30,13 +30,34 @@ namespace TamaWebApp.Controllers
             return RedirectToAction("Tamagotchi", "Home", new { id = Tamaid });
         }
 
-        [HttpPost, ActionName("Eat")]
-        [ValidateAntiForgeryToken]
-        public ActionResult Eat(Tamagotchi t)
+        [HttpGet, ActionName("Eat")]
+        public ActionResult Eat([Bind(Include = "Id")] Tamagotchi t)
         {
             if (ModelState.IsValid)
             {
-                service.Eat(t);
+                service.Eat(t.Id);
+            }
+            service.Close();
+            return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
+        }
+
+        [HttpGet, ActionName("Sleep")]
+        public ActionResult Sleep([Bind(Include = "Id")] Tamagotchi t)
+        {
+            if (ModelState.IsValid)
+            {
+                service.Sleep(t.Id);
+            }
+            service.Close();
+            return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
+        }
+
+        [HttpGet, ActionName("Hug")]
+        public ActionResult Hug([Bind(Include = "Id")] Tamagotchi t)
+        {
+            if (ModelState.IsValid)
+            {
+                service.Hug(t.Id);
             }
             service.Close();
             return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });

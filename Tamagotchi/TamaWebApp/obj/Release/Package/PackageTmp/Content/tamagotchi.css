@@ -14,7 +14,6 @@ h3,
 h4,
 h5,
 h6 {
-    text-transform: uppercase;
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
@@ -92,15 +91,6 @@ hr {
     margin: 15px auto 3px;
     max-width: 250px;
     border-color: #999999;
-}
-
-.mainBox {
-    margin-bottom: 20px;
-    padding: 30px 15px;
-    border-radius: 25px;
-    background: #fff;
-    background: rgba(132, 255, 102, 0.92);
-
 }
 
 .box {
