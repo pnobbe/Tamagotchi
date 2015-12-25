@@ -90,7 +90,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database.cs" />
+    <Compile Include="Database\DatabaseContext.cs" />
+    <Compile Include="Database\DBTamaRepository.cs" />
+    <Compile Include="Database\DBFlagRepository.cs" />
     <Compile Include="Domain\Interfaces\ISpelRegel.cs" />
     <Compile Include="Domain\Models\Crazy.cs" />
     <Compile Include="Domain\Models\Honger.cs" />
@@ -101,12 +103,14 @@
     <Compile Include="Domain\Models\Vermoeidheid.cs" />
     <Compile Include="Domain\Models\Verveling.cs" />
     <Compile Include="Domain\Models\Voedseltekort.cs" />
+    <Compile Include="Interfaces\IFlagRepository.cs" />
+    <Compile Include="Interfaces\ITamaRepository.cs" />
     <Compile Include="TamaFlags.cs" />
     <Compile Include="Tamagotchi.cs" />
     <Compile Include="TamaService.svc.cs">
       <DependentUpon>TamaService.svc</DependentUpon>
     </Compile>
-    <Compile Include="ITamaLogic.cs" />
+    <Compile Include="Interfaces\ITamaLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

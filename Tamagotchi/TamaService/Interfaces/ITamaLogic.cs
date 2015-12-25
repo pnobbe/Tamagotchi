@@ -10,7 +10,7 @@ namespace TamaService
     {
 
         [OperationContract]
-        Tamagotchi GetTamagotchi(int value);
+        Tamagotchi GetTamagotchi(int TamaID);
 
         [OperationContract]
         int AddTamagotchi(string name);
@@ -19,28 +19,30 @@ namespace TamaService
         List<Tamagotchi> GetAllTamagotchi();
 
         [OperationContract]
-        TamaFlags GetFlag(int value);
+        TamaFlags GetFlag(int FlagID);
 
         [OperationContract]
-        bool UpdateTamagochi(int value);
+        bool UpdateTamagochi(int TamaID);
 
         [OperationContract]
         bool FlipFlag(string name, int tamaID);
 
         [OperationContract]
-        bool Eat(int value);
+        bool Eat(int TamaID);
 
         [OperationContract]
-        bool Sleep(int value);
+        bool Sleep(int TamaID);
 
         [OperationContract]
-        bool Play(int value);
+        bool Play(int TamaID);
 
         [OperationContract]
-        bool Workout(int value);
+        bool Workout(int TamaID);
 
         [OperationContract]
-        bool Hug(int value);
+        bool Hug(int TamaID);
+
+        string GetStatus(int tamaID);
 
 
     }

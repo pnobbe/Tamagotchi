@@ -2,9 +2,9 @@
 
 namespace TamaService
 {
-    public class Database : DbContext
+    public class DatabaseContext : DbContext
     {
-        public Database() : base("name=TamaString")
+        public DatabaseContext() : base("name=TamaString")
         {
         }
 
