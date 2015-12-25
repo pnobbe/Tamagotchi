@@ -270,6 +270,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\Tamagotchi.js" />
     <Content Include="Scripts\_references.js" />
     <None Include="Service References\TamaService\TamaService.disco" />
     <None Include="Service References\TamaService\configuration91.svcinfo" />
@@ -313,6 +314,7 @@
     <Content Include="Views\Shared\_DeadTamaPartial.cshtml" />
     <Content Include="Views\Shared\_LivingTamaPartial.cshtml" />
     <Content Include="Views\Shared\_TamaShowPartial.cshtml" />
+    <Content Include="Views\Shared\_TamaRuleMenuPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

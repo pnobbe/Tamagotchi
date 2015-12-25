@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Services;
 using TamaWebApp.TamaService;
 
 namespace TamaWebApp.Controllers
@@ -63,6 +64,18 @@ namespace TamaWebApp.Controllers
             return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
         }
 
+        [WebMethod]
+        public string FlipFlag(int id, string flag)
+        {
+            if (ModelState.IsValid)
+            {
+                if (service.FlipFlag(flag, id))
+                {
+                    return "{ \"status\": \"Correct\" }";
+                }
+            }
+            return "{ \"status\": \"Error\" }";
+        }
     }
 
 }
