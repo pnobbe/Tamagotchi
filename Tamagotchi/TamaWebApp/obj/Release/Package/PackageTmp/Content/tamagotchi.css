@@ -49,6 +49,95 @@ hr {
     box-shadow: inset 0 -2px #28be68;
 }
 
+/* ============================================================
+  COMMON
+============================================================ */
+.cmn-toggle {
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden;
+}
+.cmn-toggle + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* ============================================================
+  SWITCH 1 - ROUND
+============================================================ */
+input.cmn-toggle-round + label {
+  padding: 2px;
+  width: 60px;
+  height: 30px;
+  background-color: #dddddd;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 60px;
+  margin-bottom: -10px;
+  margin-left: 20px;
+  display: inline-block;
+}
+input.cmn-toggle-round + label:before, input.cmn-toggle-round + label:after {
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  bottom: 1px;
+  content: "";
+}
+input.cmn-toggle-round + label:before {
+  right: 1px;
+  background-color: #f1f1f1;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 60px;
+  -webkit-transition: background 0.4s;
+  -moz-transition: background 0.4s;
+  -o-transition: background 0.4s;
+  transition: background 0.4s;
+}
+
+.switch {
+    padding: 10px;
+    background-color: rgb(69, 228, 72);
+    text-align: right;
+}
+
+input.cmn-toggle-round + label:after {
+  width: 30px;
+  background-color: #fff;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  border-radius: 100%;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  -webkit-transition: margin 0.4s;
+  -moz-transition: margin 0.4s;
+  -o-transition: margin 0.4s;
+  transition: margin 0.4s;
+}
+input.cmn-toggle-round:checked + label:before {
+  background-color: #6baaf8;
+}
+input.cmn-toggle-round:checked + label:after {
+  margin-left: 33px;
+}
+
+/* ============================================================*/
+
 .button-link {
     padding: 5px;
     padding-left: 10px;
@@ -101,6 +190,65 @@ hr {
     background: rgba(158, 252, 135, 0.92);
 }
 
+.accordion-heading .accordion-toggle-small {
+    display: block;
+    padding: 20px 50px; /*8px 15px;*/
+    background-color: rgb(125, 253, 190);
+}
+
+.no-sidebar {
+    margin-left:0 !important;
+    background-color: rgb(253, 242, 125)
+}
+
+.menuToggle {
+    padding-top: 10px;
+    padding-bottom: 17px;
+    padding-left: 17px;
+    padding-right: 17px;
+    background-color: rgb(69, 228, 72);
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    border: 4px outset #6baaf8;
+    border-left: 0px;
+    color: #5484be;
+    font-size: 40px;
+    cursor: pointer;
+-webkit-box-shadow: 10px 0 15px 0 rgba(0,0,0,0.3);
+box-shadow: 10px 0 15px 0 rgba(0,0,0,0.3);
+}
+
+#sidebar {
+    position: fixed;
+    top: 20%;
+    left: -350px;
+    width: 350px;
+    background-color: rgb(69, 228, 72);
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    border: 4px outset #6baaf8;
+    border-left: 0px;
+    padding-bottom: 10px;
+-webkit-box-shadow: 10px 0 15px 0 rgba(0,0,0,0.3);
+box-shadow: 10px 0 15px 0 rgba(0,0,0,0.3);
+}
+
+
+
+#sidebar-content {
+    left: 100px;
+    width: 80%;
+    float: left;
+    background-color: rgb(125, 253, 190);
+}
+
+#toggleSidebar {
+    float: right;
+    height: 100%;
+    width: 0px;
+    margin-top: 50%;
+}
+
 .newTama {
     margin-bottom: 50px;
     padding: 20px;
@@ -117,11 +265,16 @@ hr {
     background: rgb(136, 252, 131);
 }
 
-.intro-text {
+.intro-text, .header-text {
     text-transform: uppercase;
     font-size: 1.75em;
     font-weight: 400;
     letter-spacing: 1px;
+}
+
+.header-text {
+    padding-top: 10px;
+    margin-bottom: -10px;
 }
 
 .img-border {

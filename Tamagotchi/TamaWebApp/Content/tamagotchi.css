@@ -109,7 +109,8 @@ input.cmn-toggle-round + label:before {
 
 .switch {
     padding: 10px;
-    background-color: rgb(226, 255, 225);
+    background-color: rgb(69, 228, 72);
+    text-align: right;
 }
 
 input.cmn-toggle-round + label:after {
@@ -129,7 +130,7 @@ input.cmn-toggle-round + label:after {
   transition: margin 0.4s;
 }
 input.cmn-toggle-round:checked + label:before {
-  background-color: #8ce196;
+  background-color: #6baaf8;
 }
 input.cmn-toggle-round:checked + label:after {
   margin-left: 33px;
@@ -192,18 +193,12 @@ input.cmn-toggle-round:checked + label:after {
 .accordion-heading .accordion-toggle-small {
     display: block;
     padding: 20px 50px; /*8px 15px;*/
-    background-color: rgb(226, 255, 225);
-}
-
-.accordion-inner-small {
-    padding: 4px 8px;  /*9px 15px;*/
-    border-top: 1px solid #e5e5e5;
-    background-color: rgb(226, 255, 225);
+    background-color: rgb(125, 253, 190);
 }
 
 .no-sidebar {
     margin-left:0 !important;
-    background-color: rgb(226, 255, 225);
+    background-color: rgb(253, 242, 125)
 }
 
 .menuToggle {
@@ -211,27 +206,31 @@ input.cmn-toggle-round:checked + label:after {
     padding-bottom: 17px;
     padding-left: 17px;
     padding-right: 17px;
-    background-color: rgb(226, 255, 225);
+    background-color: rgb(69, 228, 72);
     border-bottom-right-radius: 25px;
     border-top-right-radius: 25px;
-    border: 2px outset #9A9A9A;
+    border: 4px outset #6baaf8;
     border-left: 0px;
-    color: #9A9A9A;
+    color: #5484be;
+    font-size: 40px;
     cursor: pointer;
+-webkit-box-shadow: 10px 0 15px 0 rgba(0,0,0,0.3);
+box-shadow: 10px 0 15px 0 rgba(0,0,0,0.3);
 }
 
 #sidebar {
     position: fixed;
     top: 20%;
-    height: 60%;
-    bottom: 20%;
     left: -350px;
     width: 350px;
-    background-color: rgb(226, 255, 225);
+    background-color: rgb(69, 228, 72);
     border-bottom-right-radius: 25px;
     border-top-right-radius: 25px;
-    border: 2px outset #9A9A9A;
+    border: 4px outset #6baaf8;
     border-left: 0px;
+    padding-bottom: 10px;
+-webkit-box-shadow: 10px 0 15px 0 rgba(0,0,0,0.3);
+box-shadow: 10px 0 15px 0 rgba(0,0,0,0.3);
 }
 
 
@@ -240,14 +239,14 @@ input.cmn-toggle-round:checked + label:after {
     left: 100px;
     width: 80%;
     float: left;
-    background-color: white;
+    background-color: rgb(125, 253, 190);
 }
 
 #toggleSidebar {
     float: right;
     height: 100%;
     width: 0px;
-    margin-top: 65%;
+    margin-top: 50%;
 }
 
 .newTama {
@@ -266,11 +265,16 @@ input.cmn-toggle-round:checked + label:after {
     background: rgb(136, 252, 131);
 }
 
-.intro-text {
+.intro-text, .header-text {
     text-transform: uppercase;
     font-size: 1.75em;
     font-weight: 400;
     letter-spacing: 1px;
+}
+
+.header-text {
+    padding-top: 10px;
+    margin-bottom: -10px;
 }
 
 .img-border {

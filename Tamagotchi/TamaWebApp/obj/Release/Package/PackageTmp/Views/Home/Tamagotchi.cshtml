@@ -1,9 +1,9 @@
 ﻿@model TamaWebApp.TamaService.Tamagotchi
 
+<p id="errorBox" class="text-center" style="color: red;" hidden>Er is een probleem ontstaan bij het verbinden met de server. Probeer het later nog eens!</p>
 <div class="container">
-
     @Html.Partial("_TamaShowPartial")
-
+    @Html.Partial("_TamaRuleMenuPartial")
     <div class="row">
         <div class="box">
             <div class="text-center">
