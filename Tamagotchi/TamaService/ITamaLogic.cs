@@ -28,19 +28,19 @@ namespace TamaService
         bool FlipFlag(string name, int tamaID);
 
         [OperationContract]
-        bool Eat(Tamagotchi tama);
+        bool Eat(int value);
 
         [OperationContract]
-        bool Sleep(Tamagotchi tama);
+        bool Sleep(int value);
 
         [OperationContract]
-        bool Play(Tamagotchi tama);
+        bool Play(int value);
 
         [OperationContract]
-        bool Workout(Tamagotchi tama);
+        bool Workout(int value);
 
         [OperationContract]
-        bool Hug(Tamagotchi tama);
+        bool Hug(int value);
 
 
     }

@@ -45,6 +45,9 @@ namespace TamaService
         public int FlagID { get; set; }
 
         [DataMember]
+        public int ImgId { get; set; }
+
+        [DataMember]
         public DateTime ActionDone { get; set; }
     }
 }

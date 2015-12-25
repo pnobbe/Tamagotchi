@@ -44,6 +44,9 @@ namespace TamaWebApp.TamaService {
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ImgIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime LastUpdateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -152,6 +155,19 @@ namespace TamaWebApp.TamaService {
                 if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ImgId {
+            get {
+                return this.ImgIdField;
+            }
+            set {
+                if ((this.ImgIdField.Equals(value) != true)) {
+                    this.ImgIdField = value;
+                    this.RaisePropertyChanged("ImgId");
                 }
             }
         }
@@ -448,34 +464,34 @@ namespace TamaWebApp.TamaService {
         System.Threading.Tasks.Task<bool> FlipFlagAsync(string name, int tamaID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/Eat", ReplyAction="http://tempuri.org/ITamaLogic/EatResponse")]
-        bool Eat(TamaWebApp.TamaService.Tamagotchi tama);
+        bool Eat(int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/Eat", ReplyAction="http://tempuri.org/ITamaLogic/EatResponse")]
-        System.Threading.Tasks.Task<bool> EatAsync(TamaWebApp.TamaService.Tamagotchi tama);
+        System.Threading.Tasks.Task<bool> EatAsync(int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/Sleep", ReplyAction="http://tempuri.org/ITamaLogic/SleepResponse")]
-        bool Sleep(TamaWebApp.TamaService.Tamagotchi tama);
+        bool Sleep(int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/Sleep", ReplyAction="http://tempuri.org/ITamaLogic/SleepResponse")]
-        System.Threading.Tasks.Task<bool> SleepAsync(TamaWebApp.TamaService.Tamagotchi tama);
+        System.Threading.Tasks.Task<bool> SleepAsync(int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/Play", ReplyAction="http://tempuri.org/ITamaLogic/PlayResponse")]
-        bool Play(TamaWebApp.TamaService.Tamagotchi tama);
+        bool Play(int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/Play", ReplyAction="http://tempuri.org/ITamaLogic/PlayResponse")]
-        System.Threading.Tasks.Task<bool> PlayAsync(TamaWebApp.TamaService.Tamagotchi tama);
+        System.Threading.Tasks.Task<bool> PlayAsync(int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/Workout", ReplyAction="http://tempuri.org/ITamaLogic/WorkoutResponse")]
-        bool Workout(TamaWebApp.TamaService.Tamagotchi tama);
+        bool Workout(int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/Workout", ReplyAction="http://tempuri.org/ITamaLogic/WorkoutResponse")]
-        System.Threading.Tasks.Task<bool> WorkoutAsync(TamaWebApp.TamaService.Tamagotchi tama);
+        System.Threading.Tasks.Task<bool> WorkoutAsync(int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/Hug", ReplyAction="http://tempuri.org/ITamaLogic/HugResponse")]
-        bool Hug(TamaWebApp.TamaService.Tamagotchi tama);
+        bool Hug(int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/Hug", ReplyAction="http://tempuri.org/ITamaLogic/HugResponse")]
-        System.Threading.Tasks.Task<bool> HugAsync(TamaWebApp.TamaService.Tamagotchi tama);
+        System.Threading.Tasks.Task<bool> HugAsync(int value);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -553,44 +569,44 @@ namespace TamaWebApp.TamaService {
             return base.Channel.FlipFlagAsync(name, tamaID);
         }
         
-        public bool Eat(TamaWebApp.TamaService.Tamagotchi tama) {
-            return base.Channel.Eat(tama);
+        public bool Eat(int value) {
+            return base.Channel.Eat(value);
         }
         
-        public System.Threading.Tasks.Task<bool> EatAsync(TamaWebApp.TamaService.Tamagotchi tama) {
-            return base.Channel.EatAsync(tama);
+        public System.Threading.Tasks.Task<bool> EatAsync(int value) {
+            return base.Channel.EatAsync(value);
         }
         
-        public bool Sleep(TamaWebApp.TamaService.Tamagotchi tama) {
-            return base.Channel.Sleep(tama);
+        public bool Sleep(int value) {
+            return base.Channel.Sleep(value);
         }
         
-        public System.Threading.Tasks.Task<bool> SleepAsync(TamaWebApp.TamaService.Tamagotchi tama) {
-            return base.Channel.SleepAsync(tama);
+        public System.Threading.Tasks.Task<bool> SleepAsync(int value) {
+            return base.Channel.SleepAsync(value);
         }
         
-        public bool Play(TamaWebApp.TamaService.Tamagotchi tama) {
-            return base.Channel.Play(tama);
+        public bool Play(int value) {
+            return base.Channel.Play(value);
         }
         
-        public System.Threading.Tasks.Task<bool> PlayAsync(TamaWebApp.TamaService.Tamagotchi tama) {
-            return base.Channel.PlayAsync(tama);
+        public System.Threading.Tasks.Task<bool> PlayAsync(int value) {
+            return base.Channel.PlayAsync(value);
         }
         
-        public bool Workout(TamaWebApp.TamaService.Tamagotchi tama) {
-            return base.Channel.Workout(tama);
+        public bool Workout(int value) {
+            return base.Channel.Workout(value);
         }
         
-        public System.Threading.Tasks.Task<bool> WorkoutAsync(TamaWebApp.TamaService.Tamagotchi tama) {
-            return base.Channel.WorkoutAsync(tama);
+        public System.Threading.Tasks.Task<bool> WorkoutAsync(int value) {
+            return base.Channel.WorkoutAsync(value);
         }
         
-        public bool Hug(TamaWebApp.TamaService.Tamagotchi tama) {
-            return base.Channel.Hug(tama);
+        public bool Hug(int value) {
+            return base.Channel.Hug(value);
         }
         
-        public System.Threading.Tasks.Task<bool> HugAsync(TamaWebApp.TamaService.Tamagotchi tama) {
-            return base.Channel.HugAsync(tama);
+        public System.Threading.Tasks.Task<bool> HugAsync(int value) {
+            return base.Channel.HugAsync(value);
         }
     }
 }
