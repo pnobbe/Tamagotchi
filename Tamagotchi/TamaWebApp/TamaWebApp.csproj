@@ -249,6 +249,7 @@
     <Content Include="Content\img\sprites\9\Hungry.png" />
     <Content Include="Content\img\sprites\9\Sick.png" />
     <Content Include="Content\img\sprites\9\Sleeping.png" />
+    <Content Include="Content\img\sprites\Dead.png" />
     <Content Include="Content\img\title.png" />
     <Content Include="Content\tamagotchi.css" />
     <Content Include="favicon.ico" />

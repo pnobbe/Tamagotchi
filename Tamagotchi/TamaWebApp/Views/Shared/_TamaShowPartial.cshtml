@@ -7,17 +7,20 @@
                 @Html.DisplayFor(model => model.Name)
             </div>
             <img id="TamaImg" src="~/Content/img/sprites/@Model.ImgId/Hungry.png">
+            <div id="DeathText" class="deathText" hidden>
+                <p><strong>RIP</strong></p>
+                <p>@Model.Name</p>
+            </div>
         </div>
         <br />
         <div class="text-center">
-
-            <strong>@Html.DisplayFor(model => model.Name)</strong> is: <strong  id="statusText"></strong>!
+            <strong>@Html.DisplayFor(model => model.Name)</strong> is: <strong id="statusText"></strong>!
         </div>
     </div>
 </div>
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         GetState(@Model.Id);
     });
 
@@ -29,9 +32,14 @@
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             cache: false,
-            success: function (msg)
-            {
-                $("#TamaImg").attr("src", "/Content/img/sprites/@Model.ImgId/" + msg.status + ".png");
+            success: function (msg) {
+                if (msg.status == "Dead") {
+                    $("#TamaImg").attr("src", "/Content/img/sprites/Dead.png");
+                    $("#DeathText").hidden = false;
+                }
+                else {
+                    $("#TamaImg").attr("src", "/Content/img/sprites/@Model.ImgId/" + msg.status + ".png");
+                }
                 $("#statusText").text(msg.status);
             },
             error: function (e) {
