@@ -6,17 +6,21 @@
             <div class="intro-text">
                 @Html.DisplayFor(model => model.Name)
             </div>
-            <img src="~/Content/img/sprites/@Model.ImgId/Happy.png">
+            <img id="TamaImg" src="~/Content/img/sprites/@Model.ImgId/Hungry.png">
         </div>
         <br />
         <div class="text-center">
 
-            <strong>@Html.DisplayFor(model => model.Name)</strong> is: <strong>Happy</strong>!
+            <strong>@Html.DisplayFor(model => model.Name)</strong> is: <strong  id="statusText"></strong>!
         </div>
     </div>
 </div>
 
 <script>
+    $(document).ready(function() {
+        GetState(@Model.Id);
+    });
+
     function GetState(inputid) {
         $.ajax({
             type: "GET",
@@ -27,10 +31,11 @@
             cache: false,
             success: function (msg)
             {
-                alert(msg)
+                $("#TamaImg").attr("src", "/Content/img/sprites/@Model.ImgId/" + msg.status + ".png");
+                $("#statusText").text(msg.status);
             },
             error: function (e) {
-                alert(e)
+                alert(e.status)
             }
         });
     };

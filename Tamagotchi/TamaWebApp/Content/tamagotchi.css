@@ -231,7 +231,7 @@ box-shadow: 10px 0 15px 0 rgba(0,0,0,0.3);
 #sidebar {
     position: fixed;
     top: 20%;
-    left: -350px;
+    left: -330px;
     width: 350px;
     background-color: rgb(69, 228, 72);
     border-bottom-right-radius: 25px;

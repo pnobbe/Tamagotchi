@@ -295,6 +295,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_newTamagotchiPartial.cshtml" />
     <Content Include="Views\Home\Tamagotchi.cshtml" />
+    <Content Include="Views\Shared\_DeadTamaPartial.cshtml" />
+    <Content Include="Views\Shared\_LivingTamaPartial.cshtml" />
+    <Content Include="Views\Shared\_TamaShowPartial.cshtml" />
+    <Content Include="Views\Shared\_TamaRuleMenuPartial.cshtml" />
     <None Include="Service References\TamaService\TamaService.wsdl" />
     <None Include="Service References\TamaService\TamaService.xsd">
       <SubType>Designer</SubType>
@@ -311,10 +315,6 @@
     <Content Include="Service References\TamaService\TamaWebApp.TamaService.Tamagotchi.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Views\Shared\_DeadTamaPartial.cshtml" />
-    <Content Include="Views\Shared\_LivingTamaPartial.cshtml" />
-    <Content Include="Views\Shared\_TamaShowPartial.cshtml" />
-    <Content Include="Views\Shared\_TamaRuleMenuPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

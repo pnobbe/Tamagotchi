@@ -9,23 +9,29 @@ namespace TamaWebApp.Controllers
 {
     public class HomeController : Controller
     {
-        public TamaLogicClient service = new TamaLogicClient();
         List<Tamagotchi> list = new List<Tamagotchi>();
 
         public ActionResult Index()
         {
-            return View(service.GetAllTamagotchi().OrderByDescending(t => t.Id).AsEnumerable());
+            TamaLogicClient service = new TamaLogicClient();
+            var value = service.GetAllTamagotchi().OrderByDescending(t => t.Id).AsEnumerable();
+            service.Close();
+            return View(value);
         }
 
         [HttpGet, ActionName("Tamagotchi")]
         public ActionResult Tamagotchi([Bind(Include = "Id")] Tamagotchi t)
         {
-            return View(service.GetTamagotchi(t.Id));
+            TamaLogicClient service = new TamaLogicClient();
+            var value = service.GetTamagotchi(t.Id);
+            service.Close();
+            return View(value);
         }
 
         [HttpGet, ActionName("Eat")]
         public ActionResult Eat([Bind(Include = "Id")] Tamagotchi t)
         {
+            TamaLogicClient service = new TamaLogicClient();
             if (ModelState.IsValid)
             {
                 service.Eat(t.Id);

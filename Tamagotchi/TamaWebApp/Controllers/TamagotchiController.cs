@@ -10,8 +10,6 @@ namespace TamaWebApp.Controllers
 {
     public class TamagotchiController : Controller
     {
-        public TamaService.TamaLogicClient service = new TamaService.TamaLogicClient();
-
         // GET: Tamagotchi
         public ActionResult Index()
         {
@@ -22,6 +20,7 @@ namespace TamaWebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Add([Bind(Include = "Name")] Tamagotchi t)
         {
+            TamaLogicClient service = new TamaLogicClient();
             int Tamaid = -1;
             if (ModelState.IsValid)
             {
@@ -34,6 +33,7 @@ namespace TamaWebApp.Controllers
         [HttpGet, ActionName("Eat")]
         public ActionResult Eat([Bind(Include = "Id")] Tamagotchi t)
         {
+            TamaLogicClient service = new TamaLogicClient();
             if (ModelState.IsValid)
             {
                 service.Eat(t.Id);
@@ -45,6 +45,7 @@ namespace TamaWebApp.Controllers
         [HttpGet, ActionName("Sleep")]
         public ActionResult Sleep([Bind(Include = "Id")] Tamagotchi t)
         {
+            TamaLogicClient service = new TamaLogicClient();
             if (ModelState.IsValid)
             {
                 service.Sleep(t.Id);
@@ -56,6 +57,7 @@ namespace TamaWebApp.Controllers
         [HttpGet, ActionName("Hug")]
         public ActionResult Hug([Bind(Include = "Id")] Tamagotchi t)
         {
+            TamaLogicClient service = new TamaLogicClient();
             if (ModelState.IsValid)
             {
                 service.Hug(t.Id);
@@ -67,6 +69,7 @@ namespace TamaWebApp.Controllers
         [WebMethod]
         public string FlipFlag(int id, string flag)
         {
+            TamaLogicClient service = new TamaLogicClient();
             if (ModelState.IsValid)
             {
                 if (service.FlipFlag(flag, id))
@@ -80,7 +83,10 @@ namespace TamaWebApp.Controllers
         [WebMethod]
         public string GetStatus(int id)
         {
-            return service.GetStatus(id);
+            TamaLogicClient service = new TamaLogicClient();
+            var value = service.GetStatus(id);
+            service.Close();
+            return "{ \"status\": \"" + value + "\" }";
         }
         
 

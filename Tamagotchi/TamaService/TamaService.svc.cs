@@ -21,13 +21,13 @@ namespace TamaService
 
         public int AddTamagotchi(string name)
         {
-            
+
             Random rnd = new Random();
             DateTime creationDate = Tamas.RepoTime();
-            
+
             TamaFlags tf = new TamaFlags();
             Flags.create(tf);
-            
+
             Tamagotchi tama = new Tamagotchi();
             tama.Name = name;
             tama.CreationData = creationDate;
@@ -94,7 +94,7 @@ namespace TamaService
             {
                 TamaFlags flags = Flags.getList().First(t => t.ID == tama.FlagID);
 
-                switch(name)
+                switch (name)
                 {
                     case "Crazy":
                         flags.Crazy = !flags.Crazy;
@@ -165,7 +165,7 @@ namespace TamaService
                 return false;
 
             DateTime time;
-            if(canExecute(tama, out time))
+            if (canExecute(tama, out time))
             {
                 tama.Hunger = 0;
                 time = time.AddSeconds(30);
@@ -205,7 +205,7 @@ namespace TamaService
             DateTime time;
             if (canExecute(tama, out time))
             {
-                tama.Boredom  -= 10;
+                tama.Boredom -= 10;
                 if (tama.Boredom < 0)
                     tama.Boredom = 0;
 
@@ -268,15 +268,15 @@ namespace TamaService
                 return false;
 
             int i = DateTime.Compare(time, tama.ActionDone);
-            return ( DateTime.Compare(time, tama.ActionDone) >= 0);
+            return (DateTime.Compare(time, tama.ActionDone) >= 0);
         }
 
         public string GetStatus(int tamaID)
         {
             Tamagotchi tama = GetTamagotchi(tamaID);
-            if(tama.isDead)
+            if (tama.isDead)
                 return "Death";
- 
+
             int[] list = new int[4];
 
             list[0] = tama.Health;
@@ -285,12 +285,12 @@ namespace TamaService
             list[3] = tama.Sleep;
             int maxValue = list.Max();
 
-            if(maxValue < 20)
+            if (maxValue < 20)
                 return "Happy";
 
             int maxIndex = list.ToList().IndexOf(maxValue);
 
-            switch(maxIndex)
+            switch (maxIndex)
             {
                 case 0:
                     return "Sick";
