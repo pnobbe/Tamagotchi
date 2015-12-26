@@ -6,11 +6,32 @@
             <div class="intro-text">
                 @Html.DisplayFor(model => model.Name)
             </div>
-            <img src="~/Content/img/sprites/@Model.ImgId/Happy.PNG" />
+            <img src="~/Content/img/sprites/@Model.ImgId/Happy.png">
         </div>
         <br />
         <div class="text-center">
+
             <strong>@Html.DisplayFor(model => model.Name)</strong> is: <strong>Happy</strong>!
         </div>
     </div>
 </div>
+
+<script>
+    function GetState(inputid) {
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("GetStatus", "Tamagotchi")',
+            data: { id: inputid },
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            cache: false,
+            success: function (msg)
+            {
+                alert(msg)
+            },
+            error: function (e) {
+                alert(e)
+            }
+        });
+    };
+</script>
