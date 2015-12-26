@@ -49,6 +49,16 @@ hr {
     box-shadow: inset 0 -2px #28be68;
 }
 
+.tamaBox {
+    margin: 40px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 5px outset #45e287;
+    background-color: #b7ffa6;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
 /* ============================================================
   COMMON
 ============================================================ */
@@ -232,8 +242,6 @@ box-shadow: 10px 0 15px 0 rgba(0,0,0,0.3);
 -webkit-box-shadow: 10px 0 15px 0 rgba(0,0,0,0.3);
 box-shadow: 10px 0 15px 0 rgba(0,0,0,0.3);
 }
-
-
 
 #sidebar-content {
     left: 100px;
