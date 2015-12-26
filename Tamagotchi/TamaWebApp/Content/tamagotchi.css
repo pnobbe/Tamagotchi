@@ -117,9 +117,15 @@ input.cmn-toggle-round + label:before {
   transition: background 0.4s;
 }
 
+.deathText {
+    position: relative;
+    bottom: 50px;
+    text-align: center;
+}
+
 .switch {
     padding: 10px;
-    background-color: rgb(69, 228, 72);
+    background-color: rgb(165, 251, 168);
     text-align: right;
 }
 
@@ -216,7 +222,7 @@ input.cmn-toggle-round:checked + label:after {
     padding-bottom: 17px;
     padding-left: 17px;
     padding-right: 17px;
-    background-color: rgb(69, 228, 72);
+    background-color: rgb(165, 251, 168);
     border-bottom-right-radius: 25px;
     border-top-right-radius: 25px;
     border: 4px outset #6baaf8;
@@ -233,7 +239,7 @@ box-shadow: 10px 0 15px 0 rgba(0,0,0,0.3);
     top: 20%;
     left: -330px;
     width: 350px;
-    background-color: rgb(69, 228, 72);
+    background-color: rgb(165, 251, 168);
     border-bottom-right-radius: 25px;
     border-top-right-radius: 25px;
     border: 4px outset #6baaf8;
@@ -247,7 +253,7 @@ box-shadow: 10px 0 15px 0 rgba(0,0,0,0.3);
     left: 100px;
     width: 80%;
     float: left;
-    background-color: rgb(125, 253, 190);
+    background-color: rgb(165, 251, 168);
 }
 
 #toggleSidebar {
@@ -278,6 +284,7 @@ box-shadow: 10px 0 15px 0 rgba(0,0,0,0.3);
     font-size: 1.75em;
     font-weight: 400;
     letter-spacing: 1px;
+    padding: 5px;
 }
 
 .header-text {

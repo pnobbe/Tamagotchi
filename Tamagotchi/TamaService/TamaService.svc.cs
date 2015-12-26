@@ -253,7 +253,7 @@ namespace TamaService
         {
             Tamagotchi tama = GetTamagotchi(tamaID);
             if (tama.isDead)
-                return "Death";
+                return "Dead";
 
             int[] list = new int[4];
 
