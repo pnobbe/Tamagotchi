@@ -76,6 +76,15 @@ namespace TamaWebApp.Controllers
             }
             return "{ \"status\": \"Error\" }";
         }
+
+        [WebMethod]
+        public string GetStatus(int id)
+        {
+            return service.GetStatus(id);
+        }
+        
+
+
     }
 
 }

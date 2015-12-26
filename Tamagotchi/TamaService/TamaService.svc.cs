@@ -299,7 +299,7 @@ namespace TamaService
                 case 2:
                     return "Bored";
                 case 3:
-                    return "Sleepy";
+                    return "Sleeping";
                 default:
                     return "Happy";
             }

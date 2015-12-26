@@ -42,6 +42,7 @@ namespace TamaService
         [OperationContract]
         bool Hug(int TamaID);
 
+        [OperationContract]
         string GetStatus(int tamaID);
 
 
