@@ -21,6 +21,9 @@ namespace TamaService.Database
 
         public List<TamaFlags> getList()
         {
+            _database.SaveChanges();
+            _database.Dispose();
+            _database = new DatabaseContext();
             return _database.Tamaflags.ToList();
         }
 

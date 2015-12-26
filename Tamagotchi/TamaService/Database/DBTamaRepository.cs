@@ -23,6 +23,9 @@ namespace TamaService.Database
 
         public List<Tamagotchi> getList()
         {
+            _database.SaveChanges();
+            _database.Dispose();
+            _database = new DatabaseContext();
             return _database.Tamagotchis.ToList();
         }
 
