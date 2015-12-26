@@ -14,8 +14,7 @@ namespace TamaService
     // NOTE: In order to launch WCF Test Client for testing this service, please select TamaService.svc or TamaService.svc.cs at the Solution Explorer and start debugging.
     public class TamaService : ITamaLogic
     {
-
-        private static DatabaseContext x = new DatabaseContext();
+        static DatabaseContext x = new DatabaseContext();
         ITamaRepository Tamas = new DBTamaRepository(x);
         IFlagRepository Flags = new DBFlagRepository(x);
 
@@ -26,13 +25,12 @@ namespace TamaService
             DateTime creationDate = Tamas.RepoTime();
 
             TamaFlags tf = new TamaFlags();
-            Flags.create(tf);
 
             Tamagotchi tama = new Tamagotchi();
             tama.Name = name;
             tama.CreationData = creationDate;
             tama.LastUpdate = creationDate;
-            tama.FlagID = tf.ID;
+            tama.Flags = tf;
             tama.ActionDone = creationDate;
             tama.ImgId = rnd.Next(1, 13);
             Tamas.create(tama);
@@ -68,19 +66,7 @@ namespace TamaService
             }
         }
 
-        public TamaFlags GetFlag(int value)
-        {
-            if (Flags.getList().Where(t => t.ID == value).Count() != 0)
-            {
-                TamaFlags tama = Flags.getList().First(t => t.ID == value);
-                return tama;
-
-            }
-            else
-            {
-                return null;
-            }
-        }
+     
 
         public bool FlipFlag(string name, int tamaID)
         {
@@ -90,9 +76,7 @@ namespace TamaService
             if (tama == null)
                 return false;
 
-            if (Flags.getList().Where(t => t.ID == tama.FlagID).Count() != 0)
-            {
-                TamaFlags flags = Flags.getList().First(t => t.ID == tama.FlagID);
+                TamaFlags flags = tama.Flags;
 
                 switch (name)
                 {
@@ -137,11 +121,7 @@ namespace TamaService
                 return false;
 
             }
-            else
-            {
-                return false;
-            }
-        }
+        
 
         public bool UpdateTamagochi(int value)
         {
@@ -149,8 +129,6 @@ namespace TamaService
 
             if (tama == null)
                 return false;
-
-            TamaFlags flags = GetFlag(value);
 
             List<ISpelRegel> x = new List<ISpelRegel>();
 

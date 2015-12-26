@@ -42,7 +42,7 @@ namespace TamaService
         public DateTime LastUpdate { get; set; }
 
         [DataMember]
-        public int FlagID { get; set; }
+        public virtual TamaFlags Flags { get; set; }
 
         [DataMember]
         public int ImgId { get; set; }
