@@ -19,9 +19,6 @@ namespace TamaService
         List<Tamagotchi> GetAllTamagotchi();
 
         [OperationContract]
-        TamaFlags GetFlag(int FlagID);
-
-        [OperationContract]
         bool UpdateTamagochi(int TamaID);
 
         [OperationContract]

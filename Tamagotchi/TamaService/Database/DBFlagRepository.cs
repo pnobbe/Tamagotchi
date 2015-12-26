@@ -22,8 +22,11 @@ namespace TamaService.Database
         public List<TamaFlags> getList()
         {
             _database.SaveChanges();
-            _database.Dispose();
-            _database = new DatabaseContext();
+            
+            // Loop and Update all
+            foreach (TamaFlags x in _database.Tamaflags)
+                _database.Entry(x).Reload();
+
             return _database.Tamaflags.ToList();
         }
 

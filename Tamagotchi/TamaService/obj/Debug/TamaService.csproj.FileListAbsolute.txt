@@ -32,4 +32,3 @@ C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaService\bin\Ninject.xml
 C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaService\obj\Debug\TamaService.csprojResolveAssemblyReference.cache
 C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaService\obj\Debug\TamaService.dll
 C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaService\obj\Debug\TamaService.pdb
-E:\Tamagotchi\Tamagotchi\TamaService\obj\Debug\TamaService.csprojResolveAssemblyReference.cache
