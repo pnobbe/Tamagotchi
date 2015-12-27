@@ -14,3 +14,4 @@ C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaConsole\bin\Debug\TamaCo
 C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaConsole\obj\Debug\TamaConsole.exe
 C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaConsole\obj\Debug\TamaConsole.pdb
 C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaConsole\obj\Debug\TamaConsole.csprojResolveAssemblyReference.cache
+E:\Tamagotchi\Tamagotchi\TamaConsole\obj\Debug\TamaConsole.csprojResolveAssemblyReference.cache

@@ -1,0 +1,5 @@
+E:\Tamagotchi\Tamagotchi\TamaConsole\bin\Release\TamaConsole.exe.config
+E:\Tamagotchi\Tamagotchi\TamaConsole\bin\Release\TamaConsole.exe
+E:\Tamagotchi\Tamagotchi\TamaConsole\bin\Release\TamaConsole.pdb
+E:\Tamagotchi\Tamagotchi\TamaConsole\obj\Release\TamaConsole.exe
+E:\Tamagotchi\Tamagotchi\TamaConsole\obj\Release\TamaConsole.pdb

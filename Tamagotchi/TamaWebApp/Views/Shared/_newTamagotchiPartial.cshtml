@@ -16,3 +16,24 @@
         </div>
     </div>
 }
+<script>
+    function CheckName(seconds) {
+        var elem = document.getElementById
+        var counter = seconds;
+        var newElement = document.createElement("p");
+        newElement.innerHTML = "";
+        var id;
+
+        timerDone.parentNode.replaceChild(newElement, timerDone);
+
+        id = setInterval(function () {
+            counter--;
+            if (counter < 0) {
+                newElement.parentNode.replaceChild(timerDone, newElement);
+                clearInterval(id);
+            } else {
+                newElement.innerHTML = "Volgende actie is beschikbaar in " + counter.toString() + " seconden.";
+            }
+        }, 1000);
+    }
+</script>
