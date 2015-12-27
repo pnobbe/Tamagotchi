@@ -8,6 +8,8 @@
         <div class="box">
             <div class="text-center">
                 <div class="col-lg-12">
+                    <iframe id="Cooldown" allowTransparency="true" frameborder="0" width="382" height="67"></iframe>
+                    <hr />
                     <table class="table">
                         <th>Status</th>
                         <th>Waarde</th>
@@ -63,3 +65,25 @@
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+        GetCooldown(@Model.Id);
+    });
+
+    function GetCooldown(inputid) {
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("GetCooldown", "Tamagotchi")',
+            data: { id: inputid },
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            cache: false,
+            success: function (msg) {
+                    $("#Cooldown").attr("src", "http://free.timeanddate.com/countdown/i4zxrl1c/n1310/cf12/cm1/cu4/ct4/cs1/ca0/co1/cr0/ss0/cac555/cpc090/pct/tcfff/fs100/szw448/szh189/tatVolgende%20actie%20beschikbaar%20in%3A/tac555/tptActie%20beschikbaar!/tpc090/" + msg.status);
+            },
+            error: function (e) {
+                alert(e.status)
+            }
+        });
+    };
+</script>
