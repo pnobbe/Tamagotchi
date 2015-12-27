@@ -5319,6 +5319,7 @@ a.thumbnail:focus {
 }
 
 .progress {
+    z-index: 10;
     border: 4px outset #45e287;
     height: 35px;
     margin-bottom: 20px;

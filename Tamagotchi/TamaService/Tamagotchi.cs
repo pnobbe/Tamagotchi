@@ -14,7 +14,8 @@ namespace TamaService
     {
         [DataMember]
         public int Id { get; set; }
-        
+
+        [Required(ErrorMessage = "Vul a.u.b een eerst een naam in!")]
         [DataMember]
         public string Name { get; set; }
 

@@ -246,7 +246,8 @@ input.cmn-toggle-round:checked + label:after {
 }
 
 #sidebar {
-    position: fixed;
+    z-index: 20;
+    position: absolute;
     top: 20%;
     left: -330px;
     width: 350px;
