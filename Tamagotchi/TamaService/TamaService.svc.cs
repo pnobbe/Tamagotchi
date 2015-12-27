@@ -62,7 +62,7 @@ namespace TamaService
                 Tamagotchi tama = Tamas.getList().First(t => t.Id == value);
 
                 // Update Tama
-                ninject.Load();
+                ninject.Load(tama, false);
                 tama = ninject.Updater.update(tama, Tamas);
                 Tamas.update(tama);
 

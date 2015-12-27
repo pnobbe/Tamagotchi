@@ -13,20 +13,20 @@ namespace TamaService
     {
         List<ISpelRegel> lst;
 
-        public override void Load()
+        public HelperFactory()
         {
-
             lst = new List<ISpelRegel>();
             lst.Add(new None());
 
-           // this.Bind<List<ISpelRegel>>().ToConstant(lst);
-            
+        }
+        public override void Load()
+        {
+            this.Rebind<List<ISpelRegel>>().ToConstant(lst);
         }
 
         public void Load(Tamagotchi t, Boolean OnAction)
         {
             lst = new List<ISpelRegel>();
-            lst.Add(new None());
 
             if (OnAction)
             {
@@ -54,19 +54,14 @@ namespace TamaService
                 lst.Add(new Topatleet());
 
             
-            
-            
-            //this.Bind<List<ISpelRegel>>().ToConstant(lst);
+             
         }
         public TamaUpdater Updater
         {
             get
             {
-                //IKernel kernel = new StandardKernel(this);
-                //var context = kernel.Get<List<ISpelRegel>>();
-
-                lst = new List<ISpelRegel>();
-                lst.Add(new None());
+                IKernel kernel = new StandardKernel(this);
+                var context = kernel.Get<List<ISpelRegel>>();
 
                 return new TamaUpdater(lst);
             }

@@ -12,7 +12,7 @@ namespace TamaService.Domain.Models
         {
             if(t.Health >= 100)
             {
-                if (new Random().Next(1, 100) % 2 == 1)
+                if (new Random().Next(0, 2) == 0)
                     t.isDead = true;
             }
             return t;

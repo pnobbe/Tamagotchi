@@ -29,8 +29,10 @@ namespace TamaService
             foreach(ISpelRegel s in _rules)
             {
                tama = s.ExecuteSpelregel(tama);
+               rp.update(tama);
             }
             tama.LastUpdate = curr;
+            rp.update(tama);
             return tama;
         }
     }

@@ -11,7 +11,7 @@ namespace TamaService.Domain.Models
         public Tamagotchi ExecuteSpelregel(Tamagotchi t)
         {
             t.Boredom += (short)(t.HoursPassed * 15);
-            if (t.Boredom > 100)
+            if (t.Boredom > 100 | t.Boredom < 0)
             {
                 t.Boredom = 100;
             }

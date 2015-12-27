@@ -12,7 +12,7 @@ namespace TamaService.Domain.Models
         {
 
             t.Sleep += (short)(t.HoursPassed * 5);
-            if (t.Sleep > 100)
+            if (t.Sleep > 100 | t.Sleep < 0)
             {
                 t.Sleep = 100;
             }

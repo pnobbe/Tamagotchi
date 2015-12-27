@@ -11,7 +11,7 @@ namespace TamaService.Domain.Models
         public Tamagotchi ExecuteSpelregel(Tamagotchi t)
         {
             t.Health += (short)(t.HoursPassed * 5);
-            if (t.Health > 100)
+            if (t.Health > 100 || t.Health < 0)
             {
                 t.Health = 100;
             }
