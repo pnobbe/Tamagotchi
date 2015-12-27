@@ -20,10 +20,6 @@
 </div>
 
 <script>
-    $(document).ready(function () {
-        //GetState(@Model.Id);
-        //GetCooldown(@Model.Id);
-    });
     function GetState(inputid) {
         $.ajax({
             type: "GET",
@@ -32,10 +28,14 @@
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             cache: false,
+            async: false,
             success: function (msg) {
                 if (msg.status == "Dead") {
                     $("#TamaImg").attr("src", "/Content/img/sprites/Dead.png");
                     document.getElementById("DeathText").hidden = false;
+                }
+                else if (msg.status == "Sleepy") {
+                    $("#TamaImg").attr("src", "/Content/img/sprites/@Model.Id/Sleeping.png");
                 }
                 else {
                     $("#TamaImg").attr("src", "/Content/img/sprites/@Model.ImgId/" + msg.status + ".png");
