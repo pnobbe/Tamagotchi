@@ -122,8 +122,13 @@ input.cmn-toggle-round + label {
 
 .deathText {
     position: relative;
-    bottom: 50px;
+    bottom: 180px;
     text-align: center;
+    padding-left: 45.5%;
+    padding-right: 45.5%;
+    word-wrap: break-word;
+    margin-bottom: -80px;
+    height: 100px;
 }
 
 .switch {
@@ -244,6 +249,7 @@ input.cmn-toggle-round:checked + label:after {
     top: 20%;
     left: -330px;
     width: 350px;
+    word-wrap: break-word;
     background-color: rgb(165, 251, 168);
     border-bottom-right-radius: 25px;
     border-top-right-radius: 25px;
