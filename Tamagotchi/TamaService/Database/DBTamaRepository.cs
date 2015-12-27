@@ -26,16 +26,14 @@ namespace TamaService.Database
         public List<Tamagotchi> getList()
         {
 
-            if (_database.Tamagotchis.Count() == null)
+            if (_database.Tamagotchis.Count() == 0)
             {
 
                 return new List<Tamagotchi>();
             }
             _database.SaveChanges();
 
-            // Loop and Update all
-            foreach (DBTamagotchi x in _database.Tamagotchis)
-                _database.Entry(x).Reload();
+            _database = new DatabaseContext();
 
             // CONVERT
             List<Tamagotchi> ret = new List<Tamagotchi>();
