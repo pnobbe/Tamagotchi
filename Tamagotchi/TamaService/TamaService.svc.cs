@@ -17,10 +17,10 @@ namespace TamaService
         static DatabaseContext x = new DatabaseContext();
         ITamaRepository Tamas = new DBTamaRepository(x);
         HelperFactory ninject = new HelperFactory();
+        Random rnd = new Random();
+
         public int AddTamagotchi(string name)
         {
-
-            Random rnd = new Random();
             DateTime creationDate = Tamas.RepoTime();
 
             TamaFlags tf = new TamaFlags();
