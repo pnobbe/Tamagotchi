@@ -328,5 +328,13 @@ namespace TamaService
                     return "Happy";
             }
         }
+
+        public string TimeTillAction(int tamaID)
+        {
+            Tamagotchi tama = GetTamagotchi(tamaID);
+
+            string inp = tama.ActionDone.ToString("yyyy-MM-ddTHH:mm:ssZ");
+            return "iso" + inp.Substring(0, inp.Length - 1); 
+        }
     }
 }

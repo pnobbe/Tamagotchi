@@ -42,6 +42,8 @@ namespace TamaService
         [OperationContract]
         string GetStatus(int tamaID);
 
+        [OperationContract]
+        string TimeTillAction(int tamaID);
 
     }
 
