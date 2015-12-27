@@ -6,17 +6,24 @@
             <div class="intro-text">
                 @Html.DisplayFor(model => model.Name)
             </div>
-            <img src="~/Content/img/sprites/@Model.ImgId/Happy.png">
+            <img id="TamaImg" src="~/Content/img/sprites/@Model.ImgId/Hungry.png">
+            <div id="DeathText" class="deathText" hidden>
+                <p><strong>RIP</strong></p>
+                <p>@Model.Name</p>
+            </div>
         </div>
         <br />
-        <div class="text-center">
-
-            <strong>@Html.DisplayFor(model => model.Name)</strong> is: <strong>Happy</strong>!
+        <div class="text-center">f
+            <strong>@Html.DisplayFor(model => model.Name)</strong> is: <strong id="statusText"></strong>!
         </div>
     </div>
 </div>
 
 <script>
+    $(document).ready(function () {
+        GetState(@Model.Id);
+    });
+
     function GetState(inputid) {
         $.ajax({
             type: "GET",
@@ -25,12 +32,18 @@
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             cache: false,
-            success: function (msg)
-            {
-                alert(msg)
+            success: function (msg) {
+                if (msg.status == "Dead") {
+                    $("#TamaImg").attr("src", "/Content/img/sprites/Dead.png");
+                    $("#DeathText").hidden = false;
+                }
+                else {
+                    $("#TamaImg").attr("src", "/Content/img/sprites/@Model.ImgId/" + msg.status + ".png");
+                }
+                $("#statusText").text(msg.status);
             },
             error: function (e) {
-                alert(e)
+                alert(e.status)
             }
         });
     };
