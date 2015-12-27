@@ -70,17 +70,30 @@ namespace TamaConsole
                     list = list.Where(s => !s.isDead).ToList();
                     goto case 'a';
                 case 'a':
-                     Console.Clear();
 
-                    Console.WriteLine("[ID]      [NAME]      [CREATIONDATE]");
-                    foreach(Tamagotchi t in list)
+                    if (list.Count() == 0)
                     {
-                        Console.WriteLine("[" + t.Id + "]      ["+ t.Name +"]      ["+ t.CreationData + "]");
+                        Console.WriteLine("er zijn nog geen tamagotchi's.");
+                        Console.WriteLine();
+                        Console.WriteLine("Druk op een toets om een nieuwe Tamagotchi aan te maken");
+                        Console.ReadKey();
+                        tama = newTama();
+                        break;
                     }
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    tama = getTama();
-                    break;
+                    else
+                    {
+                        Console.Clear();
+
+                        Console.WriteLine("[ID]      [NAME]      [CREATIONDATE]");
+                        foreach (Tamagotchi t in list)
+                        {
+                            Console.WriteLine("[" + t.Id + "]      [" + t.Name + "]      [" + t.CreationData + "]");
+                        }
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        tama = getTama();
+                        break;
+                    }
             }
            
         }

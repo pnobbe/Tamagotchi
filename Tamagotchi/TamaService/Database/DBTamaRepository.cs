@@ -25,6 +25,12 @@ namespace TamaService.Database
 
         public List<Tamagotchi> getList()
         {
+
+            if (_database.Tamagotchis.Count() == null)
+            {
+
+                return new List<Tamagotchi>();
+            }
             _database.SaveChanges();
 
             // Loop and Update all
@@ -80,6 +86,7 @@ namespace TamaService.Database
             t.ImgId = tama.ImgId;
             t.isDead = tama.isDead;
             t.LastUpdate = tama.LastUpdate;
+            t.LastAction = tama.lastAction;
             t.Name = tama.Name;
             t.Sleep = tama.Sleep;
 
@@ -152,6 +159,7 @@ namespace TamaService.Database
             t.isDead = tama.isDead;
             t.LastUpdate = tama.LastUpdate;
             t.Name = tama.Name;
+            t.lastAction = tama.LastAction;
             t.Sleep = tama.Sleep;
             return t;
         }

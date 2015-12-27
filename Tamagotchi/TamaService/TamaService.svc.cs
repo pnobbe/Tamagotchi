@@ -162,7 +162,7 @@ namespace TamaService
                 if (!canExecute(tama, out time))
                     return false;
 
-
+                tama.lastAction = "Eat";
                 tama.Hunger = 0;
                 time = time.AddSeconds(30);
                 tama.ActionDone = time;
@@ -189,6 +189,7 @@ namespace TamaService
                 if (!canExecute(tama, out time))
                     return false;
 
+                tama.lastAction = "Sleep";
                 tama.Sleep = 0;
                 time = time.AddHours(2);
                 tama.ActionDone = time;
@@ -219,6 +220,7 @@ namespace TamaService
                 if (tama.Boredom < 0)
                     tama.Boredom = 0;
 
+                tama.lastAction = "Play";
                 time = time.AddSeconds(30);
                 tama.ActionDone = time;
                 Tamas.update(tama);
@@ -248,6 +250,7 @@ namespace TamaService
                 if (tama.Health < 0)
                     tama.Health = 0;
 
+                tama.lastAction = "Workout";
                 time = time.AddMinutes(1);
                 tama.ActionDone = time;
                 Tamas.update(tama);
@@ -278,6 +281,7 @@ namespace TamaService
                 if (tama.Health < 0)
                     tama.Health = 0;
 
+                tama.lastAction = "Hug";
                 time = time.AddMinutes(1);
                 tama.ActionDone = time;
                 Tamas.update(tama);
@@ -301,6 +305,13 @@ namespace TamaService
             if (tama.isDead)
                 return "Dead";
 
+            // Sleeping?
+            if (tama.lastAction.Equals("Sleep"))
+            {
+                if (SecTillAction(tama.Id) > 0)
+                    return "Sleeping";
+            }
+
             int[] list = new int[4];
 
             list[0] = tama.Health;
@@ -323,7 +334,7 @@ namespace TamaService
                 case 2:
                     return "Bored";
                 case 3:
-                    return "Sleeping";
+                    return "Sleepy";
                 default:
                     return "Happy";
             }
