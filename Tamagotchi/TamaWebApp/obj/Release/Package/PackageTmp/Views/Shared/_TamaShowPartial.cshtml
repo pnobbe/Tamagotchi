@@ -35,7 +35,7 @@
             success: function (msg) {
                 if (msg.status == "Dead") {
                     $("#TamaImg").attr("src", "/Content/img/sprites/Dead.png");
-                    $("#DeathText").hidden = false;
+                    document.getElementById("DeathText").hidden = false;
                 }
                 else {
                     $("#TamaImg").attr("src", "/Content/img/sprites/@Model.ImgId/" + msg.status + ".png");
