@@ -5,7 +5,7 @@ function sidebar(panels) {
     $.asm.panels = panels;
     if (panels === 1) {
         $('#sidebar').animate({
-            left: -350,
+            left: -330,
         });
     } else if (panels === 2) {
         $('#sidebar').animate({
