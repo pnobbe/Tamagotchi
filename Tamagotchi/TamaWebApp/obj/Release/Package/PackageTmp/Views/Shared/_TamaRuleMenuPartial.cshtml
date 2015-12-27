@@ -90,6 +90,37 @@
 </div>
 
 <script>
+
+    function SetFlags() {
+        if ("@Model.Flags.Crazy" == "True") {
+            document.getElementById("cmn-toggle-1").checked = true;
+        }
+        if ("@Model.Flags.Munchies" == "True") {
+            document.getElementById("cmn-toggle-2").checked = true;
+        }
+        if ("@Model.Flags.Vermoeidheid" == "True") {
+            document.getElementById("cmn-toggle-3").checked = true;
+        }
+        if ("@Model.Flags.Honger" == "True") {
+            document.getElementById("cmn-toggle-4").checked = true;
+        }
+        if ("@Model.Flags.Isolatie" == "True") {
+            document.getElementById("cmn-toggle-5").checked = true;
+        }
+        if ("@Model.Flags.Slaaptekort" == "True") {
+            document.getElementById("cmn-toggle-6").checked = true;
+        }
+        if ("@Model.Flags.Voedseltekort" == "True") {
+            document.getElementById("cmn-toggle-7").checked = true;
+        }
+        if ("@Model.Flags.Topatleet" == "True") {
+            document.getElementById("cmn-toggle-8").checked = true;
+        }
+        if ("@Model.Flags.Verveling" == "True") {
+            document.getElementById("cmn-toggle-9").checked = true;
+        }
+    }
+
     function FlipFlag(inputid, inputflag, documentid) {
         $.ajax({
             type: "GET",
@@ -113,6 +144,5 @@
                 document.getElementById("errorBox").hidden = false;
             }
         });
-
     };
 </script>
