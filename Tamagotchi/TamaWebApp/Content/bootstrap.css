@@ -5319,7 +5319,8 @@ a.thumbnail:focus {
 }
 
 .progress {
-    height: 20px;
+    border: 4px outset #45e287;
+    height: 35px;
     margin-bottom: 20px;
     overflow: hidden;
     background-color: #f5f5f5;
