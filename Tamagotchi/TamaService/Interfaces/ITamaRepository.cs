@@ -9,7 +9,7 @@ namespace TamaService
     public interface ITamaRepository
     {
         //Create
-        void create(Tamagotchi newTama);
+        Tamagotchi create(Tamagotchi newTama);
 
         // Read
         List<Tamagotchi> getList();

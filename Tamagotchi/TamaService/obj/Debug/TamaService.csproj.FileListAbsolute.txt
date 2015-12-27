@@ -29,6 +29,6 @@ C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaService\bin\Ninject.dll
 C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaService\bin\EntityFramework.xml
 C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaService\bin\EntityFramework.SqlServer.xml
 C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaService\bin\Ninject.xml
-C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaService\obj\Debug\TamaService.csprojResolveAssemblyReference.cache
 C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaService\obj\Debug\TamaService.dll
 C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaService\obj\Debug\TamaService.pdb
+C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaService\obj\Debug\TamaService.csprojResolveAssemblyReference.cache

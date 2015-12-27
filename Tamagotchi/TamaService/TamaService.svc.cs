@@ -31,7 +31,7 @@ namespace TamaService
             tama.Flags = tf;
             tama.ActionDone = creationDate;
             tama.ImgId = rnd.Next(1, 13);
-            Tamas.create(tama);
+            tama = Tamas.create(tama);
 
             return tama.Id;
         }

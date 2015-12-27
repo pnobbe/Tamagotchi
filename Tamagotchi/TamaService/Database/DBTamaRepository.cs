@@ -15,10 +15,12 @@ namespace TamaService.Database
         }
 
 
-        public void create(Tamagotchi newTama)
+        public Tamagotchi create(Tamagotchi newTama)
         {
-            TamaToDB(newTama);
+            DBTamagotchi x = TamaToDB(newTama);
             _database.SaveChanges();
+            newTama.Id = x.Id;
+            return newTama;
         }
 
         public List<Tamagotchi> getList()

@@ -8,3 +8,8 @@ E:\Tamagotchi\Tamagotchi\TamaConsole\bin\Debug\TamaConsole.exe
 E:\Tamagotchi\Tamagotchi\TamaConsole\bin\Debug\TamaConsole.pdb
 E:\Tamagotchi\Tamagotchi\TamaConsole\obj\Debug\TamaConsole.exe
 E:\Tamagotchi\Tamagotchi\TamaConsole\obj\Debug\TamaConsole.pdb
+C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaConsole\bin\Debug\TamaConsole.exe.config
+C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaConsole\bin\Debug\TamaConsole.exe
+C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaConsole\bin\Debug\TamaConsole.pdb
+C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaConsole\obj\Debug\TamaConsole.exe
+C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaConsole\obj\Debug\TamaConsole.pdb
