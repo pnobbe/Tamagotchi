@@ -122,8 +122,13 @@ input.cmn-toggle-round + label {
 
 .deathText {
     position: relative;
-    bottom: 50px;
+    bottom: 180px;
     text-align: center;
+    padding-left: 45.5%;
+    padding-right: 45.5%;
+    word-wrap: break-word;
+    margin-bottom: -80px;
+    height: 100px;
 }
 
 .switch {
@@ -230,7 +235,7 @@ input.cmn-toggle-round:checked + label:after {
     background-color: rgb(165, 251, 168);
     border-bottom-right-radius: 25px;
     border-top-right-radius: 25px;
-    border: 4px outset #6baaf8;
+    border: 4px outset #45e287;
     border-left: 0px;
     color: #5484be;
     font-size: 40px;
@@ -244,15 +249,15 @@ input.cmn-toggle-round:checked + label:after {
     top: 20%;
     left: -330px;
     width: 350px;
+    word-wrap: break-word;
     background-color: rgb(165, 251, 168);
     border-bottom-right-radius: 25px;
     border-top-right-radius: 25px;
-    border: 4px outset #6baaf8;
+    border: 4px outset #45e287;
     border-left: 0px;
     padding-bottom: 10px;
     -webkit-box-shadow: 10px 0 15px 0 rgba(0,0,0,0.3);
     box-shadow: 10px 0 15px 0 rgba(0,0,0,0.3);
-    z-index: 10;
 }
 
 #sidebar-content {

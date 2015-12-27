@@ -32,7 +32,7 @@ namespace TamaWebApp.TamaService {
         private System.DateTime CreationDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int FlagIDField;
+        private TamaWebApp.TamaService.TamaFlags FlagsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private short HealthField;
@@ -108,14 +108,14 @@ namespace TamaWebApp.TamaService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int FlagID {
+        public TamaWebApp.TamaService.TamaFlags Flags {
             get {
-                return this.FlagIDField;
+                return this.FlagsField;
             }
             set {
-                if ((this.FlagIDField.Equals(value) != true)) {
-                    this.FlagIDField = value;
-                    this.RaisePropertyChanged("FlagID");
+                if ((object.ReferenceEquals(this.FlagsField, value) != true)) {
+                    this.FlagsField = value;
+                    this.RaisePropertyChanged("Flags");
                 }
             }
         }
@@ -445,12 +445,6 @@ namespace TamaWebApp.TamaService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/GetAllTamagotchi", ReplyAction="http://tempuri.org/ITamaLogic/GetAllTamagotchiResponse")]
         System.Threading.Tasks.Task<TamaWebApp.TamaService.Tamagotchi[]> GetAllTamagotchiAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/GetFlag", ReplyAction="http://tempuri.org/ITamaLogic/GetFlagResponse")]
-        TamaWebApp.TamaService.TamaFlags GetFlag(int FlagID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/GetFlag", ReplyAction="http://tempuri.org/ITamaLogic/GetFlagResponse")]
-        System.Threading.Tasks.Task<TamaWebApp.TamaService.TamaFlags> GetFlagAsync(int FlagID);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/UpdateTamagochi", ReplyAction="http://tempuri.org/ITamaLogic/UpdateTamagochiResponse")]
         bool UpdateTamagochi(int TamaID);
         
@@ -549,14 +543,6 @@ namespace TamaWebApp.TamaService {
         
         public System.Threading.Tasks.Task<TamaWebApp.TamaService.Tamagotchi[]> GetAllTamagotchiAsync() {
             return base.Channel.GetAllTamagotchiAsync();
-        }
-        
-        public TamaWebApp.TamaService.TamaFlags GetFlag(int FlagID) {
-            return base.Channel.GetFlag(FlagID);
-        }
-        
-        public System.Threading.Tasks.Task<TamaWebApp.TamaService.TamaFlags> GetFlagAsync(int FlagID) {
-            return base.Channel.GetFlagAsync(FlagID);
         }
         
         public bool UpdateTamagochi(int TamaID) {

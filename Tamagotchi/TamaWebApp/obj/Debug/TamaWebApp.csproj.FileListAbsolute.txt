@@ -203,4 +203,3 @@ C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaWebApp\bin\Microsoft.Owi
 C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaWebApp\obj\Debug\TamaWebApp.csprojResolveAssemblyReference.cache
 C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaWebApp\obj\Debug\TamaWebApp.dll
 C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaWebApp\obj\Debug\TamaWebApp.pdb
-E:\Tamagotchi\Tamagotchi\TamaWebApp\obj\Debug\TamaWebApp.csprojResolveAssemblyReference.cache

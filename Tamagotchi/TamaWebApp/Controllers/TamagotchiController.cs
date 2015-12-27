@@ -66,6 +66,30 @@ namespace TamaWebApp.Controllers
             return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
         }
 
+        [HttpGet, ActionName("Workout")]
+        public ActionResult Workout([Bind(Include = "Id")] Tamagotchi t)
+        {
+            TamaLogicClient service = new TamaLogicClient();
+            if (ModelState.IsValid)
+            {
+                service.Workout(t.Id);
+            }
+            service.Close();
+            return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
+        }
+
+        [HttpGet, ActionName("Play")]
+        public ActionResult Play([Bind(Include = "Id")] Tamagotchi t)
+        {
+            TamaLogicClient service = new TamaLogicClient();
+            if (ModelState.IsValid)
+            {
+                service.Play(t.Id);
+            }
+            service.Close();
+            return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
+        }
+
         [WebMethod]
         public string FlipFlag(int id, string flag)
         {
