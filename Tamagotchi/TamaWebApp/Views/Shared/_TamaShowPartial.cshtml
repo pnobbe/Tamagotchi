@@ -21,9 +21,9 @@
 
 <script>
     $(document).ready(function () {
-        GetState(@Model.Id);
+        //GetState(@Model.Id);
+        //GetCooldown(@Model.Id);
     });
-
     function GetState(inputid) {
         $.ajax({
             type: "GET",
@@ -43,7 +43,7 @@
                 $("#statusText").text(msg.status);
             },
             error: function (e) {
-                alert(e.status)
+                alert(e.status + "fail on img load")
             }
         });
     };

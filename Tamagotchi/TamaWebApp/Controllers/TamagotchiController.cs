@@ -112,7 +112,17 @@ namespace TamaWebApp.Controllers
             service.Close();
             return "{ \"status\": \"" + value + "\" }";
         }
-        
+
+
+        [WebMethod]
+        public string GetCooldown(int id)
+        {
+            TamaLogicClient service = new TamaLogicClient();
+            var value = service.SecTillAction(id);
+            Console.WriteLine(value);
+            service.Close();
+            return "{ \"status\": \"" + value + "\" }";
+        }
 
 
     }

@@ -492,6 +492,12 @@ namespace TamaWebApp.TamaService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/GetStatus", ReplyAction="http://tempuri.org/ITamaLogic/GetStatusResponse")]
         System.Threading.Tasks.Task<string> GetStatusAsync(int tamaID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/SecTillAction", ReplyAction="http://tempuri.org/ITamaLogic/SecTillActionResponse")]
+        int SecTillAction(int tamaID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/SecTillAction", ReplyAction="http://tempuri.org/ITamaLogic/SecTillActionResponse")]
+        System.Threading.Tasks.Task<int> SecTillActionAsync(int tamaID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -607,6 +613,14 @@ namespace TamaWebApp.TamaService {
         
         public System.Threading.Tasks.Task<string> GetStatusAsync(int tamaID) {
             return base.Channel.GetStatusAsync(tamaID);
+        }
+        
+        public int SecTillAction(int tamaID) {
+            return base.Channel.SecTillAction(tamaID);
+        }
+        
+        public System.Threading.Tasks.Task<int> SecTillActionAsync(int tamaID) {
+            return base.Channel.SecTillActionAsync(tamaID);
         }
     }
 }

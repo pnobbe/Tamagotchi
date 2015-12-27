@@ -86,7 +86,7 @@ input.cmn-toggle-round + label {
     padding: 2px;
     width: 60px;
     height: 30px;
-    background-color: #dddddd;
+    background-color: #3948AB;
     -webkit-border-radius: 60px;
     -moz-border-radius: 60px;
     -ms-border-radius: 60px;
@@ -98,6 +98,7 @@ input.cmn-toggle-round + label {
 }
 
     input.cmn-toggle-round + label:before, input.cmn-toggle-round + label:after {
+        background-color: white;
         display: block;
         position: absolute;
         top: 1px;

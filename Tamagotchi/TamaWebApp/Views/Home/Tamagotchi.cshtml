@@ -8,8 +8,7 @@
         <div class="box">
             <div class="text-center">
                 <div class="col-lg-12">
-                    <iframe id="Cooldown" allowTransparency="true" frameborder="0" width="382" height="67"></iframe>
-                    <hr />
+                    <p id="timer">Klaar voor de volgende actie!</p>
                     <table class="table">
                         <th>Status</th>
                         <th>Waarde</th>
@@ -66,10 +65,6 @@
     </div>
 </div>
 <script>
-    $(document).ready(function () {
-        GetCooldown(@Model.Id);
-    });
-
     function GetCooldown(inputid) {
         $.ajax({
             type: "GET",
@@ -79,11 +74,31 @@
             dataType: "json",
             cache: false,
             success: function (msg) {
-                    $("#Cooldown").attr("src", "http://free.timeanddate.com/countdown/i4zxrl1c/n1310/cf12/cm1/cu4/ct4/cs1/ca0/co1/cr0/ss0/cac555/cpc090/pct/tcfff/fs100/szw448/szh189/tatVolgende%20actie%20beschikbaar%20in%3A/tac555/tptActie%20beschikbaar!/tpc090/" + msg.status);
+                SetTime(msg.status);
             },
             error: function (e) {
-                alert(e.status)
+                alert(e.status + " failed to init countdown timer")
             }
         });
     };
+
+    function SetTime(seconds) {
+        var timerDone = document.getElementById("timer");
+        var counter = seconds;
+        var newElement = document.createElement("p");
+        newElement.innerHTML = "";
+        var id;
+
+        timerDone.parentNode.replaceChild(newElement, timerDone);
+
+        id = setInterval(function () {
+            counter--;
+            if (counter < 0) {
+                newElement.parentNode.replaceChild(timerDone, newElement);
+                clearInterval(id);
+            } else {
+                newElement.innerHTML = "Volgende actie is beschikbaar in " + counter.toString() + " seconden.";
+            }
+        }, 1000);
+    }
 </script>

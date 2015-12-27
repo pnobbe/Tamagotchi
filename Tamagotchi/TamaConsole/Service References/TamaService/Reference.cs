@@ -23,13 +23,16 @@ namespace TamaConsole.TamaService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ActionDoneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private short BoredomField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime CreationDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int FlagIDField;
+        private TamaConsole.TamaService.TamaFlags FlagsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private short HealthField;
@@ -39,6 +42,9 @@ namespace TamaConsole.TamaService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ImgIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime LastUpdateField;
@@ -59,6 +65,19 @@ namespace TamaConsole.TamaService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ActionDone {
+            get {
+                return this.ActionDoneField;
+            }
+            set {
+                if ((this.ActionDoneField.Equals(value) != true)) {
+                    this.ActionDoneField = value;
+                    this.RaisePropertyChanged("ActionDone");
+                }
             }
         }
         
@@ -89,14 +108,14 @@ namespace TamaConsole.TamaService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int FlagID {
+        public TamaConsole.TamaService.TamaFlags Flags {
             get {
-                return this.FlagIDField;
+                return this.FlagsField;
             }
             set {
-                if ((this.FlagIDField.Equals(value) != true)) {
-                    this.FlagIDField = value;
-                    this.RaisePropertyChanged("FlagID");
+                if ((object.ReferenceEquals(this.FlagsField, value) != true)) {
+                    this.FlagsField = value;
+                    this.RaisePropertyChanged("Flags");
                 }
             }
         }
@@ -136,6 +155,19 @@ namespace TamaConsole.TamaService {
                 if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ImgId {
+            get {
+                return this.ImgIdField;
+            }
+            set {
+                if ((this.ImgIdField.Equals(value) != true)) {
+                    this.ImgIdField = value;
+                    this.RaisePropertyChanged("ImgId");
                 }
             }
         }
@@ -396,16 +428,16 @@ namespace TamaConsole.TamaService {
     public interface ITamaLogic {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/GetTamagotchi", ReplyAction="http://tempuri.org/ITamaLogic/GetTamagotchiResponse")]
-        TamaConsole.TamaService.Tamagotchi GetTamagotchi(int value);
+        TamaConsole.TamaService.Tamagotchi GetTamagotchi(int TamaID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/GetTamagotchi", ReplyAction="http://tempuri.org/ITamaLogic/GetTamagotchiResponse")]
-        System.Threading.Tasks.Task<TamaConsole.TamaService.Tamagotchi> GetTamagotchiAsync(int value);
+        System.Threading.Tasks.Task<TamaConsole.TamaService.Tamagotchi> GetTamagotchiAsync(int TamaID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/AddTamagotchi", ReplyAction="http://tempuri.org/ITamaLogic/AddTamagotchiResponse")]
-        void AddTamagotchi(string name);
+        int AddTamagotchi(string name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/AddTamagotchi", ReplyAction="http://tempuri.org/ITamaLogic/AddTamagotchiResponse")]
-        System.Threading.Tasks.Task AddTamagotchiAsync(string name);
+        System.Threading.Tasks.Task<int> AddTamagotchiAsync(string name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/GetAllTamagotchi", ReplyAction="http://tempuri.org/ITamaLogic/GetAllTamagotchiResponse")]
         TamaConsole.TamaService.Tamagotchi[] GetAllTamagotchi();
@@ -413,11 +445,59 @@ namespace TamaConsole.TamaService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/GetAllTamagotchi", ReplyAction="http://tempuri.org/ITamaLogic/GetAllTamagotchiResponse")]
         System.Threading.Tasks.Task<TamaConsole.TamaService.Tamagotchi[]> GetAllTamagotchiAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/GetFlag", ReplyAction="http://tempuri.org/ITamaLogic/GetFlagResponse")]
-        TamaConsole.TamaService.TamaFlags GetFlag(int value);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/UpdateTamagochi", ReplyAction="http://tempuri.org/ITamaLogic/UpdateTamagochiResponse")]
+        bool UpdateTamagochi(int TamaID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/GetFlag", ReplyAction="http://tempuri.org/ITamaLogic/GetFlagResponse")]
-        System.Threading.Tasks.Task<TamaConsole.TamaService.TamaFlags> GetFlagAsync(int value);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/UpdateTamagochi", ReplyAction="http://tempuri.org/ITamaLogic/UpdateTamagochiResponse")]
+        System.Threading.Tasks.Task<bool> UpdateTamagochiAsync(int TamaID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/FlipFlag", ReplyAction="http://tempuri.org/ITamaLogic/FlipFlagResponse")]
+        bool FlipFlag(string name, int tamaID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/FlipFlag", ReplyAction="http://tempuri.org/ITamaLogic/FlipFlagResponse")]
+        System.Threading.Tasks.Task<bool> FlipFlagAsync(string name, int tamaID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/Eat", ReplyAction="http://tempuri.org/ITamaLogic/EatResponse")]
+        bool Eat(int TamaID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/Eat", ReplyAction="http://tempuri.org/ITamaLogic/EatResponse")]
+        System.Threading.Tasks.Task<bool> EatAsync(int TamaID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/Sleep", ReplyAction="http://tempuri.org/ITamaLogic/SleepResponse")]
+        bool Sleep(int TamaID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/Sleep", ReplyAction="http://tempuri.org/ITamaLogic/SleepResponse")]
+        System.Threading.Tasks.Task<bool> SleepAsync(int TamaID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/Play", ReplyAction="http://tempuri.org/ITamaLogic/PlayResponse")]
+        bool Play(int TamaID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/Play", ReplyAction="http://tempuri.org/ITamaLogic/PlayResponse")]
+        System.Threading.Tasks.Task<bool> PlayAsync(int TamaID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/Workout", ReplyAction="http://tempuri.org/ITamaLogic/WorkoutResponse")]
+        bool Workout(int TamaID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/Workout", ReplyAction="http://tempuri.org/ITamaLogic/WorkoutResponse")]
+        System.Threading.Tasks.Task<bool> WorkoutAsync(int TamaID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/Hug", ReplyAction="http://tempuri.org/ITamaLogic/HugResponse")]
+        bool Hug(int TamaID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/Hug", ReplyAction="http://tempuri.org/ITamaLogic/HugResponse")]
+        System.Threading.Tasks.Task<bool> HugAsync(int TamaID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/GetStatus", ReplyAction="http://tempuri.org/ITamaLogic/GetStatusResponse")]
+        string GetStatus(int tamaID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/GetStatus", ReplyAction="http://tempuri.org/ITamaLogic/GetStatusResponse")]
+        System.Threading.Tasks.Task<string> GetStatusAsync(int tamaID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/SecTillAction", ReplyAction="http://tempuri.org/ITamaLogic/SecTillActionResponse")]
+        int SecTillAction(int tamaID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/SecTillAction", ReplyAction="http://tempuri.org/ITamaLogic/SecTillActionResponse")]
+        System.Threading.Tasks.Task<int> SecTillActionAsync(int tamaID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -447,19 +527,19 @@ namespace TamaConsole.TamaService {
                 base(binding, remoteAddress) {
         }
         
-        public TamaConsole.TamaService.Tamagotchi GetTamagotchi(int value) {
-            return base.Channel.GetTamagotchi(value);
+        public TamaConsole.TamaService.Tamagotchi GetTamagotchi(int TamaID) {
+            return base.Channel.GetTamagotchi(TamaID);
         }
         
-        public System.Threading.Tasks.Task<TamaConsole.TamaService.Tamagotchi> GetTamagotchiAsync(int value) {
-            return base.Channel.GetTamagotchiAsync(value);
+        public System.Threading.Tasks.Task<TamaConsole.TamaService.Tamagotchi> GetTamagotchiAsync(int TamaID) {
+            return base.Channel.GetTamagotchiAsync(TamaID);
         }
         
-        public void AddTamagotchi(string name) {
-            base.Channel.AddTamagotchi(name);
+        public int AddTamagotchi(string name) {
+            return base.Channel.AddTamagotchi(name);
         }
         
-        public System.Threading.Tasks.Task AddTamagotchiAsync(string name) {
+        public System.Threading.Tasks.Task<int> AddTamagotchiAsync(string name) {
             return base.Channel.AddTamagotchiAsync(name);
         }
         
@@ -471,12 +551,76 @@ namespace TamaConsole.TamaService {
             return base.Channel.GetAllTamagotchiAsync();
         }
         
-        public TamaConsole.TamaService.TamaFlags GetFlag(int value) {
-            return base.Channel.GetFlag(value);
+        public bool UpdateTamagochi(int TamaID) {
+            return base.Channel.UpdateTamagochi(TamaID);
         }
         
-        public System.Threading.Tasks.Task<TamaConsole.TamaService.TamaFlags> GetFlagAsync(int value) {
-            return base.Channel.GetFlagAsync(value);
+        public System.Threading.Tasks.Task<bool> UpdateTamagochiAsync(int TamaID) {
+            return base.Channel.UpdateTamagochiAsync(TamaID);
+        }
+        
+        public bool FlipFlag(string name, int tamaID) {
+            return base.Channel.FlipFlag(name, tamaID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> FlipFlagAsync(string name, int tamaID) {
+            return base.Channel.FlipFlagAsync(name, tamaID);
+        }
+        
+        public bool Eat(int TamaID) {
+            return base.Channel.Eat(TamaID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> EatAsync(int TamaID) {
+            return base.Channel.EatAsync(TamaID);
+        }
+        
+        public bool Sleep(int TamaID) {
+            return base.Channel.Sleep(TamaID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> SleepAsync(int TamaID) {
+            return base.Channel.SleepAsync(TamaID);
+        }
+        
+        public bool Play(int TamaID) {
+            return base.Channel.Play(TamaID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> PlayAsync(int TamaID) {
+            return base.Channel.PlayAsync(TamaID);
+        }
+        
+        public bool Workout(int TamaID) {
+            return base.Channel.Workout(TamaID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> WorkoutAsync(int TamaID) {
+            return base.Channel.WorkoutAsync(TamaID);
+        }
+        
+        public bool Hug(int TamaID) {
+            return base.Channel.Hug(TamaID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> HugAsync(int TamaID) {
+            return base.Channel.HugAsync(TamaID);
+        }
+        
+        public string GetStatus(int tamaID) {
+            return base.Channel.GetStatus(tamaID);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetStatusAsync(int tamaID) {
+            return base.Channel.GetStatusAsync(tamaID);
+        }
+        
+        public int SecTillAction(int tamaID) {
+            return base.Channel.SecTillAction(tamaID);
+        }
+        
+        public System.Threading.Tasks.Task<int> SecTillActionAsync(int tamaID) {
+            return base.Channel.SecTillActionAsync(tamaID);
         }
     }
 }
