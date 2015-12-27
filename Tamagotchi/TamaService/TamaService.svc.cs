@@ -306,7 +306,7 @@ namespace TamaService
                 return "Dead";
 
             // Sleeping?
-            if (tama.lastAction.Equals("Sleep"))
+            if (!(tama.lastAction == null) && tama.lastAction.Equals("Sleep"))
             {
                 if (SecTillAction(tama.Id) > 0)
                     return "Sleeping";
