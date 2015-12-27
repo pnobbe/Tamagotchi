@@ -329,12 +329,13 @@ namespace TamaService
             }
         }
 
-        public string TimeTillAction(int tamaID)
+        public int SecTillAction(int tamaID)
         {
             Tamagotchi tama = GetTamagotchi(tamaID);
 
-            string inp = tama.ActionDone.ToString("yyyy-MM-ddTHH:mm:ssZ");
-            return "iso" + inp.Substring(0, inp.Length - 1); 
+            TimeSpan d = tama.ActionDone - Tamas.RepoTime();
+
+            return d.Seconds;
         }
     }
 }
