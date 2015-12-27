@@ -20,6 +20,7 @@
                                 @Html.DisplayFor(model => model.Health)
                             </td>
                             <td>
+                                @Html.ActionLink("Trainen", "Workout", "Tamagotchi", new { Id = Model.Id }, new { @class = "button-link" })
                             </td>
                         </tr>
                         <tr class="h3">
@@ -53,6 +54,7 @@
                             </td>
                             <td>
                                 @Html.ActionLink("Knuffelen", "Hug", "Tamagotchi", new { Id = Model.Id }, new { @class = "button-link" })
+                                @Html.ActionLink("Spelen", "Play", "Tamagotchi", new { Id = Model.Id }, new { @class = "button-link" })
                             </td>
                         </tr>
                     </table>

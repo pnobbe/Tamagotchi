@@ -310,9 +310,6 @@
     <None Include="Service References\TamaService\TamaService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Service References\TamaService\TamaWebApp.TamaService.TamaFlags.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\TamaService\TamaWebApp.TamaService.Tamagotchi.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>

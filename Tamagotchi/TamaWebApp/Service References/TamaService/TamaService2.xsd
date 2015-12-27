@@ -41,20 +41,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetFlag">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="FlagID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetFlagResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/TamaService" minOccurs="0" name="GetFlagResult" nillable="true" type="q3:TamaFlags" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="UpdateTamagochi">
     <xs:complexType>
       <xs:sequence>

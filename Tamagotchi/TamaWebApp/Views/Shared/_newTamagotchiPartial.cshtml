@@ -9,7 +9,7 @@
         <div class="text-center">
             Heb je nog geen <strong>Tamagotchi</strong>? Vul een naam in en maak er een aan!
             <br />
-            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @maxlength="20" } })
             <button type="submit" value="Add" class="button-default">Toevoegen</button>
             <br />
             @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })

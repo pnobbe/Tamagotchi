@@ -5,7 +5,7 @@
       <xs:element minOccurs="0" name="ActionDone" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Boredom" type="xs:short" />
       <xs:element minOccurs="0" name="CreationData" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="FlagID" type="xs:int" />
+      <xs:element minOccurs="0" name="Flags" nillable="true" type="tns:TamaFlags" />
       <xs:element minOccurs="0" name="Health" type="xs:short" />
       <xs:element minOccurs="0" name="Hunger" type="xs:short" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
@@ -17,12 +17,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Tamagotchi" nillable="true" type="tns:Tamagotchi" />
-  <xs:complexType name="ArrayOfTamagotchi">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tamagotchi" nillable="true" type="tns:Tamagotchi" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfTamagotchi" nillable="true" type="tns:ArrayOfTamagotchi" />
   <xs:complexType name="TamaFlags">
     <xs:sequence>
       <xs:element minOccurs="0" name="Crazy" type="xs:boolean" />
@@ -38,4 +32,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TamaFlags" nillable="true" type="tns:TamaFlags" />
+  <xs:complexType name="ArrayOfTamagotchi">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tamagotchi" nillable="true" type="tns:Tamagotchi" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTamagotchi" nillable="true" type="tns:ArrayOfTamagotchi" />
 </xs:schema>
