@@ -16,7 +16,6 @@ namespace TamaService
     {
         static DatabaseContext x = new DatabaseContext();
         ITamaRepository Tamas = new DBTamaRepository(x);
-        IFlagRepository Flags = new DBFlagRepository(x);
 
         public int AddTamagotchi(string name)
         {
@@ -25,7 +24,6 @@ namespace TamaService
             DateTime creationDate = Tamas.RepoTime();
 
             TamaFlags tf = new TamaFlags();
-
             Tamagotchi tama = new Tamagotchi();
             tama.Name = name;
             tama.CreationData = creationDate;
@@ -75,46 +73,43 @@ namespace TamaService
 
             if (tama == null)
                 return false;
-
-                TamaFlags flags = tama.Flags;
-
                 switch (name)
                 {
                     case "Crazy":
-                        flags.Crazy = !flags.Crazy;
-                        Flags.update(flags);
+                        tama.Flags.Crazy = !tama.Flags.Crazy;
+                        Tamas.update(tama);
                         return true;
                     case "Honger":
-                        flags.Honger = !flags.Honger;
-                        Flags.update(flags);
+                        tama.Flags.Honger = !tama.Flags.Honger;
+                        Tamas.update(tama);
                         return true;
                     case "Isolatie":
-                        flags.Isolatie = !flags.Isolatie;
-                        Flags.update(flags);
+                        tama.Flags.Isolatie = !tama.Flags.Isolatie;
+                        Tamas.update(tama);
                         return true;
                     case "Munchies":
-                        flags.Munchies = !flags.Munchies;
-                        Flags.update(flags);
+                        tama.Flags.Munchies = !tama.Flags.Munchies;
+                        Tamas.update(tama);
                         return true;
                     case "Slaaptekort":
-                        flags.Slaaptekort = !flags.Slaaptekort;
-                        Flags.update(flags);
+                        tama.Flags.Slaaptekort = !tama.Flags.Slaaptekort;
+                        Tamas.update(tama);
                         return true;
                     case "Topatleet":
-                        flags.Topatleet = !flags.Topatleet;
-                        Flags.update(flags);
+                        tama.Flags.Topatleet = !tama.Flags.Topatleet;
+                        Tamas.update(tama);
                         return true;
                     case "Vermoeidheid":
-                        flags.Vermoeidheid = !flags.Vermoeidheid;
-                        Flags.update(flags);
+                        tama.Flags.Vermoeidheid = !tama.Flags.Vermoeidheid;
+                        Tamas.update(tama);
                         return true;
                     case "Verveling":
-                        flags.Verveling = !flags.Verveling;
-                        Flags.update(flags);
+                        tama.Flags.Verveling = !tama.Flags.Verveling;
+                        Tamas.update(tama);
                         return true;
                     case "Voedseltekort":
-                        flags.Voedseltekort = !flags.Voedseltekort;
-                        Flags.update(flags);
+                        tama.Flags.Voedseltekort = !tama.Flags.Voedseltekort;
+                        Tamas.update(tama);
                         return true;
                 };
 
@@ -245,7 +240,6 @@ namespace TamaService
             if (tama == null || tama.isDead)
                 return false;
 
-            int i = DateTime.Compare(time, tama.ActionDone);
             return (DateTime.Compare(time, tama.ActionDone) >= 0);
         }
 

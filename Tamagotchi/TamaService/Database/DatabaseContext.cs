@@ -8,8 +8,8 @@ namespace TamaService
         {
         }
 
-        public DbSet<Tamagotchi> Tamagotchis { get; set; }
+        public DbSet<DBTamagotchi> Tamagotchis { get; set; }
 
-        public DbSet<TamaFlags> Tamaflags { get; set; }
+        public DbSet<DBTamaFlags> Tamaflags { get; set; }
     }
 }
