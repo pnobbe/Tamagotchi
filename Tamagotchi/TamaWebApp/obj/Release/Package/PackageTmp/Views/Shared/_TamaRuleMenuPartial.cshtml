@@ -1,0 +1,148 @@
+﻿@model TamaWebApp.TamaService.Tamagotchi
+
+<div id="sidebar">
+    <!--Sidebar content-->
+    <div class="text-center header-text"><strong>@Model.Name's Instellingen</strong></div>
+    <hr style="    border: 2px outset #45e287;" />
+    <div id="sidebar-content">
+        <div class="accordion" id="accordianParent">
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <div class="text-center">
+                        <div class="switch">
+                            <p>
+                                Crazy
+                                <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox" onclick="FlipFlag(@Model.Id, 'Crazy', 'cmn-toggle-1');" />
+                                <label for="cmn-toggle-1"></label>
+                                <a class="toggles" title="Als je gezondheid 100 heeft bereikt, zal elke actie die uitgevoerd wordt een 50% kans geven dat de Tamagotchi dood gaat."><i class="glyphicon glyphicon-info-sign"></i></a>
+                            </p>
+                        </div>
+                        <div class="switch">
+                            <p>
+                                Munchies
+                                <input id="cmn-toggle-2" class="cmn-toggle cmn-toggle-round" type="checkbox" onclick="FlipFlag(@Model.Id, 'Munchies', 'cmn-toggle-2');" />
+                                <label for="cmn-toggle-2"></label>
+                                <a class="toggles" title="Als je verveeldheid hoger is dan 80, zal je honger 2x zo snel stijgen."><i class="glyphicon glyphicon-info-sign"></i></a>
+                            </p>
+                        </div>
+                        <div class="switch">
+                            <p>
+                                Vermoeidheid
+                                <input id="cmn-toggle-3" class="cmn-toggle cmn-toggle-round" type="checkbox" onclick="FlipFlag(@Model.Id, 'Vermoeidheid', 'cmn-toggle-3');" />
+                                <label for="cmn-toggle-3"></label>
+                                <a class="toggles" title="Je vermoeidheid stijgt elk uur met +5."><i class="glyphicon glyphicon-info-sign"></i></a>
+                            </p>
+                        </div>
+                        <div class="switch">
+                            <p>
+                                Honger
+                                <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round" type="checkbox" onclick="FlipFlag(@Model.Id, 'Honger', 'cmn-toggle-4');" />
+                                <label for="cmn-toggle-4"></label>
+                                <a class="toggles" title="Je honger stijgt elk uur met +5. (+10 als 'Munchies' aan staat)"><i class="glyphicon glyphicon-info-sign"></i></a>
+                            </p>
+                        </div>
+                        <div class="switch">
+                            <p>
+                                Isolatie
+                                <input id="cmn-toggle-5" class="cmn-toggle cmn-toggle-round" type="checkbox" onclick="FlipFlag(@Model.Id, 'Isolatie', 'cmn-toggle-5');" />
+                                <label for="cmn-toggle-5"></label>
+                                <a class="toggles" title="Je gezondheid stijgt elk uur met +5."><i class="glyphicon glyphicon-info-sign"></i></a>
+                            </p>
+                        </div>
+                        <div class="switch">
+                            <p>
+                                Slaaptekort
+                                <input id="cmn-toggle-6" class="cmn-toggle cmn-toggle-round" type="checkbox" onclick="FlipFlag(@Model.Id, 'Slaaptekort', 'cmn-toggle-6');" />
+                                <label for="cmn-toggle-6"></label>
+                                <a class="toggles" title="Als slaaptekort 100 bereikt zal je sterven."><i class="glyphicon glyphicon-info-sign"></i></a>
+                            </p>
+                        </div>
+                        <div class="switch">
+                            <p>
+                                Voedseltekort
+                                <input id="cmn-toggle-7" class="cmn-toggle cmn-toggle-round" type="checkbox" onclick="FlipFlag(@Model.Id, 'Voedseltekort', 'cmn-toggle-7');" />
+                                <label for="cmn-toggle-7"></label>
+                                <a class="toggles" title="Als honger 100 bereikt zal je sterven."><i class="glyphicon glyphicon-info-sign"></i></a>
+                            </p>
+                        </div>
+                        <div class="switch">
+                            <p>
+                                Topatleet
+                                <input id="cmn-toggle-8" class="cmn-toggle cmn-toggle-round" type="checkbox" onclick="FlipFlag(@Model.Id, 'Topatleet', 'cmn-toggle-8');" />
+                                <label for="cmn-toggle-8"></label>
+                                <a class="toggles" title="Als je gezondheid groter is dan 20 ben je onsterfelijk!"><i class="glyphicon glyphicon-info-sign"></i></a>
+                            </p>
+                        </div>
+                        <div class="switch">
+                            <p>
+                                Verveling
+                                <input id="cmn-toggle-9" class="cmn-toggle cmn-toggle-round" type="checkbox" onclick="FlipFlag(@Model.Id, 'Verveling', 'cmn-toggle-9');" />
+                                <label for="cmn-toggle-9"></label>
+                                <a class="toggles" title="Je verveeldheid zal elk uur stijgen met +15."><i class="glyphicon glyphicon-info-sign"></i></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="toggleSidebar" class="toggles"><i class="glyphicon glyphicon-cog menuToggle"></i></a>
+</div>
+
+<script>
+
+    function SetFlags() {
+        if ("@Model.Flags.Crazy" == "True") {
+            document.getElementById("cmn-toggle-1").checked = true;
+        }
+        if ("@Model.Flags.Munchies" == "True") {
+            document.getElementById("cmn-toggle-2").checked = true;
+        }
+        if ("@Model.Flags.Vermoeidheid" == "True") {
+            document.getElementById("cmn-toggle-3").checked = true;
+        }
+        if ("@Model.Flags.Honger" == "True") {
+            document.getElementById("cmn-toggle-4").checked = true;
+        }
+        if ("@Model.Flags.Isolatie" == "True") {
+            document.getElementById("cmn-toggle-5").checked = true;
+        }
+        if ("@Model.Flags.Slaaptekort" == "True") {
+            document.getElementById("cmn-toggle-6").checked = true;
+        }
+        if ("@Model.Flags.Voedseltekort" == "True") {
+            document.getElementById("cmn-toggle-7").checked = true;
+        }
+        if ("@Model.Flags.Topatleet" == "True") {
+            document.getElementById("cmn-toggle-8").checked = true;
+        }
+        if ("@Model.Flags.Verveling" == "True") {
+            document.getElementById("cmn-toggle-9").checked = true;
+        }
+    }
+
+    function FlipFlag(inputid, inputflag, documentid) {
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("FlipFlag", "Tamagotchi")',
+            data: { id: inputid, flag: inputflag },
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            cache: false,
+            success: function (msg)
+            {
+                document.getElementById("errorBox").hidden = true;
+                if (msg.status != "Correct") {
+                    var elem = document.getElementById(documentid);
+                    elem.checked = !elem.checked;
+                    document.getElementById("errorBox").hidden = false;
+                }
+            },
+            error: function (e) {
+                var elem = document.getElementById(documentid);
+                elem.checked = !elem.checked;
+                document.getElementById("errorBox").hidden = false;
+            }
+        });
+    };
+</script>

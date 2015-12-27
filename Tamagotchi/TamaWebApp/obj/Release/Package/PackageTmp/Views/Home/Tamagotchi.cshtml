@@ -1,0 +1,129 @@
+﻿@model TamaWebApp.TamaService.Tamagotchi
+
+<p id="errorBox" class="text-center" style="color: red;" hidden>Er is een probleem ontstaan bij het verbinden met de server. Probeer het later nog eens!</p>
+<div class="container">
+    @Html.Partial("_TamaShowPartial")
+    @Html.Partial("_TamaRuleMenuPartial")
+    <div class="row">
+        <div class="box">
+            <div class="text-center">
+                <div class="col-lg-12">
+                    <p id="timer">Klaar voor de volgende actie!</p>
+                    <div class="col-lg-5">
+                        <div class="stats">
+                            <p><strong>Gezondheid</strong></p>
+                            <div class="progress progress-striped">
+                                <div class="progress-bar progress-bar-green" role="progressbar" aria-valuenow="@Model.Health" aria-valuemin="0" aria-valuemax="100" style="width: @Model.Health%;">
+                                    <span style="color: black;">@Model.Health%</span>
+                                </div>
+                            </div>
+                            <p>
+                                @Html.ActionLink("Trainen", "Workout", "Tamagotchi", new { Id = Model.Id }, new { @class = "button-link", @id = "workButton" })
+                                <label> </label>
+                                @Html.ActionLink("Knuffelen", "Hug", "Tamagotchi", new { Id = Model.Id }, new { @class = "button-link", @id = "knufButton" })
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <div class="stats">
+                            <p><strong>Honger</strong></p>
+                            <div class="progress progress-striped">
+                                <div class="progress-bar progress-bar-orange" role="progressbar" aria-valuenow="@Model.Hunger" aria-valuemin="0" aria-valuemax="100" style="width: @Model.Hunger%;">
+                                    <span style="color: black;">@Model.Hunger%</span>
+                                </div>
+                            </div>
+                            <p>@Html.ActionLink("Eten", "Eat", "Tamagotchi", new { Id = Model.Id }, new { @class = "button-link", @id = "eetButton" })</p>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-5">
+                        <div class="stats">
+                            <p><strong>Vermoeidheid</strong></p>
+                            <div class="progress progress-striped">
+                                <div class="progress-bar progress-bar-blue" role="progressbar" aria-valuenow="@Model.Sleep" aria-valuemin="0" aria-valuemax="100" style="width: @Model.Sleep%;">
+                                    <span style="color: black;">@Model.Sleep%</span>
+                                </div>
+                            </div>
+                            <p>@Html.ActionLink("Slapen", "Sleep", "Tamagotchi", new { Id = Model.Id }, new { @class = "button-link", @id = "slaapButton" })</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <div class="stats">
+                            <p><strong>Verveeldheid</strong></p>
+
+                            <div class="progress progress-striped">
+                                <div class="progress-bar progress-bar-grey" role="progressbar" aria-valuenow="@Model.Boredom" aria-valuemin="0" aria-valuemax="100" style="width: @Model.Boredom%;">
+                                    <span style="color: black;">@Model.Boredom%</span>
+                                </div>
+                            </div>
+                            <p>
+                                @Html.ActionLink("Spelen", "Play", "Tamagotchi", new { Id = Model.Id }, new { @class = "button-link", @id = "spelButton" })
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        GetState(@Model.Id);
+        GetCooldown(@Model.Id);
+        SetFlags()
+    });
+
+    function GetCooldown(inputid) {
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("GetCooldown", "Tamagotchi")',
+            data: { id: inputid },
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            cache: false,
+            async: false,
+            success: function (msg) {
+                SetTime(msg.status);
+            },
+            error: function (e) {
+                alert(e.status + " failed to init countdown timer")
+            }
+        });
+    };
+
+    function SetTime(seconds) {
+        var timerDone = document.getElementById("timer");
+        var counter = seconds;
+        var newElement = document.createElement("p");
+        newElement.innerHTML = "";
+        var id;
+
+        document.getElementById("workButton").hidden = true;
+        document.getElementById("knufButton").hidden = true;
+        document.getElementById("spelButton").hidden = true;
+        document.getElementById("eetButton").hidden = true;
+        document.getElementById("slaapButton").hidden = true;
+
+        timerDone.parentNode.replaceChild(newElement, timerDone);
+
+        id = setInterval(function () {
+            counter--;
+            if (counter < 0) {
+                newElement.parentNode.replaceChild(timerDone, newElement);
+                clearInterval(id);
+                document.getElementById("workButton").hidden = false;
+                document.getElementById("knufButton").hidden = false;
+                document.getElementById("spelButton").hidden = false;
+                document.getElementById("eetButton").hidden = false;
+                document.getElementById("slaapButton").hidden = false;
+
+            } else {
+
+                newElement.innerHTML = "Volgende actie is beschikbaar in " + counter.toString() + " seconden.";
+            }
+        }, 1000);
+    }
+</script>

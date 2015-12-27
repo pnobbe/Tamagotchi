@@ -25,19 +25,11 @@ namespace TamaWebApp.Controllers
             TamaLogicClient service = new TamaLogicClient();
             var value = service.GetTamagotchi(t.Id);
             service.Close();
-            return View(value);
-        }
-
-        [HttpGet, ActionName("Eat")]
-        public ActionResult Eat([Bind(Include = "Id")] Tamagotchi t)
-        {
-            TamaLogicClient service = new TamaLogicClient();
-            if (ModelState.IsValid)
+            if (value != null)
             {
-                service.Eat(t.Id);
+                return View(value);
             }
-            service.Close();
-            return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
+            return RedirectToAction("Index");
         }
 
     }

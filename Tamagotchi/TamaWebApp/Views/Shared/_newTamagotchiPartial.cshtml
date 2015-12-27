@@ -1,6 +1,6 @@
 ﻿@model TamaWebApp.TamaService.Tamagotchi
 
-@using (Html.BeginForm("Add", "Tamagotchi"))
+@using (Html.BeginForm("Add", "Tamagotchi", FormMethod.Post, new { id = "validateTarget" }))
 {
     @Html.AntiForgeryToken()
 
@@ -8,31 +8,24 @@
         <div class="text-center">
             Heb je nog geen <strong>Tamagotchi</strong>? Vul een naam in en maak er een aan!
             <br />
-            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @maxlength="20" } })
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @maxlength = "20", @id = "validateSource"} })
             <button type="submit" value="Add" class="button-default">Toevoegen</button>
             <br />
-            @Html.ValidationMessageFor(model => model.Name)
+            <p id="inputError" style="color: red;" hidden>Vul a.u.b eerst een naam in!</p>
         </div>
     </div>
 }
 <script>
-    function CheckName(seconds) {
-        var elem = document.getElementById
-        var counter = seconds;
-        var newElement = document.createElement("p");
-        newElement.innerHTML = "";
-        var id;
-
-        timerDone.parentNode.replaceChild(newElement, timerDone);
-
-        id = setInterval(function () {
-            counter--;
-            if (counter < 0) {
-                newElement.parentNode.replaceChild(timerDone, newElement);
-                clearInterval(id);
-            } else {
-                newElement.innerHTML = "Volgende actie is beschikbaar in " + counter.toString() + " seconden.";
+    $(function () {
+        $("#validateTarget").submit(function (event) {
+            event.preventDefault();
+            if (document.getElementById("validateSource").value.length > 0) {
+                document.getElementById("inputError").hidden = true;
+                document.getElementById("validateTarget").submit();
             }
-        }, 1000);
-    }
+            else {
+                document.getElementById("inputError").hidden = false;
+            }
+        });
+    });
 </script>

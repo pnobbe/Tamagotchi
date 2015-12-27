@@ -1,0 +1,31 @@
+﻿@model TamaWebApp.TamaService.Tamagotchi
+
+@using (Html.BeginForm("Add", "Tamagotchi", FormMethod.Post, new { id = "validateTarget" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="newTama">
+        <div class="text-center">
+            Heb je nog geen <strong>Tamagotchi</strong>? Vul een naam in en maak er een aan!
+            <br />
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @maxlength = "20", @id = "validateSource"} })
+            <button type="submit" value="Add" class="button-default">Toevoegen</button>
+            <br />
+            <p id="inputError" style="color: red;" hidden>Vul a.u.b eerst een naam in!</p>
+        </div>
+    </div>
+}
+<script>
+    $(function () {
+        $("#validateTarget").submit(function (event) {
+            event.preventDefault();
+            if (document.getElementById("validateSource").value.length > 0) {
+                document.getElementById("inputError").hidden = true;
+                document.getElementById("validateTarget").submit();
+            }
+            else {
+                document.getElementById("inputError").hidden = false;
+            }
+        });
+    });
+</script>
