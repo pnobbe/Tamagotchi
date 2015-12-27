@@ -47,5 +47,8 @@ namespace TamaService
 
         [DataMember]
         public DateTime ActionDone { get; set; }
+
+
+        public int HoursPassed { get; set; }
     }
 }

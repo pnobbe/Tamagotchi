@@ -16,7 +16,7 @@ namespace TamaService
     {
         static DatabaseContext x = new DatabaseContext();
         ITamaRepository Tamas = new DBTamaRepository(x);
-
+        HelperFactory ninject = new HelperFactory();
         public int AddTamagotchi(string name)
         {
 
@@ -42,6 +42,16 @@ namespace TamaService
             // TODO
             // UPDATE TAMA'S
 
+            List<Tamagotchi> tamas =  Tamas.getList();
+
+            foreach(Tamagotchi t in tamas)
+            {
+                Tamagotchi x = t;
+                ninject.Load(x, false);
+                x = ninject.Updater.update(x, Tamas);
+                Tamas.update(x);
+            }
+
             return Tamas.getList();
         }
 
@@ -51,9 +61,10 @@ namespace TamaService
             {
                 Tamagotchi tama = Tamas.getList().First(t => t.Id == value);
 
-                // TODO
                 // Update Tama
-
+                ninject.Load();
+                tama = ninject.Updater.update(tama, Tamas);
+                Tamas.update(tama);
 
                 return tama;
 
@@ -118,6 +129,7 @@ namespace TamaService
             }
         
 
+        // Only used in TestService
         public bool UpdateTamagochi(int value)
         {
             Tamagotchi tama = GetTamagotchi(value);
@@ -125,7 +137,9 @@ namespace TamaService
             if (tama == null)
                 return false;
 
-            List<ISpelRegel> x = new List<ISpelRegel>();
+            ninject.Load(tama, false);
+            tama = ninject.Updater.update(tama, Tamas);
+            Tamas.update(tama);
 
             return false;
         }
@@ -140,6 +154,15 @@ namespace TamaService
             DateTime time;
             if (canExecute(tama, out time))
             {
+
+                ninject.Load(tama, true);
+                tama = ninject.Updater.update(tama, Tamas);
+                Tamas.update(tama);
+
+                if (!canExecute(tama, out time))
+                    return false;
+
+
                 tama.Hunger = 0;
                 time = time.AddSeconds(30);
                 tama.ActionDone = time;
@@ -159,6 +182,13 @@ namespace TamaService
             DateTime time;
             if (canExecute(tama, out time))
             {
+                ninject.Load(tama, true);
+                tama = ninject.Updater.update(tama, Tamas);
+                Tamas.update(tama);
+
+                if (!canExecute(tama, out time))
+                    return false;
+
                 tama.Sleep = 0;
                 time = time.AddHours(2);
                 tama.ActionDone = time;
@@ -178,6 +208,13 @@ namespace TamaService
             DateTime time;
             if (canExecute(tama, out time))
             {
+                ninject.Load(tama, true);
+                tama = ninject.Updater.update(tama, Tamas);
+                Tamas.update(tama);
+
+                if (!canExecute(tama, out time))
+                    return false;
+
                 tama.Boredom -= 10;
                 if (tama.Boredom < 0)
                     tama.Boredom = 0;
@@ -200,6 +237,13 @@ namespace TamaService
             DateTime time;
             if (canExecute(tama, out time))
             {
+                ninject.Load(tama, true);
+                tama = ninject.Updater.update(tama, Tamas);
+                Tamas.update(tama);
+
+                if (!canExecute(tama, out time))
+                    return false;
+
                 tama.Health -= 5;
                 if (tama.Health < 0)
                     tama.Health = 0;
@@ -222,6 +266,14 @@ namespace TamaService
             DateTime time;
             if (canExecute(tama, out time))
             {
+                ninject.Load(tama, true);
+                tama = ninject.Updater.update(tama, Tamas);
+                Tamas.update(tama);
+
+                if (!canExecute(tama, out time))
+                    return false;
+   
+
                 tama.Health -= 10;
                 if (tama.Health < 0)
                     tama.Health = 0;

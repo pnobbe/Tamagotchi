@@ -10,7 +10,9 @@ namespace TamaService.Domain.Models
     {
         public Tamagotchi ExecuteSpelregel(Tamagotchi t)
         {
-            throw new NotImplementedException();
+            if (t.Health < 20)
+                t.isDead = false;
+            return t;
         }
     }
 }

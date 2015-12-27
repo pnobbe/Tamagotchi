@@ -10,8 +10,8 @@ namespace TamaService.Domain.Models
     {
         public Tamagotchi ExecuteSpelregel(Tamagotchi t)
         {
-            int aantalUrenVerstreken = 3;
-            t.Sleep += (short)(aantalUrenVerstreken * 5);
+
+            t.Sleep += (short)(t.HoursPassed * 5);
             if (t.Sleep > 100)
             {
                 t.Sleep = 100;

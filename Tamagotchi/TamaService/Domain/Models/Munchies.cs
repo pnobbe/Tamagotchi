@@ -10,7 +10,15 @@ namespace TamaService.Domain.Models
     {
         public Tamagotchi ExecuteSpelregel(Tamagotchi t)
         {
-            throw new NotImplementedException();
+           if(t.Flags.Honger)
+           {
+               if (t.Boredom > 80)
+               {
+                   Honger h = new Honger();
+                   return h.ExecuteSpelregel(t);
+               }
+           }
+           return t;
         }
     }
 }

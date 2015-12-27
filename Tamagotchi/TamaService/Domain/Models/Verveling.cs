@@ -10,7 +10,12 @@ namespace TamaService.Domain.Models
     {
         public Tamagotchi ExecuteSpelregel(Tamagotchi t)
         {
-            throw new NotImplementedException();
+            t.Boredom += (short)(t.HoursPassed * 15);
+            if (t.Boredom > 100)
+            {
+                t.Boredom = 100;
+            }
+            return t;
         }
     }
 }
