@@ -92,7 +92,8 @@
   <ItemGroup>
     <Compile Include="Database\DatabaseContext.cs" />
     <Compile Include="Database\DBTamaRepository.cs" />
-    <Compile Include="Database\DBFlagRepository.cs" />
+    <Compile Include="Database\DBTamaFlags.cs" />
+    <Compile Include="Database\DBTamagotchi.cs" />
     <Compile Include="Domain\Interfaces\ISpelRegel.cs" />
     <Compile Include="Domain\Models\Crazy.cs" />
     <Compile Include="Domain\Models\Honger.cs" />
