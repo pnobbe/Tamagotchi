@@ -346,7 +346,7 @@ namespace TamaService
 
             TimeSpan d = tama.ActionDone - Tamas.RepoTime();
 
-            return d.Seconds;
+            return (int)d.TotalSeconds;
         }
     }
 }
