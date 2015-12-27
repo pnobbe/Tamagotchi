@@ -50,5 +50,7 @@ namespace TamaService
 
 
         public int HoursPassed { get; set; }
+
+        public string lastAction { get; set; }
     }
 }

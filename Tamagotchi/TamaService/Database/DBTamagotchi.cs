@@ -35,5 +35,7 @@ namespace TamaService
 
         public int ImgId { get; set; }
         public DateTime ActionDone { get; set; }
+
+        public string LastAction { get; set; }
     }
 }
