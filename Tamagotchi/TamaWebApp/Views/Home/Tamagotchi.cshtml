@@ -18,8 +18,8 @@
                                 </div>
                             </div>
                             <p>
-                                @Html.ActionLink("Trainen", "Workout", "Tamagotchi", new { Id = Model.Id }, new { @class = "button-link spacing", @id = "workButton" })
-                                @Html.ActionLink("Knuffelen", "Hug", "Tamagotchi", new { Id = Model.Id }, new { @class = "button-link", @id = "knufButton" })
+                                @Html.ActionLink("Trainen", "Workout", "Tamagotchi", new { Id = Model.Id }, new { @class = "button-link spacing", @id = "workButton", @title = "Train samen tot je erbij neervalt! Resultaat: Verlaagd je gezondheidsniveau met 5. Cooldown: 1 minuut" })
+                                @Html.ActionLink("Knuffelen", "Hug", "Tamagotchi", new { Id = Model.Id }, new { @class = "button-link", @id = "knufButton", @title = "Geef je Tamagotchi een knuffel! Resultaat: Verlaagd je gezondheidsniveau met 10. Cooldown: 1 minuut" })
                             </p>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                                     <span style="color: black;">@Model.Hunger%</span>
                                 </div>
                             </div>
-                            <p>@Html.ActionLink("Eten", "Eat", "Tamagotchi", new { Id = Model.Id }, new { @class = "button-link", @id = "eetButton" })</p>
+                            <p>@Html.ActionLink("Eten", "Eat", "Tamagotchi", new { Id = Model.Id }, new { @class = "button-link", @id = "eetButton", @title = "Eet gezellig wat met je Tamagotchi. Resultaat: Zet je honger niveau op 0. Cooldown: 30 seconden" })</p>
                         </div>
 
                     </div>
@@ -45,7 +45,7 @@
                                     <span style="color: black;">@Model.Sleep%</span>
                                 </div>
                             </div>
-                            <p>@Html.ActionLink("Slapen", "Sleep", "Tamagotchi", new { Id = Model.Id }, new { @class = "button-link", @id = "slaapButton" })</p>
+                            <p>@Html.ActionLink("Slapen", "Sleep", "Tamagotchi", new { Id = Model.Id }, new { @class = "button-link", @id = "slaapButton", @title = "Doe een middag dutje! Resultaat: Zet je vermoeidheids niveau op 0. Cooldown: 2 uur" })</p>
                         </div>
                     </div>
 
@@ -59,7 +59,7 @@
                                 </div>
                             </div>
                             <p>
-                                @Html.ActionLink("Spelen", "Play", "Tamagotchi", new { Id = Model.Id }, new { @class = "button-link", @id = "spelButton" })
+                                @Html.ActionLink("Spelen", "Play", "Tamagotchi", new { Id = Model.Id }, new { @class = "button-link", @id = "spelButton", @title = "Speel gezellig een spelletje met je Tamagotchi. Resultaat: Verlaagd je verveeldheids niveau met 10. Cooldown: 30 seconden" })
                             </p>
                         </div>
                     </div>
@@ -111,7 +111,7 @@
         id = setInterval(function () {
             counter--;
             if (counter < 0) {
-                if (@Model.isDead == true) {
+                if ("@Model.isDead" == "False") {
                     newElement.parentNode.replaceChild(timerDone, newElement);
                     clearInterval(id);
                     document.getElementById("workButton").hidden = false;
