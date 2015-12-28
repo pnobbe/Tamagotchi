@@ -188,6 +188,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\background.png" />
     <Content Include="Content\img\bg2.jpg" />
     <Content Include="Content\img\sprites\10\Bored.png" />
     <Content Include="Content\img\sprites\10\Happy.png" />

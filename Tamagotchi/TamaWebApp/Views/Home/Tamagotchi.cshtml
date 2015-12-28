@@ -111,13 +111,16 @@
         id = setInterval(function () {
             counter--;
             if (counter < 0) {
-                newElement.parentNode.replaceChild(timerDone, newElement);
-                clearInterval(id);
-                document.getElementById("workButton").hidden = false;
-                document.getElementById("knufButton").hidden = false;
-                document.getElementById("spelButton").hidden = false;
-                document.getElementById("eetButton").hidden = false;
-                document.getElementById("slaapButton").hidden = false;
+                if (@Model.isDead == true) {
+                    newElement.parentNode.replaceChild(timerDone, newElement);
+                    clearInterval(id);
+                    document.getElementById("workButton").hidden = false;
+                    document.getElementById("knufButton").hidden = false;
+                    document.getElementById("spelButton").hidden = false;
+                    document.getElementById("eetButton").hidden = false;
+                    document.getElementById("slaapButton").hidden = false;
+                }
+
 
             } else {
 
