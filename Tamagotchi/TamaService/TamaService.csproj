@@ -106,7 +106,6 @@
     <Compile Include="Domain\Models\Verveling.cs" />
     <Compile Include="Domain\Models\Voedseltekort.cs" />
     <Compile Include="HelperFactory.cs" />
-    <Compile Include="Interfaces\IFlagRepository.cs" />
     <Compile Include="Interfaces\ITamaRepository.cs" />
     <Compile Include="TamaFlags.cs" />
     <Compile Include="Tamagotchi.cs" />

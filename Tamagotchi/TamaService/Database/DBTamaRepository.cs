@@ -25,14 +25,9 @@ namespace TamaService.Database
 
         public List<Tamagotchi> getList()
         {
-
-            if (_database.Tamagotchis.Count() == 0)
-            {
-
-                return new List<Tamagotchi>();
-            }
             _database.SaveChanges();
 
+            // get newest changes
             _database = new DatabaseContext();
 
             // CONVERT

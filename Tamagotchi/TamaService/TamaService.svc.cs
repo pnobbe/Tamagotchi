@@ -23,7 +23,18 @@ namespace TamaService
         {
             DateTime creationDate = Tamas.RepoTime();
 
+            // create flag
             TamaFlags tf = new TamaFlags();
+            tf.Crazy = true;
+            tf.Honger = true;
+            tf.Isolatie = true;
+            tf.Munchies = true;
+            tf.Slaaptekort = true;
+            tf.Topatleet = true;
+            tf.Vermoeidheid = true;
+            tf.Verveling = true;
+            tf.Voedseltekort = true;
+
             Tamagotchi tama = new Tamagotchi();
             tama.Name = name;
             tama.CreationData = creationDate;
