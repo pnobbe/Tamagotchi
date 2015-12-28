@@ -25,11 +25,14 @@ namespace TamaService
             TimeSpan diff2 = curr - tama.CreationData;
             tama.HoursPassed = (int)(diff2.TotalHours) - timeUsed;
 
-            // use rules
-            foreach(ISpelRegel s in _rules)
+            if (!tama.isDead)
             {
-               tama = s.ExecuteSpelregel(tama);
-               rp.update(tama);
+                // use rules
+                foreach (ISpelRegel s in _rules)
+                {
+                    tama = s.ExecuteSpelregel(tama);
+                    rp.update(tama);
+                }
             }
             tama.LastUpdate = curr;
             rp.update(tama);
