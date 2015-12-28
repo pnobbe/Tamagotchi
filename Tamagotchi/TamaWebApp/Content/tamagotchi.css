@@ -245,6 +245,10 @@ input.cmn-toggle-round:checked + label:after {
     box-shadow: 10px 0 15px 0 rgba(0,0,0,0.3);
 }
 
+.spacing {
+    margin-right: 20px;
+}
+
 #sidebar {
     z-index: 20;
     position: absolute;
