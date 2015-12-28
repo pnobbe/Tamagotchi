@@ -277,8 +277,8 @@ input.cmn-toggle-round:checked + label:after {
 }
 
 .newTama {
-    margin-bottom: 50px;
-    padding: 20px;
+    margin-bottom: 25px;
+    padding: 25px;
     border-radius: 25px;
     background: #fff;
     background: rgb(207, 252, 156);

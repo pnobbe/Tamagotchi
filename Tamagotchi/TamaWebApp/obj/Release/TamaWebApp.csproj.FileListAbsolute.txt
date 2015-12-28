@@ -64,6 +64,6 @@ E:\Tamagotchi\Tamagotchi\TamaWebApp\bin\Microsoft.Owin.Security.OAuth.xml
 E:\Tamagotchi\Tamagotchi\TamaWebApp\bin\Microsoft.Owin.Security.Google.xml
 E:\Tamagotchi\Tamagotchi\TamaWebApp\bin\Microsoft.Owin.Security.Twitter.xml
 E:\Tamagotchi\Tamagotchi\TamaWebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Tamagotchi\Tamagotchi\TamaWebApp\obj\Release\TamaWebApp.csprojResolveAssemblyReference.cache
 E:\Tamagotchi\Tamagotchi\TamaWebApp\obj\Release\TamaWebApp.dll
 E:\Tamagotchi\Tamagotchi\TamaWebApp\obj\Release\TamaWebApp.pdb
-E:\Tamagotchi\Tamagotchi\TamaWebApp\obj\Release\TamaWebApp.csprojResolveAssemblyReference.cache

@@ -17,15 +17,11 @@ namespace TamaWebApp.Controllers
         }
 
         [HttpPost, ActionName("Add")]
-        [ValidateAntiForgeryToken]
-        public ActionResult Add([Bind(Include = "Name")] Tamagotchi t)
+        public ActionResult Add(string name)
         {
             TamaLogicClient service = new TamaLogicClient();
             int Tamaid = -1;
-            if (ModelState.IsValid)
-            {
-                Tamaid = service.AddTamagotchi(t.Name);
-            }
+            Tamaid = service.AddTamagotchi(name);
             service.Close();
             return RedirectToAction("Tamagotchi", "Home", new { id = Tamaid });
         }
@@ -34,72 +30,74 @@ namespace TamaWebApp.Controllers
         public ActionResult Eat([Bind(Include = "Id")] Tamagotchi t)
         {
             TamaLogicClient service = new TamaLogicClient();
-            if (ModelState.IsValid)
+            if (service.Eat(t.Id))
             {
-                service.Eat(t.Id);
+                service.Close();
+                return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
             }
             service.Close();
-            return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpGet, ActionName("Sleep")]
         public ActionResult Sleep([Bind(Include = "Id")] Tamagotchi t)
         {
             TamaLogicClient service = new TamaLogicClient();
-            if (ModelState.IsValid)
+            if (service.Sleep(t.Id))
             {
-                service.Sleep(t.Id);
+                service.Close();
+                return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
             }
             service.Close();
-            return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpGet, ActionName("Hug")]
         public ActionResult Hug([Bind(Include = "Id")] Tamagotchi t)
         {
             TamaLogicClient service = new TamaLogicClient();
-            if (ModelState.IsValid)
+            if (service.Hug(t.Id))
             {
-                service.Hug(t.Id);
+                service.Close();
+                return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
             }
             service.Close();
-            return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpGet, ActionName("Workout")]
         public ActionResult Workout([Bind(Include = "Id")] Tamagotchi t)
         {
             TamaLogicClient service = new TamaLogicClient();
-            if (ModelState.IsValid)
+            if (service.Workout(t.Id))
             {
-                service.Workout(t.Id);
+                service.Close();
+                return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
             }
             service.Close();
-            return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpGet, ActionName("Play")]
         public ActionResult Play([Bind(Include = "Id")] Tamagotchi t)
         {
             TamaLogicClient service = new TamaLogicClient();
-            if (ModelState.IsValid)
+            if (service.Play(t.Id))
             {
-                service.Play(t.Id);
+                service.Close();
+                return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
             }
             service.Close();
-            return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
+            return RedirectToAction("Index", "Home");
         }
 
         [WebMethod]
         public string FlipFlag(int id, string flag)
         {
             TamaLogicClient service = new TamaLogicClient();
-            if (ModelState.IsValid)
+            if (service.FlipFlag(flag, id))
             {
-                if (service.FlipFlag(flag, id))
-                {
-                    return "{ \"status\": \"Correct\" }";
-                }
+                return "{ \"status\": \"Correct\" }";
             }
             return "{ \"status\": \"Error\" }";
         }
