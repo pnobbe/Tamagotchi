@@ -15,7 +15,7 @@ namespace TamaService
     public class TamaService : ITamaLogic
     {
         static DatabaseContext x = new DatabaseContext();
-        ITamaRepository Tamas = new DBTamaRepository(x);
+        public ITamaRepository Tamas = new DBTamaRepository(x);
         HelperFactory ninject = new HelperFactory();
         Random rnd = new Random();
 
@@ -50,8 +50,6 @@ namespace TamaService
 
         public List<Tamagotchi> GetAllTamagotchi()
         {
-            // TODO
-            // UPDATE TAMA'S
 
             List<Tamagotchi> tamas =  Tamas.getList();
 

@@ -19,9 +19,6 @@ namespace TamaService
         List<Tamagotchi> GetAllTamagotchi();
 
         [OperationContract]
-        bool UpdateTamagochi(int TamaID);
-
-        [OperationContract]
         bool FlipFlag(string name, int tamaID);
 
         [OperationContract]

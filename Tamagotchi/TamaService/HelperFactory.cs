@@ -16,7 +16,6 @@ namespace TamaService
         public HelperFactory()
         {
             lst = new List<ISpelRegel>();
-            lst.Add(new None());
 
         }
         public override void Load()

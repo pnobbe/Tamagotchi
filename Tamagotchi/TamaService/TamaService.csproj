@@ -95,7 +95,6 @@
     <Compile Include="Database\DBTamaFlags.cs" />
     <Compile Include="Database\DBTamagotchi.cs" />
     <Compile Include="Domain\Interfaces\ISpelRegel.cs" />
-    <Compile Include="Domain\Models\None.cs" />
     <Compile Include="Domain\Models\Crazy.cs" />
     <Compile Include="Domain\Models\Honger.cs" />
     <Compile Include="Domain\Models\Isolatie.cs" />
