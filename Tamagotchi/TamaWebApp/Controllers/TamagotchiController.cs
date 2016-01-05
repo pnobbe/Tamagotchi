@@ -30,65 +30,45 @@ namespace TamaWebApp.Controllers
         public ActionResult Eat([Bind(Include = "Id")] Tamagotchi t)
         {
             TamaLogicClient service = new TamaLogicClient();
-            if (service.Eat(t.Id))
-            {
-                service.Close();
-                return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
-            }
+            service.Eat(t.Id);
             service.Close();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
         }
 
         [HttpGet, ActionName("Sleep")]
         public ActionResult Sleep([Bind(Include = "Id")] Tamagotchi t)
         {
             TamaLogicClient service = new TamaLogicClient();
-            if (service.Sleep(t.Id))
-            {
-                service.Close();
-                return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
-            }
+            service.Sleep(t.Id);
             service.Close();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
         }
 
         [HttpGet, ActionName("Hug")]
         public ActionResult Hug([Bind(Include = "Id")] Tamagotchi t)
         {
             TamaLogicClient service = new TamaLogicClient();
-            if (service.Hug(t.Id))
-            {
-                service.Close();
-                return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
-            }
+            service.Hug(t.Id);
             service.Close();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
         }
 
         [HttpGet, ActionName("Workout")]
         public ActionResult Workout([Bind(Include = "Id")] Tamagotchi t)
         {
             TamaLogicClient service = new TamaLogicClient();
-            if (service.Workout(t.Id))
-            {
-                service.Close();
-                return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
-            }
+            service.Workout(t.Id);
             service.Close();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
         }
 
         [HttpGet, ActionName("Play")]
         public ActionResult Play([Bind(Include = "Id")] Tamagotchi t)
         {
             TamaLogicClient service = new TamaLogicClient();
-            if (service.Play(t.Id))
-            {
-                service.Close();
-                return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
-            }
+            service.Play(t.Id);
             service.Close();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Tamagotchi", "Home", new { id = t.Id });
         }
 
         [WebMethod]

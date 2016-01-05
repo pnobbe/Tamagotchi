@@ -1,9 +1,9 @@
 ﻿@model TamaWebApp.TamaService.Tamagotchi
 
 <div class="row">
-    <div class="box">
+    <div class="box background">
         <div class="text-center">
-            <div class="intro-text">
+            <div id="tamaName" class="intro-text">
                 @Html.DisplayFor(model => model.Name)
             </div>
             <img id="TamaImg">
@@ -13,8 +13,8 @@
             </div>
         </div>
         <br />
-        <div class="text-center">
-            <strong>@Html.DisplayFor(model => model.Name)</strong> is: <strong id="statusText"></strong>!
+        <div class="tamaStatus text-center">
+            <strong id="statusText"></strong>
         </div>
     </div>
 </div>
@@ -33,14 +33,16 @@
                 if (msg.status == "Dead") {
                     $("#TamaImg").attr("src", "/Content/img/sprites/Dead.png");
                     document.getElementById("DeathText").hidden = false;
+                    $("#TamaImg").attr("class", "deathImg");
+
                 }
                 else if (msg.status == "Sleepy") {
-                    $("#TamaImg").attr("src", "/Content/img/sprites/@Model.Id/Sleeping.png");
+                    $("#TamaImg").attr("src", "/Content/img/sprites/@Model.ImgId/Sleeping.png");
                 }
                 else {
                     $("#TamaImg").attr("src", "/Content/img/sprites/@Model.ImgId/" + msg.status + ".png");
                 }
-                $("#statusText").text(msg.status);
+                $("#statusText").text(msg.status + "!");
             },
             error: function (e) {
                 alert(e.status + "fail on img load")
