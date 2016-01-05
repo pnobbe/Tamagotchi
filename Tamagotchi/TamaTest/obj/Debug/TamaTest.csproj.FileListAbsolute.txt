@@ -1,0 +1,11 @@
+C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaTest\bin\Debug\TamaTest.dll
+C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaTest\bin\Debug\TamaTest.pdb
+C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaTest\obj\Debug\TamaTest.csprojResolveAssemblyReference.cache
+C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaTest\obj\Debug\TamaTest.dll
+C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaTest\obj\Debug\TamaTest.pdb
+C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaTest\bin\Debug\TamaService.dll
+C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaTest\bin\Debug\EntityFramework.dll
+C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaTest\bin\Debug\Ninject.dll
+C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaTest\bin\Debug\TamaService.pdb
+C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaTest\bin\Debug\EntityFramework.xml
+C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaTest\bin\Debug\Ninject.xml
