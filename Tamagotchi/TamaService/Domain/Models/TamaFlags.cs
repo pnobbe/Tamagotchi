@@ -1,30 +1,38 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.Runtime.Serialization;
 
-namespace TamaService
+namespace TamaService.Domain.Models
 {
-    [Table("Flags")]
-    public class DBTamaFlags
+    [DataContract]
+    public class TamaFlags
     {
-        [Key]
+        [DataMember]
         public int ID { get; set; }
 
+        [DataMember]
         public bool Crazy { get; set; }
 
+        [DataMember]
         public bool Honger { get; set; }
 
+        [DataMember]
         public bool Isolatie { get; set; }
 
+        [DataMember]
         public bool Munchies { get; set; }
 
+        [DataMember]
         public bool Slaaptekort { get; set; }
 
+        [DataMember]
         public bool Topatleet { get; set; }
 
+        [DataMember]
         public bool Vermoeidheid { get; set; }
 
+        [DataMember]
         public bool Verveling { get; set; }
 
+        [DataMember]
         public bool Voedseltekort { get; set; }
 
     }

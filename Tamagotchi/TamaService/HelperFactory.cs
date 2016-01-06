@@ -2,8 +2,6 @@
 using Ninject.Modules;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using TamaService.Domain.Interfaces;
 using TamaService.Domain.Models;
 
@@ -52,9 +50,8 @@ namespace TamaService
             if (t.Flags.Topatleet)
                 lst.Add(new Topatleet());
 
-            
-             
         }
+
         public TamaUpdater Updater
         {
             get

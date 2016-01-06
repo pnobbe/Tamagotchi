@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TamaService;
+using TamaService.Domain.Interfaces;
+using TamaService.Domain.Models;
 
 namespace TamaTest
 {
@@ -25,7 +23,7 @@ namespace TamaTest
 
         public bool update(Tamagotchi tama)
         {
-           return true;
+            return true;
         }
 
         public DateTime RepoTime()

@@ -105,13 +105,13 @@
     <Compile Include="Domain\Models\Verveling.cs" />
     <Compile Include="Domain\Models\Voedseltekort.cs" />
     <Compile Include="HelperFactory.cs" />
-    <Compile Include="Interfaces\ITamaRepository.cs" />
-    <Compile Include="TamaFlags.cs" />
-    <Compile Include="Tamagotchi.cs" />
+    <Compile Include="Domain\Interfaces\ITamaRepository.cs" />
+    <Compile Include="Domain\Models\TamaFlags.cs" />
+    <Compile Include="Domain\Models\Tamagotchi.cs" />
     <Compile Include="TamaService.svc.cs">
       <DependentUpon>TamaService.svc</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\ITamaLogic.cs" />
+    <Compile Include="Domain\Interfaces\ITamaLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TamaUpdater.cs" />
   </ItemGroup>
