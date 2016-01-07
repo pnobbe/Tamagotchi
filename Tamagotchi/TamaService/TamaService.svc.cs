@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.ServiceModel.Web;
+using System.Text;
 using TamaService.Database;
 using TamaService.Domain.Interfaces;
-using TamaService.Domain.Models;
 
 namespace TamaService
 {
@@ -39,10 +42,6 @@ namespace TamaService
             tama.Flags = tf;
             tama.ActionDone = creationDate;
             tama.ImgId = rnd.Next(1, 13);
-            tama.Boredom = 20;
-            tama.Health = 20;
-            tama.Hunger = 20;
-            tama.Sleep = 20;
             tama = Tamas.create(tama);
 
             return tama.Id;
@@ -52,9 +51,9 @@ namespace TamaService
         public List<Tamagotchi> GetAllTamagotchi()
         {
 
-            List<Tamagotchi> tamas = Tamas.getList();
+            List<Tamagotchi> tamas =  Tamas.getList();
 
-            foreach (Tamagotchi t in tamas)
+            foreach(Tamagotchi t in tamas)
             {
                 Tamagotchi x = t;
                 ninject.Load(x, false);
@@ -85,7 +84,7 @@ namespace TamaService
             }
         }
 
-
+     
 
         public bool FlipFlag(string name, int tamaID)
         {
@@ -94,50 +93,50 @@ namespace TamaService
 
             if (tama == null)
                 return false;
-            switch (name)
-            {
-                case "Crazy":
-                    tama.Flags.Crazy = !tama.Flags.Crazy;
-                    Tamas.update(tama);
-                    return true;
-                case "Honger":
-                    tama.Flags.Honger = !tama.Flags.Honger;
-                    Tamas.update(tama);
-                    return true;
-                case "Isolatie":
-                    tama.Flags.Isolatie = !tama.Flags.Isolatie;
-                    Tamas.update(tama);
-                    return true;
-                case "Munchies":
-                    tama.Flags.Munchies = !tama.Flags.Munchies;
-                    Tamas.update(tama);
-                    return true;
-                case "Slaaptekort":
-                    tama.Flags.Slaaptekort = !tama.Flags.Slaaptekort;
-                    Tamas.update(tama);
-                    return true;
-                case "Topatleet":
-                    tama.Flags.Topatleet = !tama.Flags.Topatleet;
-                    Tamas.update(tama);
-                    return true;
-                case "Vermoeidheid":
-                    tama.Flags.Vermoeidheid = !tama.Flags.Vermoeidheid;
-                    Tamas.update(tama);
-                    return true;
-                case "Verveling":
-                    tama.Flags.Verveling = !tama.Flags.Verveling;
-                    Tamas.update(tama);
-                    return true;
-                case "Voedseltekort":
-                    tama.Flags.Voedseltekort = !tama.Flags.Voedseltekort;
-                    Tamas.update(tama);
-                    return true;
-            };
+                switch (name)
+                {
+                    case "Crazy":
+                        tama.Flags.Crazy = !tama.Flags.Crazy;
+                        Tamas.update(tama);
+                        return true;
+                    case "Honger":
+                        tama.Flags.Honger = !tama.Flags.Honger;
+                        Tamas.update(tama);
+                        return true;
+                    case "Isolatie":
+                        tama.Flags.Isolatie = !tama.Flags.Isolatie;
+                        Tamas.update(tama);
+                        return true;
+                    case "Munchies":
+                        tama.Flags.Munchies = !tama.Flags.Munchies;
+                        Tamas.update(tama);
+                        return true;
+                    case "Slaaptekort":
+                        tama.Flags.Slaaptekort = !tama.Flags.Slaaptekort;
+                        Tamas.update(tama);
+                        return true;
+                    case "Topatleet":
+                        tama.Flags.Topatleet = !tama.Flags.Topatleet;
+                        Tamas.update(tama);
+                        return true;
+                    case "Vermoeidheid":
+                        tama.Flags.Vermoeidheid = !tama.Flags.Vermoeidheid;
+                        Tamas.update(tama);
+                        return true;
+                    case "Verveling":
+                        tama.Flags.Verveling = !tama.Flags.Verveling;
+                        Tamas.update(tama);
+                        return true;
+                    case "Voedseltekort":
+                        tama.Flags.Voedseltekort = !tama.Flags.Voedseltekort;
+                        Tamas.update(tama);
+                        return true;
+                };
 
-            return false;
+                return false;
 
-        }
-
+            }
+        
 
         // Only used in TestService
         public bool UpdateTamagochi(int value)
@@ -285,7 +284,7 @@ namespace TamaService
 
                 if (!canExecute(tama, out time))
                     return false;
-
+   
 
                 tama.Health -= 10;
                 if (tama.Health < 0)

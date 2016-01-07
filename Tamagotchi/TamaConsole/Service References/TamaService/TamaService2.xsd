@@ -41,6 +41,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="UpdateTamagochi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TamaID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTamagochiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateTamagochiResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="FlipFlag">
     <xs:complexType>
       <xs:sequence>

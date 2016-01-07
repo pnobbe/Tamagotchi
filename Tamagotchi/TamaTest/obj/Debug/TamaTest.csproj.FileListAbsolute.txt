@@ -9,16 +9,3 @@ C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaTest\bin\Debug\Ninject.d
 C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaTest\bin\Debug\TamaService.pdb
 C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaTest\bin\Debug\EntityFramework.xml
 C:\Users\Marius\Source\Repos\Tamagotchi2\Tamagotchi\TamaTest\bin\Debug\Ninject.xml
-E:\Tamagotchi\Tamagotchi\TamaTest\bin\Debug\TamaTest.dll
-E:\Tamagotchi\Tamagotchi\TamaTest\bin\Debug\TamaTest.pdb
-E:\Tamagotchi\Tamagotchi\TamaTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-E:\Tamagotchi\Tamagotchi\TamaTest\bin\Debug\TamaService.dll
-E:\Tamagotchi\Tamagotchi\TamaTest\bin\Debug\EntityFramework.dll
-E:\Tamagotchi\Tamagotchi\TamaTest\bin\Debug\Ninject.dll
-E:\Tamagotchi\Tamagotchi\TamaTest\bin\Debug\TamaService.pdb
-E:\Tamagotchi\Tamagotchi\TamaTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
-E:\Tamagotchi\Tamagotchi\TamaTest\bin\Debug\EntityFramework.xml
-E:\Tamagotchi\Tamagotchi\TamaTest\bin\Debug\Ninject.xml
-E:\Tamagotchi\Tamagotchi\TamaTest\obj\Debug\TamaTest.csprojResolveAssemblyReference.cache
-E:\Tamagotchi\Tamagotchi\TamaTest\obj\Debug\TamaTest.dll
-E:\Tamagotchi\Tamagotchi\TamaTest\obj\Debug\TamaTest.pdb

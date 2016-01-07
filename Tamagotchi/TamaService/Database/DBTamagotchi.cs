@@ -1,6 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Web;
+using TamaService.Domain.Interfaces;
 
 namespace TamaService
 {
@@ -9,7 +14,7 @@ namespace TamaService
     {
         [Key]
         public int Id { get; set; }
-
+        
         public string Name { get; set; }
 
         public short Hunger { get; set; }
@@ -29,7 +34,6 @@ namespace TamaService
         public virtual DBTamaFlags Flags { get; set; }
 
         public int ImgId { get; set; }
-
         public DateTime ActionDone { get; set; }
 
         public string LastAction { get; set; }

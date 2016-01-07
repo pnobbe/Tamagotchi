@@ -35,7 +35,7 @@ namespace TamaConsole
             Console.WriteLine();
             Console.WriteLine("Druk op een toets om te beginnen");
             Console.ReadKey();
-
+            
         }
 
         private static void ListTamas()
@@ -58,7 +58,7 @@ namespace TamaConsole
             List<Tamagotchi> list = new List<Tamagotchi>(x);
 
 
-            switch (c)
+            switch(c)
             {
                 case 'n':
                     tama = newTama();
@@ -95,7 +95,7 @@ namespace TamaConsole
                         break;
                     }
             }
-
+           
         }
 
         private static Tamagotchi getTama()
@@ -110,10 +110,10 @@ namespace TamaConsole
                 String inp = Console.ReadLine();
                 found = int.TryParse(inp, out i);
 
-                if (found)
+                if(found)
                 {
                     t = service.GetTamagotchi(i);
-                    if (t == null)
+                    if(t == null)
                     {
                         Console.WriteLine("Tamagotchi bestaat niet.");
                         found = false;
@@ -128,7 +128,7 @@ namespace TamaConsole
 
         private static Tamagotchi newTama()
         {
-
+            
             Tamagotchi t = null;
             bool found = false;
             do
@@ -137,7 +137,7 @@ namespace TamaConsole
                 String inp = Console.ReadLine();
                 found = true;
 
-                if (String.IsNullOrWhiteSpace(inp) || inp.Length > 20)
+                if(String.IsNullOrWhiteSpace(inp) || inp.Length > 20)
                 {
                     Console.WriteLine("Naam mag uit maximaal 20 characters bestaan & niet uit alleen whitespace");
                     found = false;
@@ -159,7 +159,7 @@ namespace TamaConsole
         private static void run()
         {
             int i = 0;
-            while (true)
+            while(true)
             {
                 Console.Clear();
                 Console.WriteLine("[" + tama.Id + "]      [" + tama.Name + "]      [" + tama.CreationData + "]");
@@ -172,7 +172,7 @@ namespace TamaConsole
                 Console.WriteLine("Verveeldheid	    " + tama.Boredom);
                 Console.WriteLine();
 
-                if (service.GetStatus(tama.Id).Equals("Dead"))
+                if(service.GetStatus(tama.Id).Equals("Dead"))
                 {
                     Console.WriteLine("Je kan geen acties uitvoeren op een dode Tamagotchi.");
                     Console.ReadKey();
@@ -180,13 +180,13 @@ namespace TamaConsole
                 }
                 else
                 {
-                    if (i != 0)
+                    if(i != 0)
                     {
                         Console.WriteLine("Je moet " + i + "Seconden wachten voordat je een actie kan uitvoeren");
                     }
                     i = 0;
                     bool done;
-                    if (!doAction(out done))
+                    if(!doAction(out done))
                     {
                         i = service.SecTillAction(tama.Id);
                     }
@@ -210,18 +210,18 @@ namespace TamaConsole
                 String inp = Console.ReadLine();
                 found = true;
                 inp = inp.ToLower();
-                switch (inp)
+                switch(inp)
                 {
                     case "eat":
                         return service.Eat(tama.Id);
                     case "sleep":
-                        return service.Sleep(tama.Id); ;
+                        return service.Sleep(tama.Id);;
                     case "play":
-                        return service.Play(tama.Id); ;
+                        return service.Play(tama.Id);;
                     case "workout":
-                        return service.Workout(tama.Id); ;
+                        return service.Workout(tama.Id);;
                     case "hug":
-                        return service.Hug(tama.Id); ;
+                        return service.Hug(tama.Id);;
                     case "stop":
                         done = true;
                         return true;

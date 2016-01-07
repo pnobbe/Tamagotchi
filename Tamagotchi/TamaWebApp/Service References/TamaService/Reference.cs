@@ -445,6 +445,12 @@ namespace TamaWebApp.TamaService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/GetAllTamagotchi", ReplyAction="http://tempuri.org/ITamaLogic/GetAllTamagotchiResponse")]
         System.Threading.Tasks.Task<TamaWebApp.TamaService.Tamagotchi[]> GetAllTamagotchiAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/UpdateTamagochi", ReplyAction="http://tempuri.org/ITamaLogic/UpdateTamagochiResponse")]
+        bool UpdateTamagochi(int TamaID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/UpdateTamagochi", ReplyAction="http://tempuri.org/ITamaLogic/UpdateTamagochiResponse")]
+        System.Threading.Tasks.Task<bool> UpdateTamagochiAsync(int TamaID);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITamaLogic/FlipFlag", ReplyAction="http://tempuri.org/ITamaLogic/FlipFlagResponse")]
         bool FlipFlag(string name, int tamaID);
         
@@ -543,6 +549,14 @@ namespace TamaWebApp.TamaService {
         
         public System.Threading.Tasks.Task<TamaWebApp.TamaService.Tamagotchi[]> GetAllTamagotchiAsync() {
             return base.Channel.GetAllTamagotchiAsync();
+        }
+        
+        public bool UpdateTamagochi(int TamaID) {
+            return base.Channel.UpdateTamagochi(TamaID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateTamagochiAsync(int TamaID) {
+            return base.Channel.UpdateTamagochiAsync(TamaID);
         }
         
         public bool FlipFlag(string name, int tamaID) {

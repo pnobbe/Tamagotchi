@@ -1,5 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Web;
 
 namespace TamaService
 {
@@ -14,7 +19,6 @@ namespace TamaService
         public bool Honger { get; set; }
 
         public bool Isolatie { get; set; }
-
         public bool Munchies { get; set; }
 
         public bool Slaaptekort { get; set; }
@@ -24,7 +28,6 @@ namespace TamaService
         public bool Vermoeidheid { get; set; }
 
         public bool Verveling { get; set; }
-
         public bool Voedseltekort { get; set; }
 
     }

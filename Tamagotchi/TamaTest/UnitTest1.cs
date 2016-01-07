@@ -1,5 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TamaService.Domain.Models;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TamaService;
 
 namespace TamaTest
 {
@@ -30,7 +31,7 @@ namespace TamaTest
             service.Tamas = new TestTamaRepo();
 
             service.AddTamagotchi("Darth Sidious");
-
+            
             TamaFlags tf = new TamaFlags();
             tf.Crazy = true;
             tf.Honger = true;
@@ -53,31 +54,31 @@ namespace TamaTest
             service.FlipFlag("Honger", 1);
             tf.Honger = !tf.Honger;
             Assert.IsTrue(compareFlags(service.GetTamagotchi(1).Flags, tf));
-
+            
             service.FlipFlag("Isolatie", 1);
             tf.Isolatie = !tf.Isolatie;
             Assert.IsTrue(compareFlags(service.GetTamagotchi(1).Flags, tf));
-
+            
             service.FlipFlag("Munchies", 1);
             tf.Munchies = !tf.Munchies;
             Assert.IsTrue(compareFlags(service.GetTamagotchi(1).Flags, tf));
-
+           
             service.FlipFlag("Slaaptekort", 1);
             tf.Slaaptekort = !tf.Slaaptekort;
             Assert.IsTrue(compareFlags(service.GetTamagotchi(1).Flags, tf));
-
+           
             service.FlipFlag("Topatleet", 1);
             tf.Topatleet = !tf.Topatleet;
             Assert.IsTrue(compareFlags(service.GetTamagotchi(1).Flags, tf));
-
+           
             service.FlipFlag("Vermoeidheid", 1);
             tf.Vermoeidheid = !tf.Vermoeidheid;
             Assert.IsTrue(compareFlags(service.GetTamagotchi(1).Flags, tf));
-
+            
             service.FlipFlag("Verveling", 1);
             tf.Verveling = !tf.Verveling;
             Assert.IsTrue(compareFlags(service.GetTamagotchi(1).Flags, tf));
-
+            
             service.FlipFlag("Voedseltekort", 1);
             tf.Voedseltekort = !tf.Voedseltekort;
             Assert.IsTrue(compareFlags(service.GetTamagotchi(1).Flags, tf));
@@ -88,35 +89,35 @@ namespace TamaTest
 
         private bool compareFlags(TamaFlags a, TamaFlags b)
         {
-            if (a.Crazy != b.Crazy)
+            if(a.Crazy != b.Crazy)
                 return false;
-            if (a.Honger != b.Honger)
+            if(a.Honger != b.Honger)
                 return false;
-            if (a.Isolatie != b.Isolatie)
+            if(a.Isolatie != b.Isolatie)
                 return false;
-            if (a.Munchies != b.Munchies)
+            if(a.Munchies != b.Munchies)
                 return false;
-            if (a.Slaaptekort != b.Slaaptekort)
+            if(a.Slaaptekort != b.Slaaptekort)
                 return false;
-            if (a.Topatleet != b.Topatleet)
+            if(a.Topatleet != b.Topatleet)
                 return false;
-            if (a.Vermoeidheid != b.Vermoeidheid)
+            if(a.Vermoeidheid != b.Vermoeidheid)
                 return false;
-            if (a.Verveling != b.Verveling)
+            if(a.Verveling != b.Verveling)
                 return false;
             if (a.Voedseltekort != b.Voedseltekort)
                 return false;
 
             return true;
         }
-
+        
         [TestMethod]
         public void TestEat()
         {
             TamaService.TamaService service = new TamaService.TamaService();
             service.Tamas = new TestTamaRepo();
             service.AddTamagotchi("Darth Sidious");
-
+            
             service.GetTamagotchi(1).Hunger = 30;
             service.Eat(1);
             Assert.AreEqual(service.GetTamagotchi(1).lastAction, "Eat");
@@ -233,7 +234,7 @@ namespace TamaTest
             Assert.IsFalse(service.Sleep(1));
         }
 
-        [TestMethod]
+         [TestMethod]
         public void TestUpdate()
         {
             TamaService.TamaService service = new TamaService.TamaService();
@@ -253,14 +254,14 @@ namespace TamaTest
 
         [TestMethod]
         public void CrazyAndIsolationCapTest()
-        {
-            TamaService.TamaService service = new TamaService.TamaService();
-            service.Tamas = new TestTamaRepo();
-            service.AddTamagotchi("Darth Sidious");
+         {
+             TamaService.TamaService service = new TamaService.TamaService();
+             service.Tamas = new TestTamaRepo();
+             service.AddTamagotchi("Darth Sidious");
 
-            // crazy & Isolatie cap
-            while (!service.GetTamagotchi(1).isDead)
-            {
+             // crazy & Isolatie cap
+             while (!service.GetTamagotchi(1).isDead)
+             {
                 Tamagotchi i = service.GetTamagotchi(1);
                 i.Hunger = 0;
                 i.Boredom = 0;
@@ -272,10 +273,10 @@ namespace TamaTest
                 service.Eat(1);
                 Assert.AreEqual(service.GetTamagotchi(1).Health, 100);
 
-                // Infinite loop = fail.
-            }
-
-        }
+                 // Infinite loop = fail.
+             }
+            
+         }
         [TestMethod]
         public void VoedseltekortAndHungerCapTest()
         {
@@ -305,7 +306,7 @@ namespace TamaTest
             service.Tamas = new TestTamaRepo();
             service.AddTamagotchi("Darth Sidious");
             Tamagotchi i = service.GetTamagotchi(1);
-
+            
             // voedseltekort & honger cap test
             i.Hunger = 94;
             i.Boredom = 100;
@@ -322,12 +323,12 @@ namespace TamaTest
 
         [TestMethod]
         public void SlaaptekortAndVermoeidheidCapTest()
-        {
-            TamaService.TamaService service = new TamaService.TamaService();
-            service.Tamas = new TestTamaRepo();
-            service.AddTamagotchi("Darth Sidious");
+         {
+             TamaService.TamaService service = new TamaService.TamaService();
+             service.Tamas = new TestTamaRepo();
+             service.AddTamagotchi("Darth Sidious");
 
-            Tamagotchi i = service.GetTamagotchi(1);
+             Tamagotchi i = service.GetTamagotchi(1);
             // slaaptekort & vermoeidheid cap
             i.Hunger = 0;
             i.Boredom = 0;
@@ -340,6 +341,6 @@ namespace TamaTest
             Assert.IsTrue(service.GetTamagotchi(1).isDead);
             service.GetTamagotchi(1).isDead = false;
 
-        }
+         }
     }
 }

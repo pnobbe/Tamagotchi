@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using TamaService.Domain.Interfaces;
-using TamaService.Domain.Models;
+using System.Web;
 
 namespace TamaService.Database
 {

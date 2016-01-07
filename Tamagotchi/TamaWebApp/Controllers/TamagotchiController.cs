@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Services;
 using TamaWebApp.TamaService;
@@ -78,6 +81,16 @@ namespace TamaWebApp.Controllers
             }
             return "{ \"status\": \"Error\" }";
         }
+
+        [WebMethod]
+        public string GetStatus(int id)
+        {
+            TamaLogicClient service = new TamaLogicClient();
+            var value = service.GetStatus(id);
+            service.Close();
+            return "{ \"status\": \"" + value + "\" }";
+        }
+
 
         [WebMethod]
         public string GetCooldown(int id)
