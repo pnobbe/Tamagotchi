@@ -42,6 +42,10 @@ namespace TamaService
             tama.Flags = tf;
             tama.ActionDone = creationDate;
             tama.ImgId = rnd.Next(1, 13);
+            tama.Health = 20;
+            tama.Boredom = 20;
+            tama.Sleep = 20;
+            tama.Hunger = 20;
             tama = Tamas.create(tama);
 
             return tama.Id;

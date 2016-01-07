@@ -50,12 +50,6 @@
   <wsdl:message name="ITamaLogic_GetAllTamagotchi_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllTamagotchiResponse" />
   </wsdl:message>
-  <wsdl:message name="ITamaLogic_UpdateTamagochi_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateTamagochi" />
-  </wsdl:message>
-  <wsdl:message name="ITamaLogic_UpdateTamagochi_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateTamagochiResponse" />
-  </wsdl:message>
   <wsdl:message name="ITamaLogic_FlipFlag_InputMessage">
     <wsdl:part name="parameters" element="tns:FlipFlag" />
   </wsdl:message>
@@ -117,10 +111,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ITamaLogic/GetAllTamagotchi" message="tns:ITamaLogic_GetAllTamagotchi_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITamaLogic/GetAllTamagotchiResponse" message="tns:ITamaLogic_GetAllTamagotchi_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="UpdateTamagochi">
-      <wsdl:input wsaw:Action="http://tempuri.org/ITamaLogic/UpdateTamagochi" message="tns:ITamaLogic_UpdateTamagochi_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ITamaLogic/UpdateTamagochiResponse" message="tns:ITamaLogic_UpdateTamagochi_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="FlipFlag">
       <wsdl:input wsaw:Action="http://tempuri.org/ITamaLogic/FlipFlag" message="tns:ITamaLogic_FlipFlag_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITamaLogic/FlipFlagResponse" message="tns:ITamaLogic_FlipFlag_OutputMessage" />
@@ -176,15 +166,6 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllTamagotchi">
       <soap:operation soapAction="http://tempuri.org/ITamaLogic/GetAllTamagotchi" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateTamagochi">
-      <soap:operation soapAction="http://tempuri.org/ITamaLogic/UpdateTamagochi" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -288,15 +269,6 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllTamagotchi">
       <soap:operation soapAction="http://tempuri.org/ITamaLogic/GetAllTamagotchi" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateTamagochi">
-      <soap:operation soapAction="http://tempuri.org/ITamaLogic/UpdateTamagochi" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
