@@ -200,6 +200,10 @@ namespace TamaTest
             Assert.AreEqual(service.GetStatus(1), "Dead");
 
             service.GetTamagotchi(1).isDead = false;
+            service.GetTamagotchi(1).Boredom = 10;
+            service.GetTamagotchi(1).Health = 10;
+            service.GetTamagotchi(1).Sleep = 10;
+            service.GetTamagotchi(1).Hunger = 10;
             Assert.AreEqual(service.GetStatus(1), "Happy");
 
             service.GetTamagotchi(1).Boredom = 25;
